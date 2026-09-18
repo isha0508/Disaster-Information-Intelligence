@@ -1,0 +1,22 @@
+# Core Data Processing & Machine Learning
+pandas==2.3.3
+numpy==2.2.6
+scikit-learn==1.7.2
+scipy==1.15.3
+
+# Data Visualization
+matplotlib==3.10.9
+seaborn==0.13.2
+
+# Interactive Environment & Notebooks
+jupyter==1.1.1
+jupyterlab==4.6.3
+notebook==7.6.2
+ipykernel==7.3.0
+ipython==8.39.0
+
+# Supporting Utilities
+joblib==1.6.0
+Pillow==12.3.0
+PyYAML==6.0.3
+requests==2.34.2

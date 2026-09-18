@@ -1,0 +1,94 @@
+# ==================================================
+# Python Virtual Environments
+# ==================================================
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# ==================================================
+# Byte-compiled / Optimized / C extensions
+# ==================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ==================================================
+# Environment Variables & Secrets
+# ==================================================
+.env
+.env.*
+!.env.example
+
+# ==================================================
+# Datasets (Prevent committing large data files)
+# ==================================================
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+*.csv
+*.tsv
+*.jsonl
+*.parquet
+*.h5
+*.hdf5
+*.zip
+*.tar.gz
+*.gz
+
+# Allow sample data if needed, but ignore large data
+!data/sample/.gitkeep
+
+# ==================================================
+# Model Checkpoints and Weights
+# ==================================================
+models/*
+!models/.gitkeep
+*.pt
+*.pth
+*.bin
+*.onnx
+*.safetensors
+*.pkl
+*.joblib
+*.weights
+
+# ==================================================
+# Jupyter Notebook & Profiling
+# ==================================================
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# ==================================================
+# IDE and Editor Files
+# ==================================================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# ==================================================
+# Operating System Artifacts
+# ==================================================
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# ==================================================
+# Logs, Temp, and Test Artifacts
+# ==================================================
+*.log
+*.tmp
+temp/
+tmp/
+.pytest_cache/
+.coverage
+htmlcov/
