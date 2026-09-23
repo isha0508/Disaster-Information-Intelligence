@@ -1,0 +1,25 @@
+{
+  "total_tweets_processed": 900,
+  "tweets_with_entities": 882,
+  "total_entities": 3085,
+  "tweets_per_split": {
+    "train": 300,
+    "validation": 300,
+    "test": 300
+  },
+  "entities_per_label": {
+    "LOCATION": 960,
+    "DISASTER_TYPE": 630,
+    "NUMBER": 545,
+    "ORGANIZATION": 403,
+    "MISC": 133,
+    "CASUALTY": 123,
+    "PERSON": 93,
+    "REQUEST": 78,
+    "RESOURCE": 43,
+    "INFRASTRUCTURE": 30,
+    "RESCUE": 29,
+    "DISPLACED": 18
+  },
+  "row_limit_per_split": 300
+}

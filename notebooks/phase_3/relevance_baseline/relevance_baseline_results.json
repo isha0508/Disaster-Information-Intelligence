@@ -1,0 +1,58 @@
+{
+  "task": "binary_humanitarian_relevance",
+  "dataset": "QCRI/HumAID-all",
+  "label_definition": {
+    "0": "not_humanitarian",
+    "1": "all_other_humanitarian_categories"
+  },
+  "best_model": "TF-IDF + Logistic Regression",
+  "validation_results": [
+    {
+      "model": "TF-IDF + Logistic Regression",
+      "accuracy": 0.8964455280379828,
+      "precision": 0.9797276853252648,
+      "recall": 0.9058609595747658,
+      "f1": 0.9413474816483756,
+      "macro_f1": 0.7498198820392945
+    },
+    {
+      "model": "TF-IDF + Linear SVM",
+      "accuracy": 0.9165918131656615,
+      "precision": 0.9600736231063287,
+      "recall": 0.9485242691285495,
+      "f1": 0.9542640022516183,
+      "macro_f1": 0.7405963388259547
+    },
+    {
+      "model": "TF-IDF + Naive Bayes",
+      "accuracy": 0.9189015783395355,
+      "precision": 0.9188841753438746,
+      "recall": 0.9998601202965449,
+      "f1": 0.9576634512325831,
+      "macro_f1": 0.4985885645220666
+    }
+  ],
+  "test_results": {
+    "accuracy": 0.8954485488126649,
+    "precision": 0.9758413090460019,
+    "recall": 0.9085878548329142,
+    "f1": 0.9410144765732574,
+    "macro_f1": 0.7407304914034742
+  },
+  "dataset_sizes": {
+    "train": 53531,
+    "validation": 7793,
+    "test": 15160
+  },
+  "config": {
+    "max_features": 100000,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_df": 0.95,
+    "sublinear_tf": true,
+    "random_seed": 42
+  }
+}

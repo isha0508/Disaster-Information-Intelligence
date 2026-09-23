@@ -1,0 +1,8 @@
+                       precision    recall  f1-score   support
+
+         Not relevant       0.42      0.75      0.54      1245
+Humanitarian relevant       0.98      0.91      0.94     13915
+
+             accuracy                           0.90     15160
+            macro avg       0.70      0.83      0.74     15160
+         weighted avg       0.93      0.90      0.91     15160

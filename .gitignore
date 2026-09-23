@@ -47,6 +47,7 @@ data/processed/*
 # Model Checkpoints and Weights
 # ==================================================
 models/*
+!models/predict.py
 !models/.gitkeep
 *.pt
 *.pth
@@ -81,6 +82,23 @@ ehthumbs.db
 [Dd]esktop.ini
 $RECYCLE.BIN/
 .DS_Store
+
+# ==================================================
+# Private Working Notes (never commit)
+# ==================================================
+docs/dataset_comparison.md
+docs/humaid_data_inspection.md
+docs/humaid_eda_report.md
+docs/eda/
+docs/preprocessing_notes.md
+docs/classification_error_analysis.md
+docs/disaster_type_dataset_requirement.md
+
+# ==================================================
+# Generated evaluation outputs (artefacts, not source)
+# ==================================================
+evaluation/results/
+evaluation/figures/
 
 # ==================================================
 # Logs, Temp, and Test Artifacts

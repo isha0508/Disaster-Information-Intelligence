@@ -32,9 +32,116 @@ To transform chaotic, high-volume real-time unstructured text into structured, g
 9. **Dashboard & Alert Notification Engine:** Interactive situational awareness UI and automated emergency alerts.
 
 ## 5. Current Development Status
-> **Status:** Phase 1 — Environment Setup
-> 
-> * Initial workspace structure initialized.
-> * Python 3.10 virtual environment configured.
-> * Foundational libraries installed for baseline verification.
-> * Git safety rules and repository tracking structure established.
+
+### Phase 1 — Environment & Project Setup
+- Initial repository and workspace structure established.
+- Python 3.10 development environment configured.
+- Foundational libraries installed and verified.
+- Git safety rules and repository tracking structure established.
+
+**Status:** Complete
+
+### Phase 2 — Data Preprocessing & Dataset Preparation
+- HumAID disaster-related textual data investigated and prepared.
+- Reusable dataset loading and text-cleaning utilities implemented.
+- Exploratory data analysis performed.
+- Automated tests developed for the preprocessing and text-cleaning pipeline.
+
+**Status:** Complete
+
+### Phase 3 — Disaster Information Classification
+Phase 3 established the classification layer of the system.
+
+#### Relevance Classification
+A TF-IDF + Logistic Regression baseline was developed to distinguish relevant disaster/humanitarian information from irrelevant content.
+
+Reported test performance:
+- Accuracy: **0.895**
+- Macro F1: **0.741**
+
+#### Humanitarian Category Classification
+Both classical and transformer-based approaches were investigated:
+- TF-IDF + Logistic Regression baseline
+- DistilBERT transformer classifier
+
+The full DistilBERT experiment achieved:
+- Test Accuracy: **0.7633**
+- Test Macro F1: **0.749**
+
+The TF-IDF humanitarian baseline achieved:
+- Test Macro F1: **0.712**
+
+#### Disaster Type Classification
+A DistilBERT classifier was trained using the **HumAID-event-type** dataset for disaster-type classification.
+
+The implemented disaster-type categories include:
+- Earthquake
+- Fire
+- Flood
+- Hurricane
+
+The trained disaster-type model is retained as the canonical Phase 3 disaster-type experiment.
+
+> Verified disaster-type test metrics are not currently reported because a corresponding verified metrics artifact was not available in the completed experiment outputs.
+
+**Status:** Complete
+
+### Phase 4 — Hybrid NER & Information Extraction
+Phase 4 established a hybrid information extraction pipeline for extracting disaster-specific information from unstructured text.
+
+The approach combines:
+- General-purpose Named Entity Recognition
+- Disaster-specific rules
+- Regular expressions
+- Gazetteers
+- Entity normalization
+- Entity merging
+- Entity linking
+- Structured incident generation
+
+The approved extraction schema includes:
+- `LOCATION`
+- `CASUALTY`
+- `DISPLACED`
+- `REQUEST`
+- `RESOURCE`
+- `RESCUE`
+- `DISASTER_TYPE`
+- `ORGANIZATION`
+- `PERSON`
+- `NUMBER`
+- `INFRASTRUCTURE`
+
+The Phase 4 pipeline produced structured entities and incident-level JSON outputs through experimental extraction runs.
+
+A gold-standard annotation template was also prepared for future formal evaluation.
+
+> A completed gold-standard annotation dataset and verified gold-standard precision, recall, and F1 results are not currently available. Therefore, no gold-standard NER performance values are reported.
+
+**Status:** Complete
+
+---
+
+## 6. Current System Pipeline
+
+The completed Phase 1–4 components form the following processing pipeline:
+
+Raw Disaster Text
+        ↓
+Data Preprocessing
+        ↓
+Relevance Classification
+        ↓
+Humanitarian Category Classification
+        ↓
+Disaster Type Classification
+        ↓
+Hybrid Information Extraction
+        ↓
+Structured Disaster Information
+        ↓
+Phase 5: Intelligence & Decision Support
+        ↓
+Phase 6: GIS & Spatial Intelligence
+        ↓
+Phase 7: LLM / Generative Intelligenced.

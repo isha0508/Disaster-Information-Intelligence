@@ -1,0 +1,36 @@
+{
+  "dataset": "QCRI/HumAID-event-type",
+  "configs": [
+    "earthquake",
+    "fire",
+    "flood",
+    "hurricane"
+  ],
+  "task": "disaster_type_classification",
+  "classes": [
+    "earthquake",
+    "fire",
+    "flood",
+    "hurricane"
+  ],
+  "model": "distilbert-base-uncased",
+  "max_len": 128,
+  "batch_size": 32,
+  "grad_accum": 2,
+  "effective_batch": 64,
+  "learning_rate": 2e-05,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.06,
+  "epochs_max": 5,
+  "epochs_run": 5,
+  "best_epoch": 4,
+  "patience": 2,
+  "seed": 42,
+  "class_weighting": "sklearn compute_class_weight balanced",
+  "device": "cuda",
+  "gpu": "Tesla T4",
+  "train_size": 53531,
+  "dev_size": 7793,
+  "test_size": 15160,
+  "total_training_time_min": 45.42
+}
