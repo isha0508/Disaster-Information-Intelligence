@@ -1,0 +1,224 @@
+{
+  "evaluation_type": "rule_based_demonstration",
+  "description": "Phase 5 Intelligence & Decision Support - rule-based demonstration using synthetic scenarios.",
+  "method": "interpretable_rule_based_scoring",
+  "disclaimer": "This deterministic, interpretable, rule-based artifact is a sanity/demonstration evaluation only; it is NOT supervised ML validation and NOT calibrated probability estimation. These are deterministic synthetic scenarios used to demonstrate and sanity-check the Phase 5 intelligence pipeline.",
+  "test_results": [
+    {
+      "scenario_id": "SCENARIO_1",
+      "description": "Minor infrastructure damage",
+      "input_text": "Minor road damage reported after light storm.",
+      "expected_behavior": "Low severity, low urgency, low priority",
+      "observed_behavior": {
+        "severity": "LOW",
+        "urgency": "LOW",
+        "priority": "LOW"
+      },
+      "enriched_output": {
+        "incident_id": "INC_D2F1F94B0924AE2A",
+        "severity_score": 7.08,
+        "severity_level": "LOW",
+        "urgency_score": 0.0,
+        "urgency_level": "LOW",
+        "priority_score": 3.5,
+        "priority_level": "LOW",
+        "confidence_score": 35.0,
+        "confidence_level": "LOW",
+        "decision_flags": [
+          "INFRASTRUCTURE_DAMAGE",
+          "LOCATION_IDENTIFIED",
+          "LOW_EVIDENCE"
+        ]
+      }
+    },
+    {
+      "scenario_id": "SCENARIO_2",
+      "description": "Large casualty event",
+      "input_text": "500 people killed in massive earthquake.",
+      "expected_behavior": "High severity, low urgency, moderate priority; large casualties trigger the operational severity floor, while priority remains weighted across severity and urgency.",
+      "observed_behavior": {
+        "severity": "HIGH",
+        "urgency": "LOW",
+        "priority": "MODERATE"
+      },
+      "enriched_output": {
+        "incident_id": "INC_1454548BA1F7092F",
+        "severity_score": 60.0,
+        "severity_level": "HIGH",
+        "urgency_score": 20.0,
+        "urgency_level": "LOW",
+        "priority_score": 42.0,
+        "priority_level": "MODERATE",
+        "confidence_score": 60.0,
+        "confidence_level": "MODERATE",
+        "decision_flags": [
+          "CASUALTY_REPORT",
+          "LOCATION_IDENTIFIED"
+        ]
+      }
+    },
+    {
+      "scenario_id": "SCENARIO_3",
+      "description": "Trapped-person rescue emergency",
+      "input_text": "People trapped under collapsed building! Need rescue immediately!",
+      "expected_behavior": "Moderate severity, high urgency, moderate priority; trapped-person evidence elevates urgency and triggers rescue response flags.",
+      "observed_behavior": {
+        "severity": "MODERATE",
+        "urgency": "HIGH",
+        "priority": "MODERATE"
+      },
+      "enriched_output": {
+        "incident_id": "INC_3CA08F4B630993A3",
+        "severity_score": 30.0,
+        "severity_level": "MODERATE",
+        "urgency_score": 65.0,
+        "urgency_level": "HIGH",
+        "priority_score": 41.18,
+        "priority_level": "MODERATE",
+        "confidence_score": 47.0,
+        "confidence_level": "LOW",
+        "decision_flags": [
+          "INFRASTRUCTURE_DAMAGE",
+          "RESCUE_OPERATION",
+          "LOCATION_IDENTIFIED",
+          "LOW_EVIDENCE"
+        ]
+      }
+    },
+    {
+      "scenario_id": "SCENARIO_4",
+      "description": "Mass displacement",
+      "input_text": "5000 people displaced by severe flooding.",
+      "expected_behavior": "High severity, low urgency, moderate priority; mass displacement triggers the operational severity floor.",
+      "observed_behavior": {
+        "severity": "HIGH",
+        "urgency": "LOW",
+        "priority": "MODERATE"
+      },
+      "enriched_output": {
+        "incident_id": "INC_CEF3D8BE89889DD6",
+        "severity_score": 60.0,
+        "severity_level": "HIGH",
+        "urgency_score": 0.0,
+        "urgency_level": "LOW",
+        "priority_score": 29.7,
+        "priority_level": "MODERATE",
+        "confidence_score": 35.0,
+        "confidence_level": "LOW",
+        "decision_flags": [
+          "LOCATION_IDENTIFIED",
+          "LOW_EVIDENCE"
+        ]
+      }
+    },
+    {
+      "scenario_id": "SCENARIO_5",
+      "description": "Urgent food/water request",
+      "input_text": "Urgently need food and clean water for affected families.",
+      "expected_behavior": "Low severity, low urgency, low priority; the resource request is retained as a resource request, but its urgency score remains below the configured moderate threshold.",
+      "observed_behavior": {
+        "severity": "LOW",
+        "urgency": "LOW",
+        "priority": "LOW"
+      },
+      "enriched_output": {
+        "incident_id": "INC_5B5BA0248FED98E4",
+        "severity_score": 1.0,
+        "severity_level": "LOW",
+        "urgency_score": 13.0,
+        "urgency_level": "LOW",
+        "priority_score": 5.76,
+        "priority_level": "LOW",
+        "confidence_score": 32.0,
+        "confidence_level": "LOW",
+        "decision_flags": [
+          "RESOURCE_REQUEST",
+          "LOCATION_IDENTIFIED",
+          "LOW_EVIDENCE"
+        ]
+      }
+    }
+  ],
+  "scoring_configuration": {
+    "thresholds": {
+      "severity": {
+        "critical": 75.0,
+        "high": 50.0,
+        "moderate": 25.0
+      },
+      "urgency": {
+        "critical": 75.0,
+        "high": 50.0,
+        "moderate": 25.0
+      },
+      "priority": {
+        "critical": 75.0,
+        "high": 50.0,
+        "moderate": 25.0
+      },
+      "confidence": {
+        "high": 75.0,
+        "moderate": 50.0
+      }
+    },
+    "severity_weights": {
+      "casualties": 0.45,
+      "displaced": 0.3,
+      "infrastructure": 0.15,
+      "rescue": 0.08,
+      "disaster_type": 0.02
+    },
+    "urgency_weights": {
+      "rescue": 0.5,
+      "casualty": 0.25,
+      "immediate_danger": 0.15,
+      "resource_urgency": 0.1
+    },
+    "priority_weights": {
+      "severity": 0.55,
+      "urgency": 0.45
+    },
+    "confidence_weights": {
+      "explicit_casualty": 0.25,
+      "explicit_location": 0.2,
+      "explicit_disaster_type": 0.15,
+      "explicit_resource_request": 0.15,
+      "explicit_rescue": 0.15,
+      "structured_extraction": 0.1
+    }
+  },
+  "system_characteristics": {
+    "deterministic": true,
+    "rule_based": true,
+    "sanity_demonstration_evaluation": true,
+    "supervised_ml_validation": false,
+    "calibrated_probability_estimation": false,
+    "interpretable": true,
+    "confidence_based_on_evidence": true,
+    "requires_supervised_training": false,
+    "requires_labeled_severity_data": false,
+    "resource_estimation": "heuristic_conservative",
+    "deduplication": "text_entity_based",
+    "clustering": "text_entity_based",
+    "phase6_ready": true
+  },
+  "limitations": [
+    "No supervised ML validation - rule-based only",
+    "Heuristic resource estimates are not calibrated",
+    "No geographic clustering in Phase 5",
+    "No real-time performance optimization",
+    "Confidence scores represent evidence quality, not calibrated probabilities",
+    "Thresholds are engineering judgments and not scientifically derived",
+    "Synthetic scenarios do not represent the full distribution of real disaster reports"
+  ],
+  "phase6_compatibility": {
+    "preserves_original_location_text": true,
+    "provides_incident_id": true,
+    "provides_cluster_id": true,
+    "provides_priority": true,
+    "provides_severity": true,
+    "provides_urgency": true,
+    "ready_for_geocoding": true,
+    "ready_for_spatial_analysis": true
+  }
+}
