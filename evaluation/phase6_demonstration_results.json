@@ -1,0 +1,3386 @@
+{
+  "evaluation_type": "deterministic_rule_algorithm_demonstration",
+  "description": "Synthetic offline fixture demonstrating spatial normalization, mock geocoding, clustering, hotspots, and area priority.",
+  "geographic_accuracy": "NOT evaluated; fixture coordinates are not evidence of real-world geocoding accuracy.",
+  "live_geocoding": false,
+  "configuration": {
+    "algorithm": "haversine_radius_connected_components",
+    "cluster_radius_km": 10,
+    "cluster_min_incidents": 2,
+    "hotspot_min_incidents": 2,
+    "coordinate_reference_system": "EPSG:4326"
+  },
+  "incidents": [
+    {
+      "scenario": "SCENARIO_1_SPATIAL_CLUSTER",
+      "incident_id": "INC_684DC20FC1D591A6",
+      "original_location": "Cebu North",
+      "normalized_location": "Cebu North",
+      "latitude": 10.3157,
+      "longitude": 123.8854,
+      "geocoding_status": "success",
+      "spatial_cluster_id": "SPATIAL_FC15229A3B03",
+      "hotspot_id": "HOTSPOT_SPATIAL_FC15229A3B03",
+      "priority_score": 0.5,
+      "spatial_priority_score": 16.72
+    },
+    {
+      "scenario": "SCENARIO_1_SPATIAL_CLUSTER",
+      "incident_id": "INC_7135A6BC869C5584",
+      "original_location": "Cebu Port",
+      "normalized_location": "Cebu Port",
+      "latitude": 10.293,
+      "longitude": 123.902,
+      "geocoding_status": "success",
+      "spatial_cluster_id": "SPATIAL_FC15229A3B03",
+      "hotspot_id": "HOTSPOT_SPATIAL_FC15229A3B03",
+      "priority_score": 3.84,
+      "spatial_priority_score": 16.72
+    },
+    {
+      "scenario": "SCENARIO_1_SPATIAL_CLUSTER",
+      "incident_id": "INC_043BFCB60B715DA3",
+      "original_location": "Cebu Clinic",
+      "normalized_location": "Cebu Clinic",
+      "latitude": 10.33,
+      "longitude": 123.89,
+      "geocoding_status": "success",
+      "spatial_cluster_id": "SPATIAL_FC15229A3B03",
+      "hotspot_id": "HOTSPOT_SPATIAL_FC15229A3B03",
+      "priority_score": 2.12,
+      "spatial_priority_score": 16.72
+    },
+    {
+      "scenario": "SCENARIO_2_ISOLATED_INCIDENT",
+      "incident_id": "INC_22AADB4D5054B2B7",
+      "original_location": "Quito Hill",
+      "normalized_location": "Quito Hill",
+      "latitude": -0.1807,
+      "longitude": -78.4678,
+      "geocoding_status": "success",
+      "spatial_cluster_id": null,
+      "hotspot_id": null,
+      "priority_score": 13.05,
+      "spatial_priority_score": 15.44
+    },
+    {
+      "scenario": "SCENARIO_3_HIGH_PRIORITY_RESCUE_CASUALTY_CLUSTER",
+      "incident_id": "INC_36A202083A00C5E3",
+      "original_location": "Kathmandu Ward 1",
+      "normalized_location": "Kathmandu Ward 1",
+      "latitude": 27.7172,
+      "longitude": 85.324,
+      "geocoding_status": "success",
+      "spatial_cluster_id": "SPATIAL_91D36297BC2B",
+      "hotspot_id": "HOTSPOT_SPATIAL_91D36297BC2B",
+      "priority_score": 52.4,
+      "spatial_priority_score": 43.77
+    },
+    {
+      "scenario": "SCENARIO_3_HIGH_PRIORITY_RESCUE_CASUALTY_CLUSTER",
+      "incident_id": "INC_AC5DAA2895615E9A",
+      "original_location": "Kathmandu Hospital",
+      "normalized_location": "Kathmandu Hospital",
+      "latitude": 27.71,
+      "longitude": 85.315,
+      "geocoding_status": "success",
+      "spatial_cluster_id": "SPATIAL_91D36297BC2B",
+      "hotspot_id": "HOTSPOT_SPATIAL_91D36297BC2B",
+      "priority_score": 20.98,
+      "spatial_priority_score": 43.77
+    },
+    {
+      "scenario": "SCENARIO_3_HIGH_PRIORITY_RESCUE_CASUALTY_CLUSTER",
+      "incident_id": "INC_5301F115F29FED9A",
+      "original_location": "Kathmandu Bridge",
+      "normalized_location": "Kathmandu Bridge",
+      "latitude": 27.725,
+      "longitude": 85.335,
+      "geocoding_status": "success",
+      "spatial_cluster_id": "SPATIAL_91D36297BC2B",
+      "hotspot_id": "HOTSPOT_SPATIAL_91D36297BC2B",
+      "priority_score": 34.49,
+      "spatial_priority_score": 43.77
+    },
+    {
+      "scenario": "SCENARIO_4_UNRESOLVED_LOCATION",
+      "incident_id": "INC_B454FEA4C290CF86",
+      "original_location": "Unknown Village",
+      "normalized_location": "Unknown Village",
+      "latitude": null,
+      "longitude": null,
+      "geocoding_status": "failed",
+      "spatial_cluster_id": null,
+      "hotspot_id": null,
+      "priority_score": 0.5,
+      "spatial_priority_score": null
+    },
+    {
+      "scenario": "SCENARIO_5_GEOGRAPHIC_HOTSPOT",
+      "incident_id": "INC_C26047D3270EDBCA",
+      "original_location": "Nairobi East",
+      "normalized_location": "Nairobi East",
+      "latitude": -1.2864,
+      "longitude": 36.8172,
+      "geocoding_status": "success",
+      "spatial_cluster_id": "SPATIAL_1A2425A25BA4",
+      "hotspot_id": "HOTSPOT_SPATIAL_1A2425A25BA4",
+      "priority_score": 0.5,
+      "spatial_priority_score": 27.27
+    },
+    {
+      "scenario": "SCENARIO_5_GEOGRAPHIC_HOTSPOT",
+      "incident_id": "INC_24AD50B9BC50DB19",
+      "original_location": "Nairobi Clinic",
+      "normalized_location": "Nairobi Clinic",
+      "latitude": -1.2921,
+      "longitude": 36.8219,
+      "geocoding_status": "success",
+      "spatial_cluster_id": "SPATIAL_1A2425A25BA4",
+      "hotspot_id": "HOTSPOT_SPATIAL_1A2425A25BA4",
+      "priority_score": 2.12,
+      "spatial_priority_score": 27.27
+    },
+    {
+      "scenario": "SCENARIO_5_GEOGRAPHIC_HOTSPOT",
+      "incident_id": "INC_DF0CBD41A31D9ACF",
+      "original_location": "Nairobi Market",
+      "normalized_location": "Nairobi Market",
+      "latitude": -1.28,
+      "longitude": 36.83,
+      "geocoding_status": "success",
+      "spatial_cluster_id": "SPATIAL_1A2425A25BA4",
+      "hotspot_id": "HOTSPOT_SPATIAL_1A2425A25BA4",
+      "priority_score": 25.03,
+      "spatial_priority_score": 27.27
+    },
+    {
+      "scenario": "SCENARIO_5_GEOGRAPHIC_HOTSPOT",
+      "incident_id": "INC_1458986E46E1993C",
+      "original_location": "Nairobi Shelter",
+      "normalized_location": "Nairobi Shelter",
+      "latitude": -1.3,
+      "longitude": 36.81,
+      "geocoding_status": "success",
+      "spatial_cluster_id": "SPATIAL_1A2425A25BA4",
+      "hotspot_id": "HOTSPOT_SPATIAL_1A2425A25BA4",
+      "priority_score": 8.71,
+      "spatial_priority_score": 27.27
+    }
+  ],
+  "clusters": [
+    {
+      "spatial_cluster_id": "SPATIAL_1A2425A25BA4",
+      "incident_count": 4,
+      "incident_ids": [
+        "INC_1458986E46E1993C",
+        "INC_24AD50B9BC50DB19",
+        "INC_C26047D3270EDBCA",
+        "INC_DF0CBD41A31D9ACF"
+      ],
+      "centroid": {
+        "latitude": -1.289625,
+        "longitude": 36.819775,
+        "method": "arithmetic_mean_of_point_coordinates"
+      }
+    },
+    {
+      "spatial_cluster_id": "SPATIAL_91D36297BC2B",
+      "incident_count": 3,
+      "incident_ids": [
+        "INC_36A202083A00C5E3",
+        "INC_5301F115F29FED9A",
+        "INC_AC5DAA2895615E9A"
+      ],
+      "centroid": {
+        "latitude": 27.717399999999998,
+        "longitude": 85.32466666666666,
+        "method": "arithmetic_mean_of_point_coordinates"
+      }
+    },
+    {
+      "spatial_cluster_id": "SPATIAL_FC15229A3B03",
+      "incident_count": 3,
+      "incident_ids": [
+        "INC_043BFCB60B715DA3",
+        "INC_684DC20FC1D591A6",
+        "INC_7135A6BC869C5584"
+      ],
+      "centroid": {
+        "latitude": 10.312899999999999,
+        "longitude": 123.89246666666668,
+        "method": "arithmetic_mean_of_point_coordinates"
+      }
+    }
+  ],
+  "hotspots": [
+    {
+      "hotspot_id": "HOTSPOT_SPATIAL_1A2425A25BA4",
+      "spatial_cluster_id": "SPATIAL_1A2425A25BA4",
+      "incident_ids": [
+        "INC_1458986E46E1993C",
+        "INC_24AD50B9BC50DB19",
+        "INC_C26047D3270EDBCA",
+        "INC_DF0CBD41A31D9ACF"
+      ],
+      "incident_count": 4,
+      "high_priority_count": 0,
+      "rescue_incident_count": 1,
+      "casualty_incident_count": 0,
+      "severity_score": 9.56,
+      "urgency_score": 10.75,
+      "priority_score": 9.09,
+      "hotspot_score": 18.55,
+      "reason": [
+        "4 incidents within the configured spatial cluster",
+        "1 rescue incidents"
+      ]
+    },
+    {
+      "hotspot_id": "HOTSPOT_SPATIAL_91D36297BC2B",
+      "spatial_cluster_id": "SPATIAL_91D36297BC2B",
+      "incident_ids": [
+        "INC_36A202083A00C5E3",
+        "INC_5301F115F29FED9A",
+        "INC_AC5DAA2895615E9A"
+      ],
+      "incident_count": 3,
+      "high_priority_count": 1,
+      "rescue_incident_count": 2,
+      "casualty_incident_count": 2,
+      "severity_score": 26.1,
+      "urgency_score": 48.0,
+      "priority_score": 35.96,
+      "hotspot_score": 39.2,
+      "reason": [
+        "3 incidents within the configured spatial cluster",
+        "1 high/critical-priority incidents",
+        "2 rescue incidents",
+        "2 casualty-related incidents"
+      ]
+    },
+    {
+      "hotspot_id": "HOTSPOT_SPATIAL_FC15229A3B03",
+      "spatial_cluster_id": "SPATIAL_FC15229A3B03",
+      "incident_ids": [
+        "INC_043BFCB60B715DA3",
+        "INC_684DC20FC1D591A6",
+        "INC_7135A6BC869C5584"
+      ],
+      "incident_count": 3,
+      "high_priority_count": 0,
+      "rescue_incident_count": 0,
+      "casualty_incident_count": 0,
+      "severity_score": 3.25,
+      "urgency_score": 1.33,
+      "priority_score": 2.15,
+      "hotspot_score": 9.59,
+      "reason": [
+        "3 incidents within the configured spatial cluster"
+      ]
+    }
+  ],
+  "spatial_priority_ranking": [
+    {
+      "spatial_area_id": "SPATIAL_91D36297BC2B",
+      "spatial_cluster_id": "SPATIAL_91D36297BC2B",
+      "incident_count": 3,
+      "mean_phase5_priority": 35.96,
+      "incident_count_signal": 75.0,
+      "spatial_priority_score": 43.77,
+      "incident_ids": [
+        "INC_36A202083A00C5E3",
+        "INC_5301F115F29FED9A",
+        "INC_AC5DAA2895615E9A"
+      ]
+    },
+    {
+      "spatial_area_id": "SPATIAL_1A2425A25BA4",
+      "spatial_cluster_id": "SPATIAL_1A2425A25BA4",
+      "incident_count": 4,
+      "mean_phase5_priority": 9.09,
+      "incident_count_signal": 100.0,
+      "spatial_priority_score": 27.27,
+      "incident_ids": [
+        "INC_1458986E46E1993C",
+        "INC_24AD50B9BC50DB19",
+        "INC_C26047D3270EDBCA",
+        "INC_DF0CBD41A31D9ACF"
+      ]
+    },
+    {
+      "spatial_area_id": "SPATIAL_FC15229A3B03",
+      "spatial_cluster_id": "SPATIAL_FC15229A3B03",
+      "incident_count": 3,
+      "mean_phase5_priority": 2.15,
+      "incident_count_signal": 75.0,
+      "spatial_priority_score": 16.72,
+      "incident_ids": [
+        "INC_043BFCB60B715DA3",
+        "INC_684DC20FC1D591A6",
+        "INC_7135A6BC869C5584"
+      ]
+    },
+    {
+      "spatial_area_id": "SPATIAL_POINT_DAA1351164FE",
+      "spatial_cluster_id": null,
+      "incident_count": 1,
+      "mean_phase5_priority": 13.05,
+      "incident_count_signal": 25.0,
+      "spatial_priority_score": 15.44,
+      "incident_ids": [
+        "INC_22AADB4D5054B2B7"
+      ]
+    }
+  ],
+  "geojson": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.8854,
+            10.3157
+          ]
+        },
+        "properties": {
+          "text": "Flooding reported near homes",
+          "location": [
+            "Cebu North"
+          ],
+          "casualties": [],
+          "displaced": [],
+          "rescue": [],
+          "infrastructure": [],
+          "disaster_type": "flood",
+          "requests": [],
+          "resources": [],
+          "organizations": [],
+          "persons": [],
+          "numbers": [],
+          "entities": [],
+          "request_resource_links": [],
+          "incident_id": "INC_684DC20FC1D591A6",
+          "severity_score": 1.0,
+          "severity_level": "LOW",
+          "severity_factors": [
+            {
+              "factor": "casualties",
+              "score": 0.0,
+              "weight": 0.45,
+              "contribution": 0.0,
+              "evidence": "0 qualitative mentions"
+            },
+            {
+              "factor": "displaced",
+              "score": 0.0,
+              "weight": 0.3,
+              "contribution": 0.0,
+              "evidence": "0 qualitative mentions"
+            },
+            {
+              "factor": "infrastructure",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 critical, 0 high-impact"
+            },
+            {
+              "factor": "rescue",
+              "score": 0.0,
+              "weight": 0.08,
+              "contribution": 0.0,
+              "evidence": "none"
+            },
+            {
+              "factor": "disaster_type",
+              "score": 50.0,
+              "weight": 0.02,
+              "contribution": 1.0,
+              "evidence": "flood"
+            }
+          ],
+          "urgency_score": 0.0,
+          "urgency_level": "LOW",
+          "urgency_factors": [
+            {
+              "factor": "rescue",
+              "score": 0.0,
+              "weight": 0.5,
+              "contribution": 0.0,
+              "evidence": "0 mentions"
+            },
+            {
+              "factor": "casualty_urgency",
+              "score": 0.0,
+              "weight": 0.25,
+              "contribution": 0.0,
+              "evidence": "0 casualty mentions"
+            },
+            {
+              "factor": "immediate_danger",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "none"
+            },
+            {
+              "factor": "resource_urgency",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 request mentions"
+            }
+          ],
+          "confidence_score": 35.0,
+          "confidence_level": "LOW",
+          "confidence_factors": [
+            {
+              "factor": "explicit_casualty",
+              "score": 0.0,
+              "weight": 0.25,
+              "contribution": 0.0,
+              "evidence": "0 mentions, explicit number: False"
+            },
+            {
+              "factor": "explicit_location",
+              "score": 100.0,
+              "weight": 0.2,
+              "contribution": 20.0,
+              "evidence": "1 location mentions"
+            },
+            {
+              "factor": "explicit_disaster_type",
+              "score": 100.0,
+              "weight": 0.15,
+              "contribution": 15.0,
+              "evidence": "disaster_type: flood"
+            },
+            {
+              "factor": "explicit_resource_request",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 request mentions"
+            },
+            {
+              "factor": "explicit_rescue",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 rescue mentions"
+            },
+            {
+              "factor": "structured_extraction",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 entities extracted"
+            }
+          ],
+          "priority_score": 0.5,
+          "priority_level": "LOW",
+          "priority_factors": [
+            {
+              "factor": "severity",
+              "score": 1.0,
+              "weight": 0.55,
+              "contribution": 0.55
+            },
+            {
+              "factor": "urgency",
+              "score": 0.0,
+              "weight": 0.45,
+              "contribution": 0.0
+            },
+            {
+              "factor": "confidence_adjustment",
+              "score": 35.0,
+              "weight": 0.0,
+              "contribution": -0.05,
+              "evidence": "Low confidence penalty applied"
+            }
+          ],
+          "resource_estimates": {
+            "explicit_requests": {
+              "total_requests": 0,
+              "by_category": {},
+              "raw_mentions": []
+            },
+            "estimated_needs": {
+              "based_on_casualties": {
+                "input_casualty_count": 0,
+                "food_meals": 0.0,
+                "water_liters": 0.0,
+                "medical_kits": 0.0
+              },
+              "based_on_displaced": {
+                "input_displaced_count": 0,
+                "shelter_spaces": 0.0,
+                "food_meals_daily": 0.0,
+                "water_liters_daily": 0.0
+              },
+              "rescue_teams": {
+                "teams_needed": 0,
+                "based_on": "0 rescue mentions, 0 casualties"
+              },
+              "metadata": {
+                "method": "heuristic_multipliers",
+                "confidence": "low",
+                "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+              }
+            },
+            "resource_summary": {
+              "has_explicit_requests": false,
+              "explicit_categories": [],
+              "has_estimates": true,
+              "estimation_basis": []
+            }
+          },
+          "resource_priorities": [],
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "similarity_scores": {},
+          "decision_flags": [
+            "LOCATION_IDENTIFIED",
+            "LOW_EVIDENCE"
+          ],
+          "processing_metadata": {
+            "enrichment_timestamp": "2026-09-23T16:41:37.590841+00:00",
+            "phase5_version": "1.0",
+            "scoring_method": "rule_based_interpretable",
+            "has_phase3_input": false
+          },
+          "cluster_id": "CLUSTER_0",
+          "cluster_size": 1,
+          "demo_scenario": "SCENARIO_1_SPATIAL_CLUSTER",
+          "location_text": "Cebu North",
+          "normalized_location": "Cebu North",
+          "normalized_locations": [
+            {
+              "original_text": "Cebu North",
+              "normalized_text": "Cebu North",
+              "status": "unchanged"
+            }
+          ],
+          "geocoding_status": "success",
+          "geocoding_source": "synthetic_demo_fixture",
+          "spatial_metadata": {
+            "coordinate_reference_system": "EPSG:4326",
+            "coordinate_order": [
+              "latitude",
+              "longitude"
+            ],
+            "coordinate_validation": "valid",
+            "geocoding_candidates": null,
+            "geocoding_error": null
+          },
+          "spatial_cluster_id": "SPATIAL_FC15229A3B03",
+          "spatial_cluster_size": 3,
+          "spatial_cluster_status": "clustered",
+          "spatial_area_id": "SPATIAL_FC15229A3B03"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.902,
+            10.293
+          ]
+        },
+        "properties": {
+          "text": "Flood damage at port road",
+          "location": [
+            "Cebu Port"
+          ],
+          "casualties": [],
+          "displaced": [],
+          "rescue": [],
+          "infrastructure": [
+            "road"
+          ],
+          "disaster_type": "flood",
+          "requests": [],
+          "resources": [],
+          "organizations": [],
+          "persons": [],
+          "numbers": [],
+          "entities": [],
+          "request_resource_links": [],
+          "incident_id": "INC_7135A6BC869C5584",
+          "severity_score": 7.75,
+          "severity_level": "LOW",
+          "severity_factors": [
+            {
+              "factor": "casualties",
+              "score": 0.0,
+              "weight": 0.45,
+              "contribution": 0.0,
+              "evidence": "0 qualitative mentions"
+            },
+            {
+              "factor": "displaced",
+              "score": 0.0,
+              "weight": 0.3,
+              "contribution": 0.0,
+              "evidence": "0 qualitative mentions"
+            },
+            {
+              "factor": "infrastructure",
+              "score": 45.0,
+              "weight": 0.15,
+              "contribution": 6.75,
+              "evidence": "0 critical, 0 high-impact"
+            },
+            {
+              "factor": "rescue",
+              "score": 0.0,
+              "weight": 0.08,
+              "contribution": 0.0,
+              "evidence": "none"
+            },
+            {
+              "factor": "disaster_type",
+              "score": 50.0,
+              "weight": 0.02,
+              "contribution": 1.0,
+              "evidence": "flood"
+            }
+          ],
+          "urgency_score": 0.0,
+          "urgency_level": "LOW",
+          "urgency_factors": [
+            {
+              "factor": "rescue",
+              "score": 0.0,
+              "weight": 0.5,
+              "contribution": 0.0,
+              "evidence": "0 mentions"
+            },
+            {
+              "factor": "casualty_urgency",
+              "score": 0.0,
+              "weight": 0.25,
+              "contribution": 0.0,
+              "evidence": "0 casualty mentions"
+            },
+            {
+              "factor": "immediate_danger",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "none"
+            },
+            {
+              "factor": "resource_urgency",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 request mentions"
+            }
+          ],
+          "confidence_score": 35.0,
+          "confidence_level": "LOW",
+          "confidence_factors": [
+            {
+              "factor": "explicit_casualty",
+              "score": 0.0,
+              "weight": 0.25,
+              "contribution": 0.0,
+              "evidence": "0 mentions, explicit number: False"
+            },
+            {
+              "factor": "explicit_location",
+              "score": 100.0,
+              "weight": 0.2,
+              "contribution": 20.0,
+              "evidence": "1 location mentions"
+            },
+            {
+              "factor": "explicit_disaster_type",
+              "score": 100.0,
+              "weight": 0.15,
+              "contribution": 15.0,
+              "evidence": "disaster_type: flood"
+            },
+            {
+              "factor": "explicit_resource_request",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 request mentions"
+            },
+            {
+              "factor": "explicit_rescue",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 rescue mentions"
+            },
+            {
+              "factor": "structured_extraction",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 entities extracted"
+            }
+          ],
+          "priority_score": 3.84,
+          "priority_level": "LOW",
+          "priority_factors": [
+            {
+              "factor": "severity",
+              "score": 7.75,
+              "weight": 0.55,
+              "contribution": 4.26
+            },
+            {
+              "factor": "urgency",
+              "score": 0.0,
+              "weight": 0.45,
+              "contribution": 0.0
+            },
+            {
+              "factor": "confidence_adjustment",
+              "score": 35.0,
+              "weight": 0.0,
+              "contribution": -0.43,
+              "evidence": "Low confidence penalty applied"
+            }
+          ],
+          "resource_estimates": {
+            "explicit_requests": {
+              "total_requests": 0,
+              "by_category": {},
+              "raw_mentions": []
+            },
+            "estimated_needs": {
+              "based_on_casualties": {
+                "input_casualty_count": 0,
+                "food_meals": 0.0,
+                "water_liters": 0.0,
+                "medical_kits": 0.0
+              },
+              "based_on_displaced": {
+                "input_displaced_count": 0,
+                "shelter_spaces": 0.0,
+                "food_meals_daily": 0.0,
+                "water_liters_daily": 0.0
+              },
+              "rescue_teams": {
+                "teams_needed": 0,
+                "based_on": "0 rescue mentions, 0 casualties"
+              },
+              "metadata": {
+                "method": "heuristic_multipliers",
+                "confidence": "low",
+                "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+              }
+            },
+            "resource_summary": {
+              "has_explicit_requests": false,
+              "explicit_categories": [],
+              "has_estimates": true,
+              "estimation_basis": []
+            }
+          },
+          "resource_priorities": [],
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "similarity_scores": {},
+          "decision_flags": [
+            "INFRASTRUCTURE_DAMAGE",
+            "LOCATION_IDENTIFIED",
+            "LOW_EVIDENCE"
+          ],
+          "processing_metadata": {
+            "enrichment_timestamp": "2026-09-23T16:41:37.591041+00:00",
+            "phase5_version": "1.0",
+            "scoring_method": "rule_based_interpretable",
+            "has_phase3_input": false
+          },
+          "cluster_id": "CLUSTER_1",
+          "cluster_size": 1,
+          "demo_scenario": "SCENARIO_1_SPATIAL_CLUSTER",
+          "location_text": "Cebu Port",
+          "normalized_location": "Cebu Port",
+          "normalized_locations": [
+            {
+              "original_text": "Cebu Port",
+              "normalized_text": "Cebu Port",
+              "status": "unchanged"
+            }
+          ],
+          "geocoding_status": "success",
+          "geocoding_source": "synthetic_demo_fixture",
+          "spatial_metadata": {
+            "coordinate_reference_system": "EPSG:4326",
+            "coordinate_order": [
+              "latitude",
+              "longitude"
+            ],
+            "coordinate_validation": "valid",
+            "geocoding_candidates": null,
+            "geocoding_error": null
+          },
+          "spatial_cluster_id": "SPATIAL_FC15229A3B03",
+          "spatial_cluster_size": 3,
+          "spatial_cluster_status": "clustered",
+          "spatial_area_id": "SPATIAL_FC15229A3B03"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            123.89,
+            10.33
+          ]
+        },
+        "properties": {
+          "text": "Residents need shelter",
+          "location": [
+            "Cebu Clinic"
+          ],
+          "casualties": [],
+          "displaced": [],
+          "rescue": [],
+          "infrastructure": [],
+          "disaster_type": "flood",
+          "requests": [
+            "shelter"
+          ],
+          "resources": [
+            "shelter"
+          ],
+          "organizations": [],
+          "persons": [],
+          "numbers": [],
+          "entities": [],
+          "request_resource_links": [],
+          "incident_id": "INC_043BFCB60B715DA3",
+          "severity_score": 1.0,
+          "severity_level": "LOW",
+          "severity_factors": [
+            {
+              "factor": "casualties",
+              "score": 0.0,
+              "weight": 0.45,
+              "contribution": 0.0,
+              "evidence": "0 qualitative mentions"
+            },
+            {
+              "factor": "displaced",
+              "score": 0.0,
+              "weight": 0.3,
+              "contribution": 0.0,
+              "evidence": "0 qualitative mentions"
+            },
+            {
+              "factor": "infrastructure",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 critical, 0 high-impact"
+            },
+            {
+              "factor": "rescue",
+              "score": 0.0,
+              "weight": 0.08,
+              "contribution": 0.0,
+              "evidence": "none"
+            },
+            {
+              "factor": "disaster_type",
+              "score": 50.0,
+              "weight": 0.02,
+              "contribution": 1.0,
+              "evidence": "flood"
+            }
+          ],
+          "urgency_score": 4.0,
+          "urgency_level": "LOW",
+          "urgency_factors": [
+            {
+              "factor": "rescue",
+              "score": 0.0,
+              "weight": 0.5,
+              "contribution": 0.0,
+              "evidence": "0 mentions"
+            },
+            {
+              "factor": "casualty_urgency",
+              "score": 0.0,
+              "weight": 0.25,
+              "contribution": 0.0,
+              "evidence": "0 casualty mentions"
+            },
+            {
+              "factor": "immediate_danger",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "none"
+            },
+            {
+              "factor": "resource_urgency",
+              "score": 40.0,
+              "weight": 0.1,
+              "contribution": 4.0,
+              "evidence": "1 request mentions"
+            }
+          ],
+          "confidence_score": 47.0,
+          "confidence_level": "LOW",
+          "confidence_factors": [
+            {
+              "factor": "explicit_casualty",
+              "score": 0.0,
+              "weight": 0.25,
+              "contribution": 0.0,
+              "evidence": "0 mentions, explicit number: False"
+            },
+            {
+              "factor": "explicit_location",
+              "score": 100.0,
+              "weight": 0.2,
+              "contribution": 20.0,
+              "evidence": "1 location mentions"
+            },
+            {
+              "factor": "explicit_disaster_type",
+              "score": 100.0,
+              "weight": 0.15,
+              "contribution": 15.0,
+              "evidence": "disaster_type: flood"
+            },
+            {
+              "factor": "explicit_resource_request",
+              "score": 80.0,
+              "weight": 0.15,
+              "contribution": 12.0,
+              "evidence": "1 request mentions"
+            },
+            {
+              "factor": "explicit_rescue",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 rescue mentions"
+            },
+            {
+              "factor": "structured_extraction",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 entities extracted"
+            }
+          ],
+          "priority_score": 2.12,
+          "priority_level": "LOW",
+          "priority_factors": [
+            {
+              "factor": "severity",
+              "score": 1.0,
+              "weight": 0.55,
+              "contribution": 0.55
+            },
+            {
+              "factor": "urgency",
+              "score": 4.0,
+              "weight": 0.45,
+              "contribution": 1.8
+            },
+            {
+              "factor": "confidence_adjustment",
+              "score": 47.0,
+              "weight": 0.0,
+              "contribution": -0.23,
+              "evidence": "Low confidence penalty applied"
+            }
+          ],
+          "resource_estimates": {
+            "explicit_requests": {
+              "total_requests": 2,
+              "by_category": {
+                "shelter": [
+                  {
+                    "category": "shelter",
+                    "quantity": null,
+                    "raw_text": "shelter",
+                    "source": "request_entity"
+                  },
+                  {
+                    "category": "shelter",
+                    "quantity": null,
+                    "raw_text": "shelter",
+                    "source": "resource_entity"
+                  }
+                ]
+              },
+              "raw_mentions": [
+                {
+                  "category": "shelter",
+                  "quantity": null,
+                  "raw_text": "shelter",
+                  "source": "request_entity"
+                },
+                {
+                  "category": "shelter",
+                  "quantity": null,
+                  "raw_text": "shelter",
+                  "source": "resource_entity"
+                }
+              ]
+            },
+            "estimated_needs": {
+              "based_on_casualties": {
+                "input_casualty_count": 0,
+                "food_meals": 0.0,
+                "water_liters": 0.0,
+                "medical_kits": 0.0
+              },
+              "based_on_displaced": {
+                "input_displaced_count": 0,
+                "shelter_spaces": 0.0,
+                "food_meals_daily": 0.0,
+                "water_liters_daily": 0.0
+              },
+              "rescue_teams": {
+                "teams_needed": 0,
+                "based_on": "0 rescue mentions, 0 casualties"
+              },
+              "metadata": {
+                "method": "heuristic_multipliers",
+                "confidence": "low",
+                "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+              }
+            },
+            "resource_summary": {
+              "has_explicit_requests": true,
+              "explicit_categories": [
+                "shelter"
+              ],
+              "has_estimates": true,
+              "estimation_basis": []
+            }
+          },
+          "resource_priorities": [
+            {
+              "category": "water",
+              "priority": "MODERATE",
+              "reason": "Basic life support (urgency: UNKNOWN)"
+            },
+            {
+              "category": "food",
+              "priority": "MODERATE",
+              "reason": "Sustenance for affected population"
+            }
+          ],
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "similarity_scores": {},
+          "decision_flags": [
+            "RESOURCE_REQUEST",
+            "LOCATION_IDENTIFIED",
+            "LOW_EVIDENCE"
+          ],
+          "processing_metadata": {
+            "enrichment_timestamp": "2026-09-23T16:41:37.591248+00:00",
+            "phase5_version": "1.0",
+            "scoring_method": "rule_based_interpretable",
+            "has_phase3_input": false
+          },
+          "cluster_id": "CLUSTER_2",
+          "cluster_size": 1,
+          "demo_scenario": "SCENARIO_1_SPATIAL_CLUSTER",
+          "location_text": "Cebu Clinic",
+          "normalized_location": "Cebu Clinic",
+          "normalized_locations": [
+            {
+              "original_text": "Cebu Clinic",
+              "normalized_text": "Cebu Clinic",
+              "status": "unchanged"
+            }
+          ],
+          "geocoding_status": "success",
+          "geocoding_source": "synthetic_demo_fixture",
+          "spatial_metadata": {
+            "coordinate_reference_system": "EPSG:4326",
+            "coordinate_order": [
+              "latitude",
+              "longitude"
+            ],
+            "coordinate_validation": "valid",
+            "geocoding_candidates": null,
+            "geocoding_error": null
+          },
+          "spatial_cluster_id": "SPATIAL_FC15229A3B03",
+          "spatial_cluster_size": 3,
+          "spatial_cluster_status": "clustered",
+          "spatial_area_id": "SPATIAL_FC15229A3B03"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -78.4678,
+            -0.1807
+          ]
+        },
+        "properties": {
+          "text": "Isolated landslide report",
+          "location": [
+            "Quito Hill"
+          ],
+          "casualties": [
+            "2 injured"
+          ],
+          "displaced": [],
+          "rescue": [],
+          "infrastructure": [],
+          "disaster_type": "landslide",
+          "requests": [],
+          "resources": [],
+          "organizations": [],
+          "persons": [],
+          "numbers": [],
+          "entities": [],
+          "request_resource_links": [],
+          "incident_id": "INC_22AADB4D5054B2B7",
+          "severity_score": 13.5,
+          "severity_level": "LOW",
+          "severity_factors": [
+            {
+              "factor": "casualties",
+              "score": 27.78,
+              "weight": 0.45,
+              "contribution": 12.5,
+              "evidence": "2 affected"
+            },
+            {
+              "factor": "displaced",
+              "score": 0.0,
+              "weight": 0.3,
+              "contribution": 0.0,
+              "evidence": "0 qualitative mentions"
+            },
+            {
+              "factor": "infrastructure",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 critical, 0 high-impact"
+            },
+            {
+              "factor": "rescue",
+              "score": 0.0,
+              "weight": 0.08,
+              "contribution": 0.0,
+              "evidence": "none"
+            },
+            {
+              "factor": "disaster_type",
+              "score": 50.0,
+              "weight": 0.02,
+              "contribution": 1.0,
+              "evidence": "landslide"
+            }
+          ],
+          "urgency_score": 12.5,
+          "urgency_level": "LOW",
+          "urgency_factors": [
+            {
+              "factor": "rescue",
+              "score": 0.0,
+              "weight": 0.5,
+              "contribution": 0.0,
+              "evidence": "0 mentions"
+            },
+            {
+              "factor": "casualty_urgency",
+              "score": 50.0,
+              "weight": 0.25,
+              "contribution": 12.5,
+              "evidence": "1 casualty mentions"
+            },
+            {
+              "factor": "immediate_danger",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "none"
+            },
+            {
+              "factor": "resource_urgency",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 request mentions"
+            }
+          ],
+          "confidence_score": 60.0,
+          "confidence_level": "MODERATE",
+          "confidence_factors": [
+            {
+              "factor": "explicit_casualty",
+              "score": 100.0,
+              "weight": 0.25,
+              "contribution": 25.0,
+              "evidence": "1 mentions, explicit number: True"
+            },
+            {
+              "factor": "explicit_location",
+              "score": 100.0,
+              "weight": 0.2,
+              "contribution": 20.0,
+              "evidence": "1 location mentions"
+            },
+            {
+              "factor": "explicit_disaster_type",
+              "score": 100.0,
+              "weight": 0.15,
+              "contribution": 15.0,
+              "evidence": "disaster_type: landslide"
+            },
+            {
+              "factor": "explicit_resource_request",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 request mentions"
+            },
+            {
+              "factor": "explicit_rescue",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 rescue mentions"
+            },
+            {
+              "factor": "structured_extraction",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 entities extracted"
+            }
+          ],
+          "priority_score": 13.05,
+          "priority_level": "LOW",
+          "priority_factors": [
+            {
+              "factor": "severity",
+              "score": 13.5,
+              "weight": 0.55,
+              "contribution": 7.43
+            },
+            {
+              "factor": "urgency",
+              "score": 12.5,
+              "weight": 0.45,
+              "contribution": 5.62
+            }
+          ],
+          "resource_estimates": {
+            "explicit_requests": {
+              "total_requests": 0,
+              "by_category": {},
+              "raw_mentions": []
+            },
+            "estimated_needs": {
+              "based_on_casualties": {
+                "input_casualty_count": 2,
+                "food_meals": 3.0,
+                "water_liters": 6.0,
+                "medical_kits": 0.6
+              },
+              "based_on_displaced": {
+                "input_displaced_count": 0,
+                "shelter_spaces": 0.0,
+                "food_meals_daily": 0.0,
+                "water_liters_daily": 0.0
+              },
+              "rescue_teams": {
+                "teams_needed": 0,
+                "based_on": "0 rescue mentions, 2 casualties"
+              },
+              "metadata": {
+                "method": "heuristic_multipliers",
+                "confidence": "low",
+                "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+              }
+            },
+            "resource_summary": {
+              "has_explicit_requests": false,
+              "explicit_categories": [],
+              "has_estimates": true,
+              "estimation_basis": [
+                "casualties"
+              ]
+            }
+          },
+          "resource_priorities": [
+            {
+              "category": "medical",
+              "priority": "HIGH",
+              "reason": "Casualty treatment required (severity: UNKNOWN)"
+            }
+          ],
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "similarity_scores": {},
+          "decision_flags": [
+            "CASUALTY_REPORT",
+            "LOCATION_IDENTIFIED"
+          ],
+          "processing_metadata": {
+            "enrichment_timestamp": "2026-09-23T16:41:37.591473+00:00",
+            "phase5_version": "1.0",
+            "scoring_method": "rule_based_interpretable",
+            "has_phase3_input": false
+          },
+          "cluster_id": "CLUSTER_3",
+          "cluster_size": 1,
+          "demo_scenario": "SCENARIO_2_ISOLATED_INCIDENT",
+          "location_text": "Quito Hill",
+          "normalized_location": "Quito Hill",
+          "normalized_locations": [
+            {
+              "original_text": "Quito Hill",
+              "normalized_text": "Quito Hill",
+              "status": "unchanged"
+            }
+          ],
+          "geocoding_status": "success",
+          "geocoding_source": "synthetic_demo_fixture",
+          "spatial_metadata": {
+            "coordinate_reference_system": "EPSG:4326",
+            "coordinate_order": [
+              "latitude",
+              "longitude"
+            ],
+            "coordinate_validation": "valid",
+            "geocoding_candidates": null,
+            "geocoding_error": null
+          },
+          "spatial_cluster_id": null,
+          "spatial_cluster_size": 1,
+          "spatial_cluster_status": "noise",
+          "spatial_area_id": "SPATIAL_POINT_DAA1351164FE"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.324,
+            27.7172
+          ]
+        },
+        "properties": {
+          "text": "People trapped after earthquake",
+          "location": [
+            "Kathmandu Ward 1"
+          ],
+          "casualties": [
+            "12 injured"
+          ],
+          "displaced": [],
+          "rescue": [
+            "people trapped",
+            "rescue"
+          ],
+          "infrastructure": [],
+          "disaster_type": "earthquake",
+          "requests": [],
+          "resources": [],
+          "organizations": [],
+          "persons": [],
+          "numbers": [],
+          "entities": [],
+          "request_resource_links": [],
+          "incident_id": "INC_36A202083A00C5E3",
+          "severity_score": 31.87,
+          "severity_level": "MODERATE",
+          "severity_factors": [
+            {
+              "factor": "casualties",
+              "score": 51.11,
+              "weight": 0.45,
+              "contribution": 23.0,
+              "evidence": "12 affected"
+            },
+            {
+              "factor": "displaced",
+              "score": 0.0,
+              "weight": 0.3,
+              "contribution": 0.0,
+              "evidence": "0 qualitative mentions"
+            },
+            {
+              "factor": "infrastructure",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 critical, 0 high-impact"
+            },
+            {
+              "factor": "rescue",
+              "score": 90.0,
+              "weight": 0.08,
+              "contribution": 7.2,
+              "evidence": "trapped/person rescue indicators"
+            },
+            {
+              "factor": "disaster_type",
+              "score": 83.33,
+              "weight": 0.02,
+              "contribution": 1.67,
+              "evidence": "earthquake"
+            }
+          ],
+          "urgency_score": 77.5,
+          "urgency_level": "CRITICAL",
+          "urgency_factors": [
+            {
+              "factor": "rescue",
+              "score": 100.0,
+              "weight": 0.5,
+              "contribution": 50.0,
+              "evidence": [
+                "trapped"
+              ]
+            },
+            {
+              "factor": "casualty_urgency",
+              "score": 50.0,
+              "weight": 0.25,
+              "contribution": 12.5,
+              "evidence": "1 casualty mentions"
+            },
+            {
+              "factor": "immediate_danger",
+              "score": 100.0,
+              "weight": 0.15,
+              "contribution": 15.0,
+              "evidence": [
+                "trapped"
+              ]
+            },
+            {
+              "factor": "resource_urgency",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 request mentions"
+            }
+          ],
+          "confidence_score": 72.0,
+          "confidence_level": "MODERATE",
+          "confidence_factors": [
+            {
+              "factor": "explicit_casualty",
+              "score": 100.0,
+              "weight": 0.25,
+              "contribution": 25.0,
+              "evidence": "1 mentions, explicit number: True"
+            },
+            {
+              "factor": "explicit_location",
+              "score": 100.0,
+              "weight": 0.2,
+              "contribution": 20.0,
+              "evidence": "1 location mentions"
+            },
+            {
+              "factor": "explicit_disaster_type",
+              "score": 100.0,
+              "weight": 0.15,
+              "contribution": 15.0,
+              "evidence": "disaster_type: earthquake"
+            },
+            {
+              "factor": "explicit_resource_request",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 request mentions"
+            },
+            {
+              "factor": "explicit_rescue",
+              "score": 80.0,
+              "weight": 0.15,
+              "contribution": 12.0,
+              "evidence": "2 rescue mentions"
+            },
+            {
+              "factor": "structured_extraction",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 entities extracted"
+            }
+          ],
+          "priority_score": 52.4,
+          "priority_level": "HIGH",
+          "priority_factors": [
+            {
+              "factor": "severity",
+              "score": 31.87,
+              "weight": 0.55,
+              "contribution": 17.53
+            },
+            {
+              "factor": "urgency",
+              "score": 77.5,
+              "weight": 0.45,
+              "contribution": 34.88
+            }
+          ],
+          "resource_estimates": {
+            "explicit_requests": {
+              "total_requests": 0,
+              "by_category": {},
+              "raw_mentions": []
+            },
+            "estimated_needs": {
+              "based_on_casualties": {
+                "input_casualty_count": 12,
+                "food_meals": 18.0,
+                "water_liters": 36.0,
+                "medical_kits": 3.6
+              },
+              "based_on_displaced": {
+                "input_displaced_count": 0,
+                "shelter_spaces": 0.0,
+                "food_meals_daily": 0.0,
+                "water_liters_daily": 0.0
+              },
+              "rescue_teams": {
+                "teams_needed": 3,
+                "based_on": "2 rescue mentions, 12 casualties"
+              },
+              "metadata": {
+                "method": "heuristic_multipliers",
+                "confidence": "moderate",
+                "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+              }
+            },
+            "resource_summary": {
+              "has_explicit_requests": false,
+              "explicit_categories": [],
+              "has_estimates": true,
+              "estimation_basis": [
+                "casualties",
+                "rescue_operations"
+              ]
+            }
+          },
+          "resource_priorities": [
+            {
+              "category": "rescue_teams",
+              "priority": "CRITICAL",
+              "reason": "Active rescue operations required"
+            },
+            {
+              "category": "medical",
+              "priority": "HIGH",
+              "reason": "Casualty treatment required (severity: UNKNOWN)"
+            }
+          ],
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "similarity_scores": {},
+          "decision_flags": [
+            "HIGH_PRIORITY",
+            "IMMEDIATE_RESCUE",
+            "CASUALTY_REPORT",
+            "RESCUE_OPERATION",
+            "LOCATION_IDENTIFIED"
+          ],
+          "processing_metadata": {
+            "enrichment_timestamp": "2026-09-23T16:41:37.591779+00:00",
+            "phase5_version": "1.0",
+            "scoring_method": "rule_based_interpretable",
+            "has_phase3_input": false
+          },
+          "cluster_id": "CLUSTER_4",
+          "cluster_size": 1,
+          "demo_scenario": "SCENARIO_3_HIGH_PRIORITY_RESCUE_CASUALTY_CLUSTER",
+          "location_text": "Kathmandu Ward 1",
+          "normalized_location": "Kathmandu Ward 1",
+          "normalized_locations": [
+            {
+              "original_text": "Kathmandu Ward 1",
+              "normalized_text": "Kathmandu Ward 1",
+              "status": "unchanged"
+            }
+          ],
+          "geocoding_status": "success",
+          "geocoding_source": "synthetic_demo_fixture",
+          "spatial_metadata": {
+            "coordinate_reference_system": "EPSG:4326",
+            "coordinate_order": [
+              "latitude",
+              "longitude"
+            ],
+            "coordinate_validation": "valid",
+            "geocoding_candidates": null,
+            "geocoding_error": null
+          },
+          "spatial_cluster_id": "SPATIAL_91D36297BC2B",
+          "spatial_cluster_size": 3,
+          "spatial_cluster_status": "clustered",
+          "spatial_area_id": "SPATIAL_91D36297BC2B"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.315,
+            27.71
+          ]
+        },
+        "properties": {
+          "text": "Casualties near hospital",
+          "location": [
+            "Kathmandu Hospital"
+          ],
+          "casualties": [
+            "25 injured"
+          ],
+          "displaced": [],
+          "rescue": [],
+          "infrastructure": [],
+          "disaster_type": "earthquake",
+          "requests": [],
+          "resources": [],
+          "organizations": [],
+          "persons": [],
+          "numbers": [],
+          "entities": [],
+          "request_resource_links": [],
+          "incident_id": "INC_AC5DAA2895615E9A",
+          "severity_score": 27.92,
+          "severity_level": "MODERATE",
+          "severity_factors": [
+            {
+              "factor": "casualties",
+              "score": 58.33,
+              "weight": 0.45,
+              "contribution": 26.25,
+              "evidence": "25 affected"
+            },
+            {
+              "factor": "displaced",
+              "score": 0.0,
+              "weight": 0.3,
+              "contribution": 0.0,
+              "evidence": "0 qualitative mentions"
+            },
+            {
+              "factor": "infrastructure",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 critical, 0 high-impact"
+            },
+            {
+              "factor": "rescue",
+              "score": 0.0,
+              "weight": 0.08,
+              "contribution": 0.0,
+              "evidence": "none"
+            },
+            {
+              "factor": "disaster_type",
+              "score": 83.33,
+              "weight": 0.02,
+              "contribution": 1.67,
+              "evidence": "earthquake"
+            }
+          ],
+          "urgency_score": 12.5,
+          "urgency_level": "LOW",
+          "urgency_factors": [
+            {
+              "factor": "rescue",
+              "score": 0.0,
+              "weight": 0.5,
+              "contribution": 0.0,
+              "evidence": "0 mentions"
+            },
+            {
+              "factor": "casualty_urgency",
+              "score": 50.0,
+              "weight": 0.25,
+              "contribution": 12.5,
+              "evidence": "1 casualty mentions"
+            },
+            {
+              "factor": "immediate_danger",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "none"
+            },
+            {
+              "factor": "resource_urgency",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 request mentions"
+            }
+          ],
+          "confidence_score": 60.0,
+          "confidence_level": "MODERATE",
+          "confidence_factors": [
+            {
+              "factor": "explicit_casualty",
+              "score": 100.0,
+              "weight": 0.25,
+              "contribution": 25.0,
+              "evidence": "1 mentions, explicit number: True"
+            },
+            {
+              "factor": "explicit_location",
+              "score": 100.0,
+              "weight": 0.2,
+              "contribution": 20.0,
+              "evidence": "1 location mentions"
+            },
+            {
+              "factor": "explicit_disaster_type",
+              "score": 100.0,
+              "weight": 0.15,
+              "contribution": 15.0,
+              "evidence": "disaster_type: earthquake"
+            },
+            {
+              "factor": "explicit_resource_request",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 request mentions"
+            },
+            {
+              "factor": "explicit_rescue",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 rescue mentions"
+            },
+            {
+              "factor": "structured_extraction",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 entities extracted"
+            }
+          ],
+          "priority_score": 20.98,
+          "priority_level": "LOW",
+          "priority_factors": [
+            {
+              "factor": "severity",
+              "score": 27.92,
+              "weight": 0.55,
+              "contribution": 15.36
+            },
+            {
+              "factor": "urgency",
+              "score": 12.5,
+              "weight": 0.45,
+              "contribution": 5.62
+            }
+          ],
+          "resource_estimates": {
+            "explicit_requests": {
+              "total_requests": 0,
+              "by_category": {},
+              "raw_mentions": []
+            },
+            "estimated_needs": {
+              "based_on_casualties": {
+                "input_casualty_count": 25,
+                "food_meals": 37.5,
+                "water_liters": 75.0,
+                "medical_kits": 7.5
+              },
+              "based_on_displaced": {
+                "input_displaced_count": 0,
+                "shelter_spaces": 0.0,
+                "food_meals_daily": 0.0,
+                "water_liters_daily": 0.0
+              },
+              "rescue_teams": {
+                "teams_needed": 0,
+                "based_on": "0 rescue mentions, 25 casualties"
+              },
+              "metadata": {
+                "method": "heuristic_multipliers",
+                "confidence": "moderate",
+                "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+              }
+            },
+            "resource_summary": {
+              "has_explicit_requests": false,
+              "explicit_categories": [],
+              "has_estimates": true,
+              "estimation_basis": [
+                "casualties"
+              ]
+            }
+          },
+          "resource_priorities": [
+            {
+              "category": "medical",
+              "priority": "HIGH",
+              "reason": "Casualty treatment required (severity: UNKNOWN)"
+            }
+          ],
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "similarity_scores": {},
+          "decision_flags": [
+            "CASUALTY_REPORT",
+            "LOCATION_IDENTIFIED"
+          ],
+          "processing_metadata": {
+            "enrichment_timestamp": "2026-09-23T16:41:37.592069+00:00",
+            "phase5_version": "1.0",
+            "scoring_method": "rule_based_interpretable",
+            "has_phase3_input": false
+          },
+          "cluster_id": "CLUSTER_5",
+          "cluster_size": 1,
+          "demo_scenario": "SCENARIO_3_HIGH_PRIORITY_RESCUE_CASUALTY_CLUSTER",
+          "location_text": "Kathmandu Hospital",
+          "normalized_location": "Kathmandu Hospital",
+          "normalized_locations": [
+            {
+              "original_text": "Kathmandu Hospital",
+              "normalized_text": "Kathmandu Hospital",
+              "status": "unchanged"
+            }
+          ],
+          "geocoding_status": "success",
+          "geocoding_source": "synthetic_demo_fixture",
+          "spatial_metadata": {
+            "coordinate_reference_system": "EPSG:4326",
+            "coordinate_order": [
+              "latitude",
+              "longitude"
+            ],
+            "coordinate_validation": "valid",
+            "geocoding_candidates": null,
+            "geocoding_error": null
+          },
+          "spatial_cluster_id": "SPATIAL_91D36297BC2B",
+          "spatial_cluster_size": 3,
+          "spatial_cluster_status": "clustered",
+          "spatial_area_id": "SPATIAL_91D36297BC2B"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            85.335,
+            27.725
+          ]
+        },
+        "properties": {
+          "text": "Bridge collapse, request rescue teams",
+          "location": [
+            "Kathmandu Bridge"
+          ],
+          "casualties": [],
+          "displaced": [],
+          "rescue": [
+            "rescue teams"
+          ],
+          "infrastructure": [
+            "bridge"
+          ],
+          "disaster_type": "earthquake",
+          "requests": [
+            "rescue teams"
+          ],
+          "resources": [],
+          "organizations": [],
+          "persons": [],
+          "numbers": [],
+          "entities": [],
+          "request_resource_links": [],
+          "incident_id": "INC_5301F115F29FED9A",
+          "severity_score": 18.52,
+          "severity_level": "LOW",
+          "severity_factors": [
+            {
+              "factor": "casualties",
+              "score": 0.0,
+              "weight": 0.45,
+              "contribution": 0.0,
+              "evidence": "0 qualitative mentions"
+            },
+            {
+              "factor": "displaced",
+              "score": 0.0,
+              "weight": 0.3,
+              "contribution": 0.0,
+              "evidence": "0 qualitative mentions"
+            },
+            {
+              "factor": "infrastructure",
+              "score": 75.0,
+              "weight": 0.15,
+              "contribution": 11.25,
+              "evidence": "0 critical, 1 high-impact"
+            },
+            {
+              "factor": "rescue",
+              "score": 70.0,
+              "weight": 0.08,
+              "contribution": 5.6,
+              "evidence": "trapped/person rescue indicators"
+            },
+            {
+              "factor": "disaster_type",
+              "score": 83.33,
+              "weight": 0.02,
+              "contribution": 1.67,
+              "evidence": "earthquake"
+            }
+          ],
+          "urgency_score": 54.0,
+          "urgency_level": "HIGH",
+          "urgency_factors": [
+            {
+              "factor": "rescue",
+              "score": 70.0,
+              "weight": 0.5,
+              "contribution": 35.0,
+              "evidence": "1 mentions"
+            },
+            {
+              "factor": "casualty_urgency",
+              "score": 0.0,
+              "weight": 0.25,
+              "contribution": 0.0,
+              "evidence": "0 casualty mentions"
+            },
+            {
+              "factor": "immediate_danger",
+              "score": 100.0,
+              "weight": 0.15,
+              "contribution": 15.0,
+              "evidence": [
+                "collapse"
+              ]
+            },
+            {
+              "factor": "resource_urgency",
+              "score": 40.0,
+              "weight": 0.1,
+              "contribution": 4.0,
+              "evidence": "1 request mentions"
+            }
+          ],
+          "confidence_score": 59.0,
+          "confidence_level": "MODERATE",
+          "confidence_factors": [
+            {
+              "factor": "explicit_casualty",
+              "score": 0.0,
+              "weight": 0.25,
+              "contribution": 0.0,
+              "evidence": "0 mentions, explicit number: False"
+            },
+            {
+              "factor": "explicit_location",
+              "score": 100.0,
+              "weight": 0.2,
+              "contribution": 20.0,
+              "evidence": "1 location mentions"
+            },
+            {
+              "factor": "explicit_disaster_type",
+              "score": 100.0,
+              "weight": 0.15,
+              "contribution": 15.0,
+              "evidence": "disaster_type: earthquake"
+            },
+            {
+              "factor": "explicit_resource_request",
+              "score": 80.0,
+              "weight": 0.15,
+              "contribution": 12.0,
+              "evidence": "1 request mentions"
+            },
+            {
+              "factor": "explicit_rescue",
+              "score": 80.0,
+              "weight": 0.15,
+              "contribution": 12.0,
+              "evidence": "1 rescue mentions"
+            },
+            {
+              "factor": "structured_extraction",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 entities extracted"
+            }
+          ],
+          "priority_score": 34.49,
+          "priority_level": "MODERATE",
+          "priority_factors": [
+            {
+              "factor": "severity",
+              "score": 18.52,
+              "weight": 0.55,
+              "contribution": 10.19
+            },
+            {
+              "factor": "urgency",
+              "score": 54.0,
+              "weight": 0.45,
+              "contribution": 24.3
+            }
+          ],
+          "resource_estimates": {
+            "explicit_requests": {
+              "total_requests": 0,
+              "by_category": {},
+              "raw_mentions": []
+            },
+            "estimated_needs": {
+              "based_on_casualties": {
+                "input_casualty_count": 0,
+                "food_meals": 0.0,
+                "water_liters": 0.0,
+                "medical_kits": 0.0
+              },
+              "based_on_displaced": {
+                "input_displaced_count": 0,
+                "shelter_spaces": 0.0,
+                "food_meals_daily": 0.0,
+                "water_liters_daily": 0.0
+              },
+              "rescue_teams": {
+                "teams_needed": 1,
+                "based_on": "1 rescue mentions, 0 casualties"
+              },
+              "metadata": {
+                "method": "heuristic_multipliers",
+                "confidence": "low",
+                "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+              }
+            },
+            "resource_summary": {
+              "has_explicit_requests": false,
+              "explicit_categories": [],
+              "has_estimates": true,
+              "estimation_basis": [
+                "rescue_operations"
+              ]
+            }
+          },
+          "resource_priorities": [
+            {
+              "category": "rescue_teams",
+              "priority": "CRITICAL",
+              "reason": "Active rescue operations required"
+            },
+            {
+              "category": "water",
+              "priority": "MODERATE",
+              "reason": "Basic life support (urgency: UNKNOWN)"
+            },
+            {
+              "category": "food",
+              "priority": "MODERATE",
+              "reason": "Sustenance for affected population"
+            }
+          ],
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "similarity_scores": {},
+          "decision_flags": [
+            "INFRASTRUCTURE_DAMAGE",
+            "RESCUE_OPERATION",
+            "URGENT_RESOURCE_NEED",
+            "LOCATION_IDENTIFIED"
+          ],
+          "processing_metadata": {
+            "enrichment_timestamp": "2026-09-23T16:41:37.592407+00:00",
+            "phase5_version": "1.0",
+            "scoring_method": "rule_based_interpretable",
+            "has_phase3_input": false
+          },
+          "cluster_id": "CLUSTER_6",
+          "cluster_size": 1,
+          "demo_scenario": "SCENARIO_3_HIGH_PRIORITY_RESCUE_CASUALTY_CLUSTER",
+          "location_text": "Kathmandu Bridge",
+          "normalized_location": "Kathmandu Bridge",
+          "normalized_locations": [
+            {
+              "original_text": "Kathmandu Bridge",
+              "normalized_text": "Kathmandu Bridge",
+              "status": "unchanged"
+            }
+          ],
+          "geocoding_status": "success",
+          "geocoding_source": "synthetic_demo_fixture",
+          "spatial_metadata": {
+            "coordinate_reference_system": "EPSG:4326",
+            "coordinate_order": [
+              "latitude",
+              "longitude"
+            ],
+            "coordinate_validation": "valid",
+            "geocoding_candidates": null,
+            "geocoding_error": null
+          },
+          "spatial_cluster_id": "SPATIAL_91D36297BC2B",
+          "spatial_cluster_size": 3,
+          "spatial_cluster_status": "clustered",
+          "spatial_area_id": "SPATIAL_91D36297BC2B"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.8172,
+            -1.2864
+          ]
+        },
+        "properties": {
+          "text": "Heavy rain causes flooding",
+          "location": [
+            "Nairobi East"
+          ],
+          "casualties": [],
+          "displaced": [],
+          "rescue": [],
+          "infrastructure": [],
+          "disaster_type": "flood",
+          "requests": [],
+          "resources": [],
+          "organizations": [],
+          "persons": [],
+          "numbers": [],
+          "entities": [],
+          "request_resource_links": [],
+          "incident_id": "INC_C26047D3270EDBCA",
+          "severity_score": 1.0,
+          "severity_level": "LOW",
+          "severity_factors": [
+            {
+              "factor": "casualties",
+              "score": 0.0,
+              "weight": 0.45,
+              "contribution": 0.0,
+              "evidence": "0 qualitative mentions"
+            },
+            {
+              "factor": "displaced",
+              "score": 0.0,
+              "weight": 0.3,
+              "contribution": 0.0,
+              "evidence": "0 qualitative mentions"
+            },
+            {
+              "factor": "infrastructure",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 critical, 0 high-impact"
+            },
+            {
+              "factor": "rescue",
+              "score": 0.0,
+              "weight": 0.08,
+              "contribution": 0.0,
+              "evidence": "none"
+            },
+            {
+              "factor": "disaster_type",
+              "score": 50.0,
+              "weight": 0.02,
+              "contribution": 1.0,
+              "evidence": "flood"
+            }
+          ],
+          "urgency_score": 0.0,
+          "urgency_level": "LOW",
+          "urgency_factors": [
+            {
+              "factor": "rescue",
+              "score": 0.0,
+              "weight": 0.5,
+              "contribution": 0.0,
+              "evidence": "0 mentions"
+            },
+            {
+              "factor": "casualty_urgency",
+              "score": 0.0,
+              "weight": 0.25,
+              "contribution": 0.0,
+              "evidence": "0 casualty mentions"
+            },
+            {
+              "factor": "immediate_danger",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "none"
+            },
+            {
+              "factor": "resource_urgency",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 request mentions"
+            }
+          ],
+          "confidence_score": 35.0,
+          "confidence_level": "LOW",
+          "confidence_factors": [
+            {
+              "factor": "explicit_casualty",
+              "score": 0.0,
+              "weight": 0.25,
+              "contribution": 0.0,
+              "evidence": "0 mentions, explicit number: False"
+            },
+            {
+              "factor": "explicit_location",
+              "score": 100.0,
+              "weight": 0.2,
+              "contribution": 20.0,
+              "evidence": "1 location mentions"
+            },
+            {
+              "factor": "explicit_disaster_type",
+              "score": 100.0,
+              "weight": 0.15,
+              "contribution": 15.0,
+              "evidence": "disaster_type: flood"
+            },
+            {
+              "factor": "explicit_resource_request",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 request mentions"
+            },
+            {
+              "factor": "explicit_rescue",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 rescue mentions"
+            },
+            {
+              "factor": "structured_extraction",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 entities extracted"
+            }
+          ],
+          "priority_score": 0.5,
+          "priority_level": "LOW",
+          "priority_factors": [
+            {
+              "factor": "severity",
+              "score": 1.0,
+              "weight": 0.55,
+              "contribution": 0.55
+            },
+            {
+              "factor": "urgency",
+              "score": 0.0,
+              "weight": 0.45,
+              "contribution": 0.0
+            },
+            {
+              "factor": "confidence_adjustment",
+              "score": 35.0,
+              "weight": 0.0,
+              "contribution": -0.05,
+              "evidence": "Low confidence penalty applied"
+            }
+          ],
+          "resource_estimates": {
+            "explicit_requests": {
+              "total_requests": 0,
+              "by_category": {},
+              "raw_mentions": []
+            },
+            "estimated_needs": {
+              "based_on_casualties": {
+                "input_casualty_count": 0,
+                "food_meals": 0.0,
+                "water_liters": 0.0,
+                "medical_kits": 0.0
+              },
+              "based_on_displaced": {
+                "input_displaced_count": 0,
+                "shelter_spaces": 0.0,
+                "food_meals_daily": 0.0,
+                "water_liters_daily": 0.0
+              },
+              "rescue_teams": {
+                "teams_needed": 0,
+                "based_on": "0 rescue mentions, 0 casualties"
+              },
+              "metadata": {
+                "method": "heuristic_multipliers",
+                "confidence": "low",
+                "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+              }
+            },
+            "resource_summary": {
+              "has_explicit_requests": false,
+              "explicit_categories": [],
+              "has_estimates": true,
+              "estimation_basis": []
+            }
+          },
+          "resource_priorities": [],
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "similarity_scores": {},
+          "decision_flags": [
+            "LOCATION_IDENTIFIED",
+            "LOW_EVIDENCE"
+          ],
+          "processing_metadata": {
+            "enrichment_timestamp": "2026-09-23T16:41:37.593128+00:00",
+            "phase5_version": "1.0",
+            "scoring_method": "rule_based_interpretable",
+            "has_phase3_input": false
+          },
+          "cluster_id": "CLUSTER_8",
+          "cluster_size": 1,
+          "demo_scenario": "SCENARIO_5_GEOGRAPHIC_HOTSPOT",
+          "location_text": "Nairobi East",
+          "normalized_location": "Nairobi East",
+          "normalized_locations": [
+            {
+              "original_text": "Nairobi East",
+              "normalized_text": "Nairobi East",
+              "status": "unchanged"
+            }
+          ],
+          "geocoding_status": "success",
+          "geocoding_source": "synthetic_demo_fixture",
+          "spatial_metadata": {
+            "coordinate_reference_system": "EPSG:4326",
+            "coordinate_order": [
+              "latitude",
+              "longitude"
+            ],
+            "coordinate_validation": "valid",
+            "geocoding_candidates": null,
+            "geocoding_error": null
+          },
+          "spatial_cluster_id": "SPATIAL_1A2425A25BA4",
+          "spatial_cluster_size": 4,
+          "spatial_cluster_status": "clustered",
+          "spatial_area_id": "SPATIAL_1A2425A25BA4"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.8219,
+            -1.2921
+          ]
+        },
+        "properties": {
+          "text": "Medical supplies requested",
+          "location": [
+            "Nairobi Clinic"
+          ],
+          "casualties": [],
+          "displaced": [],
+          "rescue": [],
+          "infrastructure": [],
+          "disaster_type": "flood",
+          "requests": [
+            "medical supplies"
+          ],
+          "resources": [
+            "medical"
+          ],
+          "organizations": [],
+          "persons": [],
+          "numbers": [],
+          "entities": [],
+          "request_resource_links": [],
+          "incident_id": "INC_24AD50B9BC50DB19",
+          "severity_score": 1.0,
+          "severity_level": "LOW",
+          "severity_factors": [
+            {
+              "factor": "casualties",
+              "score": 0.0,
+              "weight": 0.45,
+              "contribution": 0.0,
+              "evidence": "0 qualitative mentions"
+            },
+            {
+              "factor": "displaced",
+              "score": 0.0,
+              "weight": 0.3,
+              "contribution": 0.0,
+              "evidence": "0 qualitative mentions"
+            },
+            {
+              "factor": "infrastructure",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 critical, 0 high-impact"
+            },
+            {
+              "factor": "rescue",
+              "score": 0.0,
+              "weight": 0.08,
+              "contribution": 0.0,
+              "evidence": "none"
+            },
+            {
+              "factor": "disaster_type",
+              "score": 50.0,
+              "weight": 0.02,
+              "contribution": 1.0,
+              "evidence": "flood"
+            }
+          ],
+          "urgency_score": 4.0,
+          "urgency_level": "LOW",
+          "urgency_factors": [
+            {
+              "factor": "rescue",
+              "score": 0.0,
+              "weight": 0.5,
+              "contribution": 0.0,
+              "evidence": "0 mentions"
+            },
+            {
+              "factor": "casualty_urgency",
+              "score": 0.0,
+              "weight": 0.25,
+              "contribution": 0.0,
+              "evidence": "0 casualty mentions"
+            },
+            {
+              "factor": "immediate_danger",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "none"
+            },
+            {
+              "factor": "resource_urgency",
+              "score": 40.0,
+              "weight": 0.1,
+              "contribution": 4.0,
+              "evidence": "1 request mentions"
+            }
+          ],
+          "confidence_score": 47.0,
+          "confidence_level": "LOW",
+          "confidence_factors": [
+            {
+              "factor": "explicit_casualty",
+              "score": 0.0,
+              "weight": 0.25,
+              "contribution": 0.0,
+              "evidence": "0 mentions, explicit number: False"
+            },
+            {
+              "factor": "explicit_location",
+              "score": 100.0,
+              "weight": 0.2,
+              "contribution": 20.0,
+              "evidence": "1 location mentions"
+            },
+            {
+              "factor": "explicit_disaster_type",
+              "score": 100.0,
+              "weight": 0.15,
+              "contribution": 15.0,
+              "evidence": "disaster_type: flood"
+            },
+            {
+              "factor": "explicit_resource_request",
+              "score": 80.0,
+              "weight": 0.15,
+              "contribution": 12.0,
+              "evidence": "1 request mentions"
+            },
+            {
+              "factor": "explicit_rescue",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 rescue mentions"
+            },
+            {
+              "factor": "structured_extraction",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 entities extracted"
+            }
+          ],
+          "priority_score": 2.12,
+          "priority_level": "LOW",
+          "priority_factors": [
+            {
+              "factor": "severity",
+              "score": 1.0,
+              "weight": 0.55,
+              "contribution": 0.55
+            },
+            {
+              "factor": "urgency",
+              "score": 4.0,
+              "weight": 0.45,
+              "contribution": 1.8
+            },
+            {
+              "factor": "confidence_adjustment",
+              "score": 47.0,
+              "weight": 0.0,
+              "contribution": -0.23,
+              "evidence": "Low confidence penalty applied"
+            }
+          ],
+          "resource_estimates": {
+            "explicit_requests": {
+              "total_requests": 2,
+              "by_category": {
+                "medical": [
+                  {
+                    "category": "medical",
+                    "quantity": null,
+                    "raw_text": "medical supplies",
+                    "source": "request_entity"
+                  },
+                  {
+                    "category": "medical",
+                    "quantity": null,
+                    "raw_text": "medical",
+                    "source": "resource_entity"
+                  }
+                ]
+              },
+              "raw_mentions": [
+                {
+                  "category": "medical",
+                  "quantity": null,
+                  "raw_text": "medical supplies",
+                  "source": "request_entity"
+                },
+                {
+                  "category": "medical",
+                  "quantity": null,
+                  "raw_text": "medical",
+                  "source": "resource_entity"
+                }
+              ]
+            },
+            "estimated_needs": {
+              "based_on_casualties": {
+                "input_casualty_count": 0,
+                "food_meals": 0.0,
+                "water_liters": 0.0,
+                "medical_kits": 0.0
+              },
+              "based_on_displaced": {
+                "input_displaced_count": 0,
+                "shelter_spaces": 0.0,
+                "food_meals_daily": 0.0,
+                "water_liters_daily": 0.0
+              },
+              "rescue_teams": {
+                "teams_needed": 0,
+                "based_on": "0 rescue mentions, 0 casualties"
+              },
+              "metadata": {
+                "method": "heuristic_multipliers",
+                "confidence": "low",
+                "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+              }
+            },
+            "resource_summary": {
+              "has_explicit_requests": true,
+              "explicit_categories": [
+                "medical"
+              ],
+              "has_estimates": true,
+              "estimation_basis": []
+            }
+          },
+          "resource_priorities": [
+            {
+              "category": "water",
+              "priority": "MODERATE",
+              "reason": "Basic life support (urgency: UNKNOWN)"
+            },
+            {
+              "category": "food",
+              "priority": "MODERATE",
+              "reason": "Sustenance for affected population"
+            }
+          ],
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "similarity_scores": {},
+          "decision_flags": [
+            "RESOURCE_REQUEST",
+            "LOCATION_IDENTIFIED",
+            "LOW_EVIDENCE"
+          ],
+          "processing_metadata": {
+            "enrichment_timestamp": "2026-09-23T16:41:37.593598+00:00",
+            "phase5_version": "1.0",
+            "scoring_method": "rule_based_interpretable",
+            "has_phase3_input": false
+          },
+          "cluster_id": "CLUSTER_9",
+          "cluster_size": 1,
+          "demo_scenario": "SCENARIO_5_GEOGRAPHIC_HOTSPOT",
+          "location_text": "Nairobi Clinic",
+          "normalized_location": "Nairobi Clinic",
+          "normalized_locations": [
+            {
+              "original_text": "Nairobi Clinic",
+              "normalized_text": "Nairobi Clinic",
+              "status": "unchanged"
+            }
+          ],
+          "geocoding_status": "success",
+          "geocoding_source": "synthetic_demo_fixture",
+          "spatial_metadata": {
+            "coordinate_reference_system": "EPSG:4326",
+            "coordinate_order": [
+              "latitude",
+              "longitude"
+            ],
+            "coordinate_validation": "valid",
+            "geocoding_candidates": null,
+            "geocoding_error": null
+          },
+          "spatial_cluster_id": "SPATIAL_1A2425A25BA4",
+          "spatial_cluster_size": 4,
+          "spatial_cluster_status": "clustered",
+          "spatial_area_id": "SPATIAL_1A2425A25BA4"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.83,
+            -1.28
+          ]
+        },
+        "properties": {
+          "text": "Market area needs evacuation",
+          "location": [
+            "Nairobi Market"
+          ],
+          "casualties": [],
+          "displaced": [
+            "120 displaced"
+          ],
+          "rescue": [
+            "evacuation"
+          ],
+          "infrastructure": [],
+          "disaster_type": "flood",
+          "requests": [],
+          "resources": [],
+          "organizations": [],
+          "persons": [],
+          "numbers": [],
+          "entities": [],
+          "request_resource_links": [],
+          "incident_id": "INC_DF0CBD41A31D9ACF",
+          "severity_score": 21.93,
+          "severity_level": "LOW",
+          "severity_factors": [
+            {
+              "factor": "casualties",
+              "score": 0.0,
+              "weight": 0.45,
+              "contribution": 0.0,
+              "evidence": "0 qualitative mentions"
+            },
+            {
+              "factor": "displaced",
+              "score": 51.11,
+              "weight": 0.3,
+              "contribution": 15.33,
+              "evidence": "120 displaced"
+            },
+            {
+              "factor": "infrastructure",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 critical, 0 high-impact"
+            },
+            {
+              "factor": "rescue",
+              "score": 70.0,
+              "weight": 0.08,
+              "contribution": 5.6,
+              "evidence": "trapped/person rescue indicators"
+            },
+            {
+              "factor": "disaster_type",
+              "score": 50.0,
+              "weight": 0.02,
+              "contribution": 1.0,
+              "evidence": "flood"
+            }
+          ],
+          "urgency_score": 35.0,
+          "urgency_level": "MODERATE",
+          "urgency_factors": [
+            {
+              "factor": "rescue",
+              "score": 70.0,
+              "weight": 0.5,
+              "contribution": 35.0,
+              "evidence": "1 mentions"
+            },
+            {
+              "factor": "casualty_urgency",
+              "score": 0.0,
+              "weight": 0.25,
+              "contribution": 0.0,
+              "evidence": "0 casualty mentions"
+            },
+            {
+              "factor": "immediate_danger",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "none"
+            },
+            {
+              "factor": "resource_urgency",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 request mentions"
+            }
+          ],
+          "confidence_score": 47.0,
+          "confidence_level": "LOW",
+          "confidence_factors": [
+            {
+              "factor": "explicit_casualty",
+              "score": 0.0,
+              "weight": 0.25,
+              "contribution": 0.0,
+              "evidence": "0 mentions, explicit number: False"
+            },
+            {
+              "factor": "explicit_location",
+              "score": 100.0,
+              "weight": 0.2,
+              "contribution": 20.0,
+              "evidence": "1 location mentions"
+            },
+            {
+              "factor": "explicit_disaster_type",
+              "score": 100.0,
+              "weight": 0.15,
+              "contribution": 15.0,
+              "evidence": "disaster_type: flood"
+            },
+            {
+              "factor": "explicit_resource_request",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 request mentions"
+            },
+            {
+              "factor": "explicit_rescue",
+              "score": 80.0,
+              "weight": 0.15,
+              "contribution": 12.0,
+              "evidence": "1 rescue mentions"
+            },
+            {
+              "factor": "structured_extraction",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 entities extracted"
+            }
+          ],
+          "priority_score": 25.03,
+          "priority_level": "MODERATE",
+          "priority_factors": [
+            {
+              "factor": "severity",
+              "score": 21.93,
+              "weight": 0.55,
+              "contribution": 12.06
+            },
+            {
+              "factor": "urgency",
+              "score": 35.0,
+              "weight": 0.45,
+              "contribution": 15.75
+            },
+            {
+              "factor": "confidence_adjustment",
+              "score": 47.0,
+              "weight": 0.0,
+              "contribution": -2.78,
+              "evidence": "Low confidence penalty applied"
+            }
+          ],
+          "resource_estimates": {
+            "explicit_requests": {
+              "total_requests": 0,
+              "by_category": {},
+              "raw_mentions": []
+            },
+            "estimated_needs": {
+              "based_on_casualties": {
+                "input_casualty_count": 0,
+                "food_meals": 0.0,
+                "water_liters": 0.0,
+                "medical_kits": 0.0
+              },
+              "based_on_displaced": {
+                "input_displaced_count": 120,
+                "shelter_spaces": 96.0,
+                "food_meals_daily": 240.0,
+                "water_liters_daily": 480.0
+              },
+              "rescue_teams": {
+                "teams_needed": 1,
+                "based_on": "1 rescue mentions, 0 casualties"
+              },
+              "metadata": {
+                "method": "heuristic_multipliers",
+                "confidence": "moderate",
+                "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+              }
+            },
+            "resource_summary": {
+              "has_explicit_requests": false,
+              "explicit_categories": [],
+              "has_estimates": true,
+              "estimation_basis": [
+                "displaced",
+                "rescue_operations"
+              ]
+            }
+          },
+          "resource_priorities": [
+            {
+              "category": "rescue_teams",
+              "priority": "CRITICAL",
+              "reason": "Active rescue operations required"
+            },
+            {
+              "category": "water",
+              "priority": "MODERATE",
+              "reason": "Basic life support (urgency: UNKNOWN)"
+            },
+            {
+              "category": "food",
+              "priority": "MODERATE",
+              "reason": "Sustenance for affected population"
+            },
+            {
+              "category": "shelter",
+              "priority": "MODERATE",
+              "reason": "Temporary housing for displaced persons"
+            }
+          ],
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "similarity_scores": {},
+          "decision_flags": [
+            "RESCUE_OPERATION",
+            "LOCATION_IDENTIFIED",
+            "LOW_EVIDENCE"
+          ],
+          "processing_metadata": {
+            "enrichment_timestamp": "2026-09-23T16:41:37.594207+00:00",
+            "phase5_version": "1.0",
+            "scoring_method": "rule_based_interpretable",
+            "has_phase3_input": false
+          },
+          "cluster_id": "CLUSTER_10",
+          "cluster_size": 1,
+          "demo_scenario": "SCENARIO_5_GEOGRAPHIC_HOTSPOT",
+          "location_text": "Nairobi Market",
+          "normalized_location": "Nairobi Market",
+          "normalized_locations": [
+            {
+              "original_text": "Nairobi Market",
+              "normalized_text": "Nairobi Market",
+              "status": "unchanged"
+            }
+          ],
+          "geocoding_status": "success",
+          "geocoding_source": "synthetic_demo_fixture",
+          "spatial_metadata": {
+            "coordinate_reference_system": "EPSG:4326",
+            "coordinate_order": [
+              "latitude",
+              "longitude"
+            ],
+            "coordinate_validation": "valid",
+            "geocoding_candidates": null,
+            "geocoding_error": null
+          },
+          "spatial_cluster_id": "SPATIAL_1A2425A25BA4",
+          "spatial_cluster_size": 4,
+          "spatial_cluster_status": "clustered",
+          "spatial_area_id": "SPATIAL_1A2425A25BA4"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            36.81,
+            -1.3
+          ]
+        },
+        "properties": {
+          "text": "Families need shelter after flooding",
+          "location": [
+            "Nairobi Shelter"
+          ],
+          "casualties": [],
+          "displaced": [
+            "80 displaced"
+          ],
+          "rescue": [],
+          "infrastructure": [],
+          "disaster_type": "flood",
+          "requests": [
+            "shelter"
+          ],
+          "resources": [],
+          "organizations": [],
+          "persons": [],
+          "numbers": [],
+          "entities": [],
+          "request_resource_links": [],
+          "incident_id": "INC_1458986E46E1993C",
+          "severity_score": 14.33,
+          "severity_level": "LOW",
+          "severity_factors": [
+            {
+              "factor": "casualties",
+              "score": 0.0,
+              "weight": 0.45,
+              "contribution": 0.0,
+              "evidence": "0 qualitative mentions"
+            },
+            {
+              "factor": "displaced",
+              "score": 44.44,
+              "weight": 0.3,
+              "contribution": 13.33,
+              "evidence": "80 displaced"
+            },
+            {
+              "factor": "infrastructure",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 critical, 0 high-impact"
+            },
+            {
+              "factor": "rescue",
+              "score": 0.0,
+              "weight": 0.08,
+              "contribution": 0.0,
+              "evidence": "none"
+            },
+            {
+              "factor": "disaster_type",
+              "score": 50.0,
+              "weight": 0.02,
+              "contribution": 1.0,
+              "evidence": "flood"
+            }
+          ],
+          "urgency_score": 4.0,
+          "urgency_level": "LOW",
+          "urgency_factors": [
+            {
+              "factor": "rescue",
+              "score": 0.0,
+              "weight": 0.5,
+              "contribution": 0.0,
+              "evidence": "0 mentions"
+            },
+            {
+              "factor": "casualty_urgency",
+              "score": 0.0,
+              "weight": 0.25,
+              "contribution": 0.0,
+              "evidence": "0 casualty mentions"
+            },
+            {
+              "factor": "immediate_danger",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "none"
+            },
+            {
+              "factor": "resource_urgency",
+              "score": 40.0,
+              "weight": 0.1,
+              "contribution": 4.0,
+              "evidence": "1 request mentions"
+            }
+          ],
+          "confidence_score": 47.0,
+          "confidence_level": "LOW",
+          "confidence_factors": [
+            {
+              "factor": "explicit_casualty",
+              "score": 0.0,
+              "weight": 0.25,
+              "contribution": 0.0,
+              "evidence": "0 mentions, explicit number: False"
+            },
+            {
+              "factor": "explicit_location",
+              "score": 100.0,
+              "weight": 0.2,
+              "contribution": 20.0,
+              "evidence": "1 location mentions"
+            },
+            {
+              "factor": "explicit_disaster_type",
+              "score": 100.0,
+              "weight": 0.15,
+              "contribution": 15.0,
+              "evidence": "disaster_type: flood"
+            },
+            {
+              "factor": "explicit_resource_request",
+              "score": 80.0,
+              "weight": 0.15,
+              "contribution": 12.0,
+              "evidence": "1 request mentions"
+            },
+            {
+              "factor": "explicit_rescue",
+              "score": 0.0,
+              "weight": 0.15,
+              "contribution": 0.0,
+              "evidence": "0 rescue mentions"
+            },
+            {
+              "factor": "structured_extraction",
+              "score": 0.0,
+              "weight": 0.1,
+              "contribution": 0.0,
+              "evidence": "0 entities extracted"
+            }
+          ],
+          "priority_score": 8.71,
+          "priority_level": "LOW",
+          "priority_factors": [
+            {
+              "factor": "severity",
+              "score": 14.33,
+              "weight": 0.55,
+              "contribution": 7.88
+            },
+            {
+              "factor": "urgency",
+              "score": 4.0,
+              "weight": 0.45,
+              "contribution": 1.8
+            },
+            {
+              "factor": "confidence_adjustment",
+              "score": 47.0,
+              "weight": 0.0,
+              "contribution": -0.97,
+              "evidence": "Low confidence penalty applied"
+            }
+          ],
+          "resource_estimates": {
+            "explicit_requests": {
+              "total_requests": 1,
+              "by_category": {
+                "shelter": [
+                  {
+                    "category": "shelter",
+                    "quantity": null,
+                    "raw_text": "shelter",
+                    "source": "request_entity"
+                  }
+                ]
+              },
+              "raw_mentions": [
+                {
+                  "category": "shelter",
+                  "quantity": null,
+                  "raw_text": "shelter",
+                  "source": "request_entity"
+                }
+              ]
+            },
+            "estimated_needs": {
+              "based_on_casualties": {
+                "input_casualty_count": 0,
+                "food_meals": 0.0,
+                "water_liters": 0.0,
+                "medical_kits": 0.0
+              },
+              "based_on_displaced": {
+                "input_displaced_count": 80,
+                "shelter_spaces": 64.0,
+                "food_meals_daily": 160.0,
+                "water_liters_daily": 320.0
+              },
+              "rescue_teams": {
+                "teams_needed": 0,
+                "based_on": "0 rescue mentions, 0 casualties"
+              },
+              "metadata": {
+                "method": "heuristic_multipliers",
+                "confidence": "moderate",
+                "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+              }
+            },
+            "resource_summary": {
+              "has_explicit_requests": true,
+              "explicit_categories": [
+                "shelter"
+              ],
+              "has_estimates": true,
+              "estimation_basis": [
+                "displaced"
+              ]
+            }
+          },
+          "resource_priorities": [
+            {
+              "category": "water",
+              "priority": "MODERATE",
+              "reason": "Basic life support (urgency: UNKNOWN)"
+            },
+            {
+              "category": "food",
+              "priority": "MODERATE",
+              "reason": "Sustenance for affected population"
+            },
+            {
+              "category": "shelter",
+              "priority": "MODERATE",
+              "reason": "Temporary housing for displaced persons"
+            }
+          ],
+          "is_duplicate": false,
+          "duplicate_of": null,
+          "similarity_scores": {},
+          "decision_flags": [
+            "RESOURCE_REQUEST",
+            "LOCATION_IDENTIFIED",
+            "LOW_EVIDENCE"
+          ],
+          "processing_metadata": {
+            "enrichment_timestamp": "2026-09-23T16:41:37.594813+00:00",
+            "phase5_version": "1.0",
+            "scoring_method": "rule_based_interpretable",
+            "has_phase3_input": false
+          },
+          "cluster_id": "CLUSTER_11",
+          "cluster_size": 1,
+          "demo_scenario": "SCENARIO_5_GEOGRAPHIC_HOTSPOT",
+          "location_text": "Nairobi Shelter",
+          "normalized_location": "Nairobi Shelter",
+          "normalized_locations": [
+            {
+              "original_text": "Nairobi Shelter",
+              "normalized_text": "Nairobi Shelter",
+              "status": "unchanged"
+            }
+          ],
+          "geocoding_status": "success",
+          "geocoding_source": "synthetic_demo_fixture",
+          "spatial_metadata": {
+            "coordinate_reference_system": "EPSG:4326",
+            "coordinate_order": [
+              "latitude",
+              "longitude"
+            ],
+            "coordinate_validation": "valid",
+            "geocoding_candidates": null,
+            "geocoding_error": null
+          },
+          "spatial_cluster_id": "SPATIAL_1A2425A25BA4",
+          "spatial_cluster_size": 4,
+          "spatial_cluster_status": "clustered",
+          "spatial_area_id": "SPATIAL_1A2425A25BA4"
+        }
+      }
+    ],
+    "metadata": {
+      "coordinate_reference_system": "EPSG:4326",
+      "feature_type": "incident_points",
+      "clusters": [
+        {
+          "spatial_cluster_id": "SPATIAL_1A2425A25BA4",
+          "incident_count": 4,
+          "incident_ids": [
+            "INC_1458986E46E1993C",
+            "INC_24AD50B9BC50DB19",
+            "INC_C26047D3270EDBCA",
+            "INC_DF0CBD41A31D9ACF"
+          ],
+          "centroid": {
+            "latitude": -1.289625,
+            "longitude": 36.819775,
+            "method": "arithmetic_mean_of_point_coordinates"
+          }
+        },
+        {
+          "spatial_cluster_id": "SPATIAL_91D36297BC2B",
+          "incident_count": 3,
+          "incident_ids": [
+            "INC_36A202083A00C5E3",
+            "INC_5301F115F29FED9A",
+            "INC_AC5DAA2895615E9A"
+          ],
+          "centroid": {
+            "latitude": 27.717399999999998,
+            "longitude": 85.32466666666666,
+            "method": "arithmetic_mean_of_point_coordinates"
+          }
+        },
+        {
+          "spatial_cluster_id": "SPATIAL_FC15229A3B03",
+          "incident_count": 3,
+          "incident_ids": [
+            "INC_043BFCB60B715DA3",
+            "INC_684DC20FC1D591A6",
+            "INC_7135A6BC869C5584"
+          ],
+          "centroid": {
+            "latitude": 10.312899999999999,
+            "longitude": 123.89246666666668,
+            "method": "arithmetic_mean_of_point_coordinates"
+          }
+        }
+      ],
+      "hotspots": [
+        {
+          "hotspot_id": "HOTSPOT_SPATIAL_1A2425A25BA4",
+          "spatial_cluster_id": "SPATIAL_1A2425A25BA4",
+          "incident_ids": [
+            "INC_1458986E46E1993C",
+            "INC_24AD50B9BC50DB19",
+            "INC_C26047D3270EDBCA",
+            "INC_DF0CBD41A31D9ACF"
+          ],
+          "incident_count": 4,
+          "high_priority_count": 0,
+          "rescue_incident_count": 1,
+          "casualty_incident_count": 0,
+          "severity_score": 9.56,
+          "urgency_score": 10.75,
+          "priority_score": 9.09,
+          "hotspot_score": 18.55,
+          "reason": [
+            "4 incidents within the configured spatial cluster",
+            "1 rescue incidents"
+          ]
+        },
+        {
+          "hotspot_id": "HOTSPOT_SPATIAL_91D36297BC2B",
+          "spatial_cluster_id": "SPATIAL_91D36297BC2B",
+          "incident_ids": [
+            "INC_36A202083A00C5E3",
+            "INC_5301F115F29FED9A",
+            "INC_AC5DAA2895615E9A"
+          ],
+          "incident_count": 3,
+          "high_priority_count": 1,
+          "rescue_incident_count": 2,
+          "casualty_incident_count": 2,
+          "severity_score": 26.1,
+          "urgency_score": 48.0,
+          "priority_score": 35.96,
+          "hotspot_score": 39.2,
+          "reason": [
+            "3 incidents within the configured spatial cluster",
+            "1 high/critical-priority incidents",
+            "2 rescue incidents",
+            "2 casualty-related incidents"
+          ]
+        },
+        {
+          "hotspot_id": "HOTSPOT_SPATIAL_FC15229A3B03",
+          "spatial_cluster_id": "SPATIAL_FC15229A3B03",
+          "incident_ids": [
+            "INC_043BFCB60B715DA3",
+            "INC_684DC20FC1D591A6",
+            "INC_7135A6BC869C5584"
+          ],
+          "incident_count": 3,
+          "high_priority_count": 0,
+          "rescue_incident_count": 0,
+          "casualty_incident_count": 0,
+          "severity_score": 3.25,
+          "urgency_score": 1.33,
+          "priority_score": 2.15,
+          "hotspot_score": 9.59,
+          "reason": [
+            "3 incidents within the configured spatial cluster"
+          ]
+        }
+      ]
+    }
+  },
+  "phase5_fields_preserved": true
+}

@@ -120,28 +120,72 @@ A gold-standard annotation template was also prepared for future formal evaluati
 
 **Status:** Complete
 
+### Phase 5 — Incident Intelligence & Decision Support
+Phase 5 implements the Incident Intelligence & Decision Support Layer, which transforms Phase 4 structured incident records into enriched operational intelligence records.
+
+The implementation includes:
+- **Severity Scoring (0-100)**: Rule-based scoring considering casualties, displacement, infrastructure damage, rescue involvement, and disaster type context
+- **Urgency Scoring (0-100)**: Time-critical assessment based on rescue signals, immediate danger, and resource urgency
+- **Priority Scoring (0-100)**: Operational priority combining severity and urgency for human review ranking
+- **Confidence Scoring (0-100)**: Evidence quality indicator based on information completeness
+- **Deduplication**: Text/entity-based duplicate detection using similarity thresholds
+- **Clustering**: Lightweight incident clustering for future GIS integration
+- **Resource Estimation**: Conservative heuristic estimates distinguishing explicit requests from estimated needs
+- **Decision-Support Flags**: Machine-readable flags (CRITICAL_PRIORITY, IMMEDIATE_RESCUE, etc.)
+
+All scoring is rule-based and interpretable. No supervised ML models are used due to the absence of labeled severity/urgency datasets.
+
+> The Phase 5 intelligence system uses interpretable rule-based scoring. No supervised validation is performed due to the absence of labeled severity/urgency datasets. Confidence scores represent evidence quality, not calibrated probability.
+
+**Status:** Complete
+
+### Phase 6 — GIS & Spatial Intelligence
+Phase 6 adds conservative location normalization, a provider-neutral geocoding interface, WGS84 coordinate validation, Haversine distance, configurable spatial clustering, interpretable hotspot and area-priority summaries, and GeoJSON-compatible incident points. It preserves Phase 4/5 fields and uses an offline geocoder by default; unresolved locations receive no fabricated coordinates.
+
+The Phase 6 demonstration uses synthetic coordinates to exercise the algorithms. It does not validate real-world geocoding accuracy. See [Phase 6 GIS & Spatial Intelligence](docs/phase6_gis_spatial_intelligence.md) for configuration, formulas, limitations, tests, and integration guidance.
+
+**Status:** Complete
+
 ---
 
-## 6. Current System Pipeline
-
-The completed Phase 1–4 components form the following processing pipeline:
-
-Raw Disaster Text
+## 6. Complete System Pipeline
+```text
+PHASE 1
+Project Foundation
         ↓
-Data Preprocessing
+PHASE 2
+Data Preprocessing & EDA
         ↓
-Relevance Classification
+PHASE 3
+Disaster Classification
         ↓
-Humanitarian Category Classification
-        ↓
-Disaster Type Classification
-        ↓
+PHASE 4
 Hybrid Information Extraction
         ↓
 Structured Disaster Information
         ↓
-Phase 5: Intelligence & Decision Support
+PHASE 5
+Incident Intelligence & Decision Support
         ↓
-Phase 6: GIS & Spatial Intelligence
+PHASE 6
+GIS & Spatial Intelligence
         ↓
-Phase 7: LLM / Generative Intelligenced.
+PHASE 7
+LLM / Generative Intelligence
+        ↓
+PHASE 8
+Live Data Ingestion & Continuous Monitoring
+        ↓
+PHASE 9
+Real-Time Alerting & Early Warning
+        ↓
+PHASE 10
+Operational Dashboard & Visualization
+        ↓
+PHASE 11
+Database + API + Integration + Deployment
+        ↓
+PHASE 12
+End-to-End Evaluation & Production Readiness
+End-to-End Evaluation & Production Readiness
+```
