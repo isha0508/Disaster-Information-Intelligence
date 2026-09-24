@@ -1,0 +1,1462 @@
+{
+  "evaluation_type": "synthetic_offline_grounded_generation_demonstration",
+  "description": "Deterministic mock LLM narrative over Phase 5/6 structured outputs.",
+  "geographic_accuracy": "NOT evaluated. Demo fixture coordinates are synthetic and must not be used operationally.",
+  "llm_quality_validation": "NOT performed; the mock provider validates integration behavior only.",
+  "phase6_spatial_metadata": {
+    "algorithm": "haversine_radius_connected_components",
+    "cluster_radius_km": 10,
+    "cluster_min_incidents": 2,
+    "hotspot_min_incidents": 2,
+    "coordinate_reference_system": "EPSG:4326"
+  },
+  "incident_results": [
+    {
+      "phase5_phase6_incident": {
+        "text": "People trapped near damaged hospital; urgent water requested.",
+        "location": [
+          "Demo Harbor"
+        ],
+        "casualties": [
+          "120 people injured"
+        ],
+        "displaced": [],
+        "rescue": [
+          "people trapped"
+        ],
+        "infrastructure": [
+          "hospital damaged"
+        ],
+        "disaster_type": "flood",
+        "requests": [
+          "urgent water"
+        ],
+        "resources": [
+          "water"
+        ],
+        "organizations": [],
+        "persons": [],
+        "numbers": [
+          "120"
+        ],
+        "entities": [],
+        "request_resource_links": [],
+        "incident_id": "INC_32B5B77EF00FECAA",
+        "severity_score": 68.2,
+        "severity_level": "HIGH",
+        "severity_factors": [
+          {
+            "factor": "casualties",
+            "score": 100.0,
+            "weight": 0.45,
+            "contribution": 45.0,
+            "evidence": "120 affected"
+          },
+          {
+            "factor": "displaced",
+            "score": 0.0,
+            "weight": 0.3,
+            "contribution": 0.0,
+            "evidence": "0 qualitative mentions"
+          },
+          {
+            "factor": "infrastructure",
+            "score": 100.0,
+            "weight": 0.15,
+            "contribution": 15.0,
+            "evidence": "1 critical, 0 high-impact"
+          },
+          {
+            "factor": "rescue",
+            "score": 90.0,
+            "weight": 0.08,
+            "contribution": 7.2,
+            "evidence": "trapped/person rescue indicators"
+          },
+          {
+            "factor": "disaster_type",
+            "score": 50.0,
+            "weight": 0.02,
+            "contribution": 1.0,
+            "evidence": "flood"
+          }
+        ],
+        "urgency_score": 85.5,
+        "urgency_level": "CRITICAL",
+        "urgency_factors": [
+          {
+            "factor": "rescue",
+            "score": 100.0,
+            "weight": 0.5,
+            "contribution": 50.0,
+            "evidence": [
+              "trapped"
+            ]
+          },
+          {
+            "factor": "casualty_urgency",
+            "score": 50.0,
+            "weight": 0.25,
+            "contribution": 12.5,
+            "evidence": "1 casualty mentions"
+          },
+          {
+            "factor": "immediate_danger",
+            "score": 100.0,
+            "weight": 0.15,
+            "contribution": 15.0,
+            "evidence": [
+              "trapped"
+            ]
+          },
+          {
+            "factor": "resource_urgency",
+            "score": 80.0,
+            "weight": 0.1,
+            "contribution": 8.0,
+            "evidence": "1 request mentions"
+          }
+        ],
+        "confidence_score": 84.0,
+        "confidence_level": "HIGH",
+        "confidence_factors": [
+          {
+            "factor": "explicit_casualty",
+            "score": 100.0,
+            "weight": 0.25,
+            "contribution": 25.0,
+            "evidence": "1 mentions, explicit number: True"
+          },
+          {
+            "factor": "explicit_location",
+            "score": 100.0,
+            "weight": 0.2,
+            "contribution": 20.0,
+            "evidence": "1 location mentions"
+          },
+          {
+            "factor": "explicit_disaster_type",
+            "score": 100.0,
+            "weight": 0.15,
+            "contribution": 15.0,
+            "evidence": "disaster_type: flood"
+          },
+          {
+            "factor": "explicit_resource_request",
+            "score": 80.0,
+            "weight": 0.15,
+            "contribution": 12.0,
+            "evidence": "1 request mentions"
+          },
+          {
+            "factor": "explicit_rescue",
+            "score": 80.0,
+            "weight": 0.15,
+            "contribution": 12.0,
+            "evidence": "1 rescue mentions"
+          },
+          {
+            "factor": "structured_extraction",
+            "score": 0.0,
+            "weight": 0.1,
+            "contribution": 0.0,
+            "evidence": "0 entities extracted"
+          }
+        ],
+        "priority_score": 75.99,
+        "priority_level": "CRITICAL",
+        "priority_factors": [
+          {
+            "factor": "severity",
+            "score": 68.2,
+            "weight": 0.55,
+            "contribution": 37.51
+          },
+          {
+            "factor": "urgency",
+            "score": 85.5,
+            "weight": 0.45,
+            "contribution": 38.48
+          }
+        ],
+        "resource_estimates": {
+          "explicit_requests": {
+            "total_requests": 2,
+            "by_category": {
+              "water": [
+                {
+                  "category": "water",
+                  "quantity": null,
+                  "raw_text": "urgent water",
+                  "source": "request_entity"
+                },
+                {
+                  "category": "water",
+                  "quantity": null,
+                  "raw_text": "water",
+                  "source": "resource_entity"
+                }
+              ]
+            },
+            "raw_mentions": [
+              {
+                "category": "water",
+                "quantity": null,
+                "raw_text": "urgent water",
+                "source": "request_entity"
+              },
+              {
+                "category": "water",
+                "quantity": null,
+                "raw_text": "water",
+                "source": "resource_entity"
+              }
+            ]
+          },
+          "estimated_needs": {
+            "based_on_casualties": {
+              "input_casualty_count": 120,
+              "food_meals": 180.0,
+              "water_liters": 360.0,
+              "medical_kits": 36.0
+            },
+            "based_on_displaced": {
+              "input_displaced_count": 0,
+              "shelter_spaces": 0.0,
+              "food_meals_daily": 0.0,
+              "water_liters_daily": 0.0
+            },
+            "rescue_teams": {
+              "teams_needed": 10,
+              "based_on": "1 rescue mentions, 120 casualties"
+            },
+            "metadata": {
+              "method": "heuristic_multipliers",
+              "confidence": "moderate",
+              "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+            }
+          },
+          "resource_summary": {
+            "has_explicit_requests": true,
+            "explicit_categories": [
+              "water"
+            ],
+            "has_estimates": true,
+            "estimation_basis": [
+              "casualties",
+              "rescue_operations"
+            ]
+          }
+        },
+        "resource_priorities": [
+          {
+            "category": "rescue_teams",
+            "priority": "CRITICAL",
+            "reason": "Active rescue operations required"
+          },
+          {
+            "category": "medical",
+            "priority": "HIGH",
+            "reason": "Casualty treatment required (severity: UNKNOWN)"
+          },
+          {
+            "category": "water",
+            "priority": "MODERATE",
+            "reason": "Basic life support (urgency: UNKNOWN)"
+          },
+          {
+            "category": "food",
+            "priority": "MODERATE",
+            "reason": "Sustenance for affected population"
+          }
+        ],
+        "is_duplicate": false,
+        "duplicate_of": null,
+        "similarity_scores": {},
+        "decision_flags": [
+          "CRITICAL_PRIORITY",
+          "IMMEDIATE_RESCUE",
+          "CASUALTY_REPORT",
+          "INFRASTRUCTURE_DAMAGE",
+          "RESCUE_OPERATION",
+          "URGENT_RESOURCE_NEED",
+          "LOCATION_IDENTIFIED"
+        ],
+        "processing_metadata": {
+          "enrichment_timestamp": "2026-09-23T17:57:15.254054+00:00",
+          "phase5_version": "1.0",
+          "scoring_method": "rule_based_interpretable",
+          "has_phase3_input": false
+        },
+        "cluster_id": "CLUSTER_0",
+        "cluster_size": 1,
+        "location_text": "Demo Harbor",
+        "normalized_location": "Demo Harbor",
+        "normalized_locations": [
+          {
+            "original_text": "Demo Harbor",
+            "normalized_text": "Demo Harbor",
+            "status": "unchanged"
+          }
+        ],
+        "latitude": 10.0,
+        "longitude": 20.0,
+        "geocoding_status": "success",
+        "geocoding_source": "synthetic_demo_fixture",
+        "spatial_metadata": {
+          "coordinate_reference_system": "EPSG:4326",
+          "coordinate_order": [
+            "latitude",
+            "longitude"
+          ],
+          "coordinate_validation": "valid",
+          "geocoding_candidates": null,
+          "geocoding_error": null
+        },
+        "spatial_cluster_id": "SPATIAL_3A0C5FDD8387",
+        "spatial_cluster_size": 2,
+        "spatial_cluster_status": "clustered",
+        "spatial_area_id": "SPATIAL_3A0C5FDD8387"
+      },
+      "phase7_result": {
+        "incident_id": "INC_32B5B77EF00FECAA",
+        "summary": "Structured evidence identifies the disaster type as flood. The incident record mentions Demo Harbor. Structured casualty evidence: 120 people injured. Structured rescue evidence: people trapped. Structured infrastructure evidence: hospital damaged. Structured request evidence: urgent water.",
+        "situation_assessment": "Phase 5 computed intelligence: Severity: HIGH (68.2/100); Urgency: CRITICAL (85.5/100); Priority: CRITICAL (75.99/100); Confidence: HIGH (84.0/100).",
+        "priority_explanation": [
+          "Phase 5 priority includes the severity factor (contribution 37.51).",
+          "Phase 5 priority includes the urgency factor (contribution 38.48)."
+        ],
+        "key_evidence": [
+          "Disaster type: flood",
+          "Casualty evidence: 120 people injured",
+          "Rescue evidence: people trapped",
+          "Infrastructure evidence: hospital damaged",
+          "Request evidence: urgent water",
+          "Resource mentions: water",
+          "Location mention: Demo Harbor"
+        ],
+        "recommended_actions": [
+          "Recommended action: coordinate a prompt assessment of the reported rescue situation.",
+          "Recommended action: assess reported casualties and coordinate appropriate medical review.",
+          "Recommended action: verify reported infrastructure damage with the relevant response team.",
+          "Recommended action: review and confirm the explicitly recorded request(s): urgent water; water."
+        ],
+        "resource_summary": {
+          "explicit_requests": [
+            {
+              "category": "water",
+              "quantity": null,
+              "raw_text": "urgent water",
+              "source": "request_entity"
+            },
+            {
+              "category": "water",
+              "quantity": null,
+              "raw_text": "water",
+              "source": "resource_entity"
+            }
+          ],
+          "estimated_needs": {
+            "based_on_casualties": {
+              "input_casualty_count": 120,
+              "food_meals": 180.0,
+              "water_liters": 360.0,
+              "medical_kits": 36.0
+            },
+            "based_on_displaced": {
+              "input_displaced_count": 0,
+              "shelter_spaces": 0.0,
+              "food_meals_daily": 0.0,
+              "water_liters_daily": 0.0
+            },
+            "rescue_teams": {
+              "teams_needed": 10,
+              "based_on": "1 rescue mentions, 120 casualties"
+            },
+            "metadata": {
+              "method": "heuristic_multipliers",
+              "confidence": "moderate",
+              "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+            }
+          },
+          "estimated_needs_type": "heuristic_estimate",
+          "estimate_disclaimer": "Planning aid only; not a confirmed request or validated requirement."
+        },
+        "spatial_context": {
+          "location_text": "Demo Harbor",
+          "normalized_location": "Demo Harbor",
+          "coordinates": {
+            "latitude": 10.0,
+            "longitude": 20.0
+          },
+          "geocoding_status": "success",
+          "geocoding_source": "synthetic_demo_fixture",
+          "spatial_cluster_id": "SPATIAL_3A0C5FDD8387",
+          "spatial_cluster_size": 2,
+          "hotspot": true,
+          "hotspot_id": "HOTSPOT_SPATIAL_3A0C5FDD8387",
+          "hotspot_incident_count": 2,
+          "spatial_priority_score": 41.93,
+          "spatial_metadata": {
+            "coordinate_reference_system": "EPSG:4326",
+            "coordinate_order": [
+              "latitude",
+              "longitude"
+            ],
+            "coordinate_validation": "valid",
+            "geocoding_candidates": null,
+            "geocoding_error": null
+          }
+        },
+        "deterministic_intelligence": {
+          "severity_score": 68.2,
+          "severity_level": "HIGH",
+          "urgency_score": 85.5,
+          "urgency_level": "CRITICAL",
+          "priority_score": 75.99,
+          "priority_level": "CRITICAL",
+          "confidence_score": 84.0,
+          "confidence_level": "HIGH"
+        },
+        "uncertainties": [
+          "Estimated resource needs are heuristic planning aids, not confirmed requests or requirements."
+        ],
+        "confidence_note": "Phase 5 evidence confidence is HIGH (84.0/100); it is an evidence-quality score, not a calibrated probability.",
+        "grounding_warnings": [
+          "Potential unsupported numeric claim in generated narrative: 100.",
+          "Potential unsupported numeric claim in generated narrative: 5."
+        ],
+        "generation_errors": [],
+        "generation_metadata": {
+          "phase7_version": "1.0",
+          "provider": "mock",
+          "model": "mock-phase7-v1",
+          "generation_mode": "provider",
+          "timestamp": "2026-09-23T17:57:15.257336+00:00",
+          "grounding_enabled": true,
+          "api_key_included": false
+        }
+      },
+      "situation_report": "# DISASTER SITUATION REPORT\n\n## 1. Incident Overview\n- Incident ID: INC_32B5B77EF00FECAA\n- Disaster type: flood\n\n## 2. Situation Summary\nStructured evidence identifies the disaster type as flood. The incident record mentions Demo Harbor. Structured casualty evidence: 120 people injured. Structured rescue evidence: people trapped. Structured infrastructure evidence: hospital damaged. Structured request evidence: urgent water.\n\n## 3. Human Impact\n- Casualties:\n- 120 people injured\n- Displacement:\nNot available from structured evidence.\n\n## 4. Infrastructure Impact\n- hospital damaged\n\n## 5. Rescue / Immediate Danger\n- people trapped\n\n## 6. Resource Requests\n- urgent water\n- water\n\n## 7. Estimated Resource Needs\nHEURISTIC ESTIMATES — planning aids only, not confirmed requests:\n```json\n{\n  \"based_on_casualties\": {\n    \"input_casualty_count\": 120,\n    \"food_meals\": 180.0,\n    \"water_liters\": 360.0,\n    \"medical_kits\": 36.0\n  },\n  \"based_on_displaced\": {\n    \"input_displaced_count\": 0,\n    \"shelter_spaces\": 0.0,\n    \"food_meals_daily\": 0.0,\n    \"water_liters_daily\": 0.0\n  },\n  \"rescue_teams\": {\n    \"teams_needed\": 10,\n    \"based_on\": \"1 rescue mentions, 120 casualties\"\n  },\n  \"metadata\": {\n    \"method\": \"heuristic_multipliers\",\n    \"confidence\": \"moderate\",\n    \"disclaimer\": \"Heuristic estimates for planning purposes only. Actual needs may vary significantly.\"\n  }\n}\n```\n\n## 8. Severity / Urgency / Priority\n- Severity: HIGH (68.2/100)\n- Urgency: CRITICAL (85.5/100)\n- Priority: CRITICAL (75.99/100)\n- Confidence: HIGH (84.0/100)\n\n## 9. Why This Incident Is Prioritized\n- Phase 5 priority includes the severity factor (contribution 37.51).\n- Phase 5 priority includes the urgency factor (contribution 38.48).\n\n## 10. Spatial Context\nLocation mention: Demo Harbor\nCoordinates: 10.0, 20.0 (provider reported success; coordinate range validated as WGS84).\nSpatial cluster: SPATIAL_3A0C5FDD8387 (incident count: 2).\nHotspot: yes (hotspot ID: HOTSPOT_SPATIAL_3A0C5FDD8387; incidents: 2).\nSpatial area priority score: 41.93.\n\n## 11. Recommended Actions\n- Recommended action: coordinate a prompt assessment of the reported rescue situation.\n- Recommended action: assess reported casualties and coordinate appropriate medical review.\n- Recommended action: verify reported infrastructure damage with the relevant response team.\n- Recommended action: review and confirm the explicitly recorded request(s): urgent water; water.\n\n## 12. Uncertainties / Information Gaps\n- Estimated resource needs are heuristic planning aids, not confirmed requests or requirements.\n\nConfidence note: Phase 5 evidence confidence is HIGH (84.0/100); it is an evidence-quality score, not a calibrated probability.\n\nRecommendations are decision support for human review, not autonomous commands."
+    },
+    {
+      "phase5_phase6_incident": {
+        "text": "Flooding reported near the harbor access road.",
+        "location": [
+          "Demo Harbor East"
+        ],
+        "casualties": [],
+        "displaced": [],
+        "rescue": [],
+        "infrastructure": [
+          "road"
+        ],
+        "disaster_type": "flood",
+        "requests": [],
+        "resources": [],
+        "organizations": [],
+        "persons": [],
+        "numbers": [],
+        "entities": [],
+        "request_resource_links": [],
+        "incident_id": "INC_49D37B68E7895E55",
+        "severity_score": 7.75,
+        "severity_level": "LOW",
+        "severity_factors": [
+          {
+            "factor": "casualties",
+            "score": 0.0,
+            "weight": 0.45,
+            "contribution": 0.0,
+            "evidence": "0 qualitative mentions"
+          },
+          {
+            "factor": "displaced",
+            "score": 0.0,
+            "weight": 0.3,
+            "contribution": 0.0,
+            "evidence": "0 qualitative mentions"
+          },
+          {
+            "factor": "infrastructure",
+            "score": 45.0,
+            "weight": 0.15,
+            "contribution": 6.75,
+            "evidence": "0 critical, 0 high-impact"
+          },
+          {
+            "factor": "rescue",
+            "score": 0.0,
+            "weight": 0.08,
+            "contribution": 0.0,
+            "evidence": "none"
+          },
+          {
+            "factor": "disaster_type",
+            "score": 50.0,
+            "weight": 0.02,
+            "contribution": 1.0,
+            "evidence": "flood"
+          }
+        ],
+        "urgency_score": 0.0,
+        "urgency_level": "LOW",
+        "urgency_factors": [
+          {
+            "factor": "rescue",
+            "score": 0.0,
+            "weight": 0.5,
+            "contribution": 0.0,
+            "evidence": "0 mentions"
+          },
+          {
+            "factor": "casualty_urgency",
+            "score": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0,
+            "evidence": "0 casualty mentions"
+          },
+          {
+            "factor": "immediate_danger",
+            "score": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0,
+            "evidence": "none"
+          },
+          {
+            "factor": "resource_urgency",
+            "score": 0.0,
+            "weight": 0.1,
+            "contribution": 0.0,
+            "evidence": "0 request mentions"
+          }
+        ],
+        "confidence_score": 35.0,
+        "confidence_level": "LOW",
+        "confidence_factors": [
+          {
+            "factor": "explicit_casualty",
+            "score": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0,
+            "evidence": "0 mentions, explicit number: False"
+          },
+          {
+            "factor": "explicit_location",
+            "score": 100.0,
+            "weight": 0.2,
+            "contribution": 20.0,
+            "evidence": "1 location mentions"
+          },
+          {
+            "factor": "explicit_disaster_type",
+            "score": 100.0,
+            "weight": 0.15,
+            "contribution": 15.0,
+            "evidence": "disaster_type: flood"
+          },
+          {
+            "factor": "explicit_resource_request",
+            "score": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0,
+            "evidence": "0 request mentions"
+          },
+          {
+            "factor": "explicit_rescue",
+            "score": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0,
+            "evidence": "0 rescue mentions"
+          },
+          {
+            "factor": "structured_extraction",
+            "score": 0.0,
+            "weight": 0.1,
+            "contribution": 0.0,
+            "evidence": "0 entities extracted"
+          }
+        ],
+        "priority_score": 3.84,
+        "priority_level": "LOW",
+        "priority_factors": [
+          {
+            "factor": "severity",
+            "score": 7.75,
+            "weight": 0.55,
+            "contribution": 4.26
+          },
+          {
+            "factor": "urgency",
+            "score": 0.0,
+            "weight": 0.45,
+            "contribution": 0.0
+          },
+          {
+            "factor": "confidence_adjustment",
+            "score": 35.0,
+            "weight": 0.0,
+            "contribution": -0.43,
+            "evidence": "Low confidence penalty applied"
+          }
+        ],
+        "resource_estimates": {
+          "explicit_requests": {
+            "total_requests": 0,
+            "by_category": {},
+            "raw_mentions": []
+          },
+          "estimated_needs": {
+            "based_on_casualties": {
+              "input_casualty_count": 0,
+              "food_meals": 0.0,
+              "water_liters": 0.0,
+              "medical_kits": 0.0
+            },
+            "based_on_displaced": {
+              "input_displaced_count": 0,
+              "shelter_spaces": 0.0,
+              "food_meals_daily": 0.0,
+              "water_liters_daily": 0.0
+            },
+            "rescue_teams": {
+              "teams_needed": 0,
+              "based_on": "0 rescue mentions, 0 casualties"
+            },
+            "metadata": {
+              "method": "heuristic_multipliers",
+              "confidence": "low",
+              "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+            }
+          },
+          "resource_summary": {
+            "has_explicit_requests": false,
+            "explicit_categories": [],
+            "has_estimates": true,
+            "estimation_basis": []
+          }
+        },
+        "resource_priorities": [],
+        "is_duplicate": false,
+        "duplicate_of": null,
+        "similarity_scores": {},
+        "decision_flags": [
+          "INFRASTRUCTURE_DAMAGE",
+          "LOCATION_IDENTIFIED",
+          "LOW_EVIDENCE"
+        ],
+        "processing_metadata": {
+          "enrichment_timestamp": "2026-09-23T17:57:15.254299+00:00",
+          "phase5_version": "1.0",
+          "scoring_method": "rule_based_interpretable",
+          "has_phase3_input": false
+        },
+        "cluster_id": "CLUSTER_1",
+        "cluster_size": 1,
+        "location_text": "Demo Harbor East",
+        "normalized_location": "Demo Harbor East",
+        "normalized_locations": [
+          {
+            "original_text": "Demo Harbor East",
+            "normalized_text": "Demo Harbor East",
+            "status": "unchanged"
+          }
+        ],
+        "latitude": 10.02,
+        "longitude": 20.01,
+        "geocoding_status": "success",
+        "geocoding_source": "synthetic_demo_fixture",
+        "spatial_metadata": {
+          "coordinate_reference_system": "EPSG:4326",
+          "coordinate_order": [
+            "latitude",
+            "longitude"
+          ],
+          "coordinate_validation": "valid",
+          "geocoding_candidates": null,
+          "geocoding_error": null
+        },
+        "spatial_cluster_id": "SPATIAL_3A0C5FDD8387",
+        "spatial_cluster_size": 2,
+        "spatial_cluster_status": "clustered",
+        "spatial_area_id": "SPATIAL_3A0C5FDD8387"
+      },
+      "phase7_result": {
+        "incident_id": "INC_49D37B68E7895E55",
+        "summary": "Structured evidence identifies the disaster type as flood. The incident record mentions Demo Harbor East. Structured infrastructure evidence: road.",
+        "situation_assessment": "Phase 5 computed intelligence: Severity: LOW (7.75/100); Urgency: LOW (0.0/100); Priority: LOW (3.84/100); Confidence: LOW (35.0/100).",
+        "priority_explanation": [
+          "Phase 5 priority includes the severity factor (contribution 4.26).",
+          "Phase 5 priority includes the urgency factor (contribution 0.0).",
+          "Phase 5 priority includes the confidence_adjustment factor (contribution -0.43)."
+        ],
+        "key_evidence": [
+          "Disaster type: flood",
+          "Infrastructure evidence: road",
+          "Location mention: Demo Harbor East"
+        ],
+        "recommended_actions": [
+          "Recommended action: verify reported infrastructure damage with the relevant response team."
+        ],
+        "resource_summary": {
+          "explicit_requests": [],
+          "estimated_needs": {
+            "based_on_casualties": {
+              "input_casualty_count": 0,
+              "food_meals": 0.0,
+              "water_liters": 0.0,
+              "medical_kits": 0.0
+            },
+            "based_on_displaced": {
+              "input_displaced_count": 0,
+              "shelter_spaces": 0.0,
+              "food_meals_daily": 0.0,
+              "water_liters_daily": 0.0
+            },
+            "rescue_teams": {
+              "teams_needed": 0,
+              "based_on": "0 rescue mentions, 0 casualties"
+            },
+            "metadata": {
+              "method": "heuristic_multipliers",
+              "confidence": "low",
+              "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+            }
+          },
+          "estimated_needs_type": "heuristic_estimate",
+          "estimate_disclaimer": "Planning aid only; not a confirmed request or validated requirement."
+        },
+        "spatial_context": {
+          "location_text": "Demo Harbor East",
+          "normalized_location": "Demo Harbor East",
+          "coordinates": {
+            "latitude": 10.02,
+            "longitude": 20.01
+          },
+          "geocoding_status": "success",
+          "geocoding_source": "synthetic_demo_fixture",
+          "spatial_cluster_id": "SPATIAL_3A0C5FDD8387",
+          "spatial_cluster_size": 2,
+          "hotspot": true,
+          "hotspot_id": "HOTSPOT_SPATIAL_3A0C5FDD8387",
+          "hotspot_incident_count": 2,
+          "spatial_priority_score": 41.93,
+          "spatial_metadata": {
+            "coordinate_reference_system": "EPSG:4326",
+            "coordinate_order": [
+              "latitude",
+              "longitude"
+            ],
+            "coordinate_validation": "valid",
+            "geocoding_candidates": null,
+            "geocoding_error": null
+          }
+        },
+        "deterministic_intelligence": {
+          "severity_score": 7.75,
+          "severity_level": "LOW",
+          "urgency_score": 0.0,
+          "urgency_level": "LOW",
+          "priority_score": 3.84,
+          "priority_level": "LOW",
+          "confidence_score": 35.0,
+          "confidence_level": "LOW"
+        },
+        "uncertainties": [
+          "No structured casualty information was provided.",
+          "Phase 5 confidence is LOW; extracted evidence may be incomplete.",
+          "Estimated resource needs are heuristic planning aids, not confirmed requests or requirements."
+        ],
+        "confidence_note": "Phase 5 evidence confidence is LOW (35.0/100); it is an evidence-quality score, not a calibrated probability.",
+        "grounding_warnings": [
+          "Potential unsupported numeric claim in generated narrative: 0.43.",
+          "Potential unsupported numeric claim in generated narrative: 100.",
+          "Potential unsupported numeric claim in generated narrative: 5."
+        ],
+        "generation_errors": [],
+        "generation_metadata": {
+          "phase7_version": "1.0",
+          "provider": "mock",
+          "model": "mock-phase7-v1",
+          "generation_mode": "provider",
+          "timestamp": "2026-09-23T17:57:15.259544+00:00",
+          "grounding_enabled": true,
+          "api_key_included": false
+        }
+      },
+      "situation_report": "# DISASTER SITUATION REPORT\n\n## 1. Incident Overview\n- Incident ID: INC_49D37B68E7895E55\n- Disaster type: flood\n\n## 2. Situation Summary\nStructured evidence identifies the disaster type as flood. The incident record mentions Demo Harbor East. Structured infrastructure evidence: road.\n\n## 3. Human Impact\n- Casualties:\nNot available from structured evidence.\n- Displacement:\nNot available from structured evidence.\n\n## 4. Infrastructure Impact\n- road\n\n## 5. Rescue / Immediate Danger\nNot available from structured evidence.\n\n## 6. Resource Requests\nNot available.\n\n## 7. Estimated Resource Needs\nHEURISTIC ESTIMATES — planning aids only, not confirmed requests:\n```json\n{\n  \"based_on_casualties\": {\n    \"input_casualty_count\": 0,\n    \"food_meals\": 0.0,\n    \"water_liters\": 0.0,\n    \"medical_kits\": 0.0\n  },\n  \"based_on_displaced\": {\n    \"input_displaced_count\": 0,\n    \"shelter_spaces\": 0.0,\n    \"food_meals_daily\": 0.0,\n    \"water_liters_daily\": 0.0\n  },\n  \"rescue_teams\": {\n    \"teams_needed\": 0,\n    \"based_on\": \"0 rescue mentions, 0 casualties\"\n  },\n  \"metadata\": {\n    \"method\": \"heuristic_multipliers\",\n    \"confidence\": \"low\",\n    \"disclaimer\": \"Heuristic estimates for planning purposes only. Actual needs may vary significantly.\"\n  }\n}\n```\n\n## 8. Severity / Urgency / Priority\n- Severity: LOW (7.75/100)\n- Urgency: LOW (0.0/100)\n- Priority: LOW (3.84/100)\n- Confidence: LOW (35.0/100)\n\n## 9. Why This Incident Is Prioritized\n- Phase 5 priority includes the severity factor (contribution 4.26).\n- Phase 5 priority includes the urgency factor (contribution 0.0).\n- Phase 5 priority includes the confidence_adjustment factor (contribution -0.43).\n\n## 10. Spatial Context\nLocation mention: Demo Harbor East\nCoordinates: 10.02, 20.01 (provider reported success; coordinate range validated as WGS84).\nSpatial cluster: SPATIAL_3A0C5FDD8387 (incident count: 2).\nHotspot: yes (hotspot ID: HOTSPOT_SPATIAL_3A0C5FDD8387; incidents: 2).\nSpatial area priority score: 41.93.\n\n## 11. Recommended Actions\n- Recommended action: verify reported infrastructure damage with the relevant response team.\n\n## 12. Uncertainties / Information Gaps\n- No structured casualty information was provided.\n- Phase 5 confidence is LOW; extracted evidence may be incomplete.\n- Estimated resource needs are heuristic planning aids, not confirmed requests or requirements.\n\nConfidence note: Phase 5 evidence confidence is LOW (35.0/100); it is an evidence-quality score, not a calibrated probability.\n\nRecommendations are decision support for human review, not autonomous commands."
+    },
+    {
+      "phase5_phase6_incident": {
+        "text": "People request shelter after flooding.",
+        "location": [
+          "Unresolved Demo Village"
+        ],
+        "casualties": [],
+        "displaced": [
+          "30 families displaced"
+        ],
+        "rescue": [],
+        "infrastructure": [],
+        "disaster_type": "flood",
+        "requests": [
+          "shelter"
+        ],
+        "resources": [
+          "shelter"
+        ],
+        "organizations": [],
+        "persons": [],
+        "numbers": [],
+        "entities": [],
+        "request_resource_links": [],
+        "incident_id": "INC_C00039D9979BADFC",
+        "severity_score": 10.17,
+        "severity_level": "LOW",
+        "severity_factors": [
+          {
+            "factor": "casualties",
+            "score": 0.0,
+            "weight": 0.45,
+            "contribution": 0.0,
+            "evidence": "0 qualitative mentions"
+          },
+          {
+            "factor": "displaced",
+            "score": 30.56,
+            "weight": 0.3,
+            "contribution": 9.17,
+            "evidence": "30 displaced"
+          },
+          {
+            "factor": "infrastructure",
+            "score": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0,
+            "evidence": "0 critical, 0 high-impact"
+          },
+          {
+            "factor": "rescue",
+            "score": 0.0,
+            "weight": 0.08,
+            "contribution": 0.0,
+            "evidence": "none"
+          },
+          {
+            "factor": "disaster_type",
+            "score": 50.0,
+            "weight": 0.02,
+            "contribution": 1.0,
+            "evidence": "flood"
+          }
+        ],
+        "urgency_score": 4.0,
+        "urgency_level": "LOW",
+        "urgency_factors": [
+          {
+            "factor": "rescue",
+            "score": 0.0,
+            "weight": 0.5,
+            "contribution": 0.0,
+            "evidence": "0 mentions"
+          },
+          {
+            "factor": "casualty_urgency",
+            "score": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0,
+            "evidence": "0 casualty mentions"
+          },
+          {
+            "factor": "immediate_danger",
+            "score": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0,
+            "evidence": "none"
+          },
+          {
+            "factor": "resource_urgency",
+            "score": 40.0,
+            "weight": 0.1,
+            "contribution": 4.0,
+            "evidence": "1 request mentions"
+          }
+        ],
+        "confidence_score": 47.0,
+        "confidence_level": "LOW",
+        "confidence_factors": [
+          {
+            "factor": "explicit_casualty",
+            "score": 0.0,
+            "weight": 0.25,
+            "contribution": 0.0,
+            "evidence": "0 mentions, explicit number: False"
+          },
+          {
+            "factor": "explicit_location",
+            "score": 100.0,
+            "weight": 0.2,
+            "contribution": 20.0,
+            "evidence": "1 location mentions"
+          },
+          {
+            "factor": "explicit_disaster_type",
+            "score": 100.0,
+            "weight": 0.15,
+            "contribution": 15.0,
+            "evidence": "disaster_type: flood"
+          },
+          {
+            "factor": "explicit_resource_request",
+            "score": 80.0,
+            "weight": 0.15,
+            "contribution": 12.0,
+            "evidence": "1 request mentions"
+          },
+          {
+            "factor": "explicit_rescue",
+            "score": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0,
+            "evidence": "0 rescue mentions"
+          },
+          {
+            "factor": "structured_extraction",
+            "score": 0.0,
+            "weight": 0.1,
+            "contribution": 0.0,
+            "evidence": "0 entities extracted"
+          }
+        ],
+        "priority_score": 6.65,
+        "priority_level": "LOW",
+        "priority_factors": [
+          {
+            "factor": "severity",
+            "score": 10.17,
+            "weight": 0.55,
+            "contribution": 5.59
+          },
+          {
+            "factor": "urgency",
+            "score": 4.0,
+            "weight": 0.45,
+            "contribution": 1.8
+          },
+          {
+            "factor": "confidence_adjustment",
+            "score": 47.0,
+            "weight": 0.0,
+            "contribution": -0.74,
+            "evidence": "Low confidence penalty applied"
+          }
+        ],
+        "resource_estimates": {
+          "explicit_requests": {
+            "total_requests": 2,
+            "by_category": {
+              "shelter": [
+                {
+                  "category": "shelter",
+                  "quantity": null,
+                  "raw_text": "shelter",
+                  "source": "request_entity"
+                },
+                {
+                  "category": "shelter",
+                  "quantity": null,
+                  "raw_text": "shelter",
+                  "source": "resource_entity"
+                }
+              ]
+            },
+            "raw_mentions": [
+              {
+                "category": "shelter",
+                "quantity": null,
+                "raw_text": "shelter",
+                "source": "request_entity"
+              },
+              {
+                "category": "shelter",
+                "quantity": null,
+                "raw_text": "shelter",
+                "source": "resource_entity"
+              }
+            ]
+          },
+          "estimated_needs": {
+            "based_on_casualties": {
+              "input_casualty_count": 0,
+              "food_meals": 0.0,
+              "water_liters": 0.0,
+              "medical_kits": 0.0
+            },
+            "based_on_displaced": {
+              "input_displaced_count": 30,
+              "shelter_spaces": 24.0,
+              "food_meals_daily": 60.0,
+              "water_liters_daily": 120.0
+            },
+            "rescue_teams": {
+              "teams_needed": 0,
+              "based_on": "0 rescue mentions, 0 casualties"
+            },
+            "metadata": {
+              "method": "heuristic_multipliers",
+              "confidence": "low",
+              "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+            }
+          },
+          "resource_summary": {
+            "has_explicit_requests": true,
+            "explicit_categories": [
+              "shelter"
+            ],
+            "has_estimates": true,
+            "estimation_basis": [
+              "displaced"
+            ]
+          }
+        },
+        "resource_priorities": [
+          {
+            "category": "water",
+            "priority": "MODERATE",
+            "reason": "Basic life support (urgency: UNKNOWN)"
+          },
+          {
+            "category": "food",
+            "priority": "MODERATE",
+            "reason": "Sustenance for affected population"
+          },
+          {
+            "category": "shelter",
+            "priority": "MODERATE",
+            "reason": "Temporary housing for displaced persons"
+          }
+        ],
+        "is_duplicate": false,
+        "duplicate_of": null,
+        "similarity_scores": {},
+        "decision_flags": [
+          "RESOURCE_REQUEST",
+          "LOCATION_IDENTIFIED",
+          "LOW_EVIDENCE"
+        ],
+        "processing_metadata": {
+          "enrichment_timestamp": "2026-09-23T17:57:15.254492+00:00",
+          "phase5_version": "1.0",
+          "scoring_method": "rule_based_interpretable",
+          "has_phase3_input": false
+        },
+        "cluster_id": "CLUSTER_2",
+        "cluster_size": 1,
+        "location_text": "Unresolved Demo Village",
+        "normalized_location": "Unresolved Demo Village",
+        "normalized_locations": [
+          {
+            "original_text": "Unresolved Demo Village",
+            "normalized_text": "Unresolved Demo Village",
+            "status": "unchanged"
+          }
+        ],
+        "latitude": null,
+        "longitude": null,
+        "geocoding_status": "failed",
+        "geocoding_source": "synthetic_demo_fixture",
+        "spatial_metadata": {
+          "coordinate_reference_system": "EPSG:4326",
+          "coordinate_order": [
+            "latitude",
+            "longitude"
+          ],
+          "coordinate_validation": "missing_coordinates",
+          "geocoding_candidates": null,
+          "geocoding_error": null
+        },
+        "spatial_cluster_id": null,
+        "spatial_cluster_size": 0,
+        "spatial_cluster_status": "missing_coordinates",
+        "spatial_area_id": null
+      },
+      "phase7_result": {
+        "incident_id": "INC_C00039D9979BADFC",
+        "summary": "Structured evidence identifies the disaster type as flood. The incident record mentions Unresolved Demo Village. Structured displacement evidence: 30 families displaced. Structured request evidence: shelter.",
+        "situation_assessment": "Phase 5 computed intelligence: Severity: LOW (10.17/100); Urgency: LOW (4.0/100); Priority: LOW (6.65/100); Confidence: LOW (47.0/100).",
+        "priority_explanation": [
+          "Phase 5 priority includes the severity factor (contribution 5.59).",
+          "Phase 5 priority includes the urgency factor (contribution 1.8).",
+          "Phase 5 priority includes the confidence_adjustment factor (contribution -0.74)."
+        ],
+        "key_evidence": [
+          "Disaster type: flood",
+          "Displacement evidence: 30 families displaced",
+          "Request evidence: shelter",
+          "Resource mentions: shelter",
+          "Location mention: Unresolved Demo Village"
+        ],
+        "recommended_actions": [
+          "Recommended action: review and confirm the explicitly recorded request(s): shelter; shelter.",
+          "Recommended action: assess the reported displacement and related shelter needs.",
+          "Recommended action: resolve or confirm the location before using geographic coordinates operationally."
+        ],
+        "resource_summary": {
+          "explicit_requests": [
+            {
+              "category": "shelter",
+              "quantity": null,
+              "raw_text": "shelter",
+              "source": "request_entity"
+            },
+            {
+              "category": "shelter",
+              "quantity": null,
+              "raw_text": "shelter",
+              "source": "resource_entity"
+            }
+          ],
+          "estimated_needs": {
+            "based_on_casualties": {
+              "input_casualty_count": 0,
+              "food_meals": 0.0,
+              "water_liters": 0.0,
+              "medical_kits": 0.0
+            },
+            "based_on_displaced": {
+              "input_displaced_count": 30,
+              "shelter_spaces": 24.0,
+              "food_meals_daily": 60.0,
+              "water_liters_daily": 120.0
+            },
+            "rescue_teams": {
+              "teams_needed": 0,
+              "based_on": "0 rescue mentions, 0 casualties"
+            },
+            "metadata": {
+              "method": "heuristic_multipliers",
+              "confidence": "low",
+              "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+            }
+          },
+          "estimated_needs_type": "heuristic_estimate",
+          "estimate_disclaimer": "Planning aid only; not a confirmed request or validated requirement."
+        },
+        "spatial_context": {
+          "location_text": "Unresolved Demo Village",
+          "normalized_location": "Unresolved Demo Village",
+          "coordinates": null,
+          "geocoding_status": "failed",
+          "geocoding_source": "synthetic_demo_fixture",
+          "spatial_cluster_id": null,
+          "spatial_cluster_size": 0,
+          "hotspot": false,
+          "hotspot_id": null,
+          "hotspot_incident_count": null,
+          "spatial_priority_score": null,
+          "spatial_metadata": {
+            "coordinate_reference_system": "EPSG:4326",
+            "coordinate_order": [
+              "latitude",
+              "longitude"
+            ],
+            "coordinate_validation": "missing_coordinates",
+            "geocoding_candidates": null,
+            "geocoding_error": null
+          }
+        },
+        "deterministic_intelligence": {
+          "severity_score": 10.17,
+          "severity_level": "LOW",
+          "urgency_score": 4.0,
+          "urgency_level": "LOW",
+          "priority_score": 6.65,
+          "priority_level": "LOW",
+          "confidence_score": 47.0,
+          "confidence_level": "LOW"
+        },
+        "uncertainties": [
+          "Location is mentioned as Unresolved Demo Village, but verified coordinates are unavailable (geocoding status: failed).",
+          "No structured casualty information was provided.",
+          "Phase 5 confidence is LOW; extracted evidence may be incomplete.",
+          "Estimated resource needs are heuristic planning aids, not confirmed requests or requirements."
+        ],
+        "confidence_note": "Phase 5 evidence confidence is LOW (47.0/100); it is an evidence-quality score, not a calibrated probability.",
+        "grounding_warnings": [
+          "Potential unsupported numeric claim in generated narrative: 0.74.",
+          "Potential unsupported numeric claim in generated narrative: 100.",
+          "Potential unsupported numeric claim in generated narrative: 5."
+        ],
+        "generation_errors": [],
+        "generation_metadata": {
+          "phase7_version": "1.0",
+          "provider": "mock",
+          "model": "mock-phase7-v1",
+          "generation_mode": "provider",
+          "timestamp": "2026-09-23T17:57:15.261288+00:00",
+          "grounding_enabled": true,
+          "api_key_included": false
+        }
+      },
+      "situation_report": "# DISASTER SITUATION REPORT\n\n## 1. Incident Overview\n- Incident ID: INC_C00039D9979BADFC\n- Disaster type: flood\n\n## 2. Situation Summary\nStructured evidence identifies the disaster type as flood. The incident record mentions Unresolved Demo Village. Structured displacement evidence: 30 families displaced. Structured request evidence: shelter.\n\n## 3. Human Impact\n- Casualties:\nNot available from structured evidence.\n- Displacement:\n- 30 families displaced\n\n## 4. Infrastructure Impact\nNot available from structured evidence.\n\n## 5. Rescue / Immediate Danger\nNot available from structured evidence.\n\n## 6. Resource Requests\n- shelter\n- shelter\n\n## 7. Estimated Resource Needs\nHEURISTIC ESTIMATES — planning aids only, not confirmed requests:\n```json\n{\n  \"based_on_casualties\": {\n    \"input_casualty_count\": 0,\n    \"food_meals\": 0.0,\n    \"water_liters\": 0.0,\n    \"medical_kits\": 0.0\n  },\n  \"based_on_displaced\": {\n    \"input_displaced_count\": 30,\n    \"shelter_spaces\": 24.0,\n    \"food_meals_daily\": 60.0,\n    \"water_liters_daily\": 120.0\n  },\n  \"rescue_teams\": {\n    \"teams_needed\": 0,\n    \"based_on\": \"0 rescue mentions, 0 casualties\"\n  },\n  \"metadata\": {\n    \"method\": \"heuristic_multipliers\",\n    \"confidence\": \"low\",\n    \"disclaimer\": \"Heuristic estimates for planning purposes only. Actual needs may vary significantly.\"\n  }\n}\n```\n\n## 8. Severity / Urgency / Priority\n- Severity: LOW (10.17/100)\n- Urgency: LOW (4.0/100)\n- Priority: LOW (6.65/100)\n- Confidence: LOW (47.0/100)\n\n## 9. Why This Incident Is Prioritized\n- Phase 5 priority includes the severity factor (contribution 5.59).\n- Phase 5 priority includes the urgency factor (contribution 1.8).\n- Phase 5 priority includes the confidence_adjustment factor (contribution -0.74).\n\n## 10. Spatial Context\nLocation mention: Unresolved Demo Village\nThe location is mentioned, but geocoding failed; no verified coordinates are available.\n\n## 11. Recommended Actions\n- Recommended action: review and confirm the explicitly recorded request(s): shelter; shelter.\n- Recommended action: assess the reported displacement and related shelter needs.\n- Recommended action: resolve or confirm the location before using geographic coordinates operationally.\n\n## 12. Uncertainties / Information Gaps\n- Location is mentioned as Unresolved Demo Village, but verified coordinates are unavailable (geocoding status: failed).\n- No structured casualty information was provided.\n- Phase 5 confidence is LOW; extracted evidence may be incomplete.\n- Estimated resource needs are heuristic planning aids, not confirmed requests or requirements.\n\nConfidence note: Phase 5 evidence confidence is LOW (47.0/100); it is an evidence-quality score, not a calibrated probability.\n\nRecommendations are decision support for human review, not autonomous commands."
+    }
+  ],
+  "provider_error_handling_examples": {
+    "malformed_provider_output": {
+      "incident_id": "INC_32B5B77EF00FECAA",
+      "summary": "Structured evidence identifies the disaster type as flood. The incident record mentions Demo Harbor. Structured casualty evidence: 120 people injured. Structured rescue evidence: people trapped. Structured infrastructure evidence: hospital damaged. Structured request evidence: urgent water.",
+      "situation_assessment": "Phase 5 computed intelligence: Severity: HIGH (68.2/100); Urgency: CRITICAL (85.5/100); Priority: CRITICAL (75.99/100); Confidence: HIGH (84.0/100).",
+      "priority_explanation": [
+        "Phase 5 priority includes the severity factor (contribution 37.51).",
+        "Phase 5 priority includes the urgency factor (contribution 38.48)."
+      ],
+      "key_evidence": [
+        "Disaster type: flood",
+        "Casualty evidence: 120 people injured",
+        "Rescue evidence: people trapped",
+        "Infrastructure evidence: hospital damaged",
+        "Request evidence: urgent water",
+        "Resource mentions: water",
+        "Location mention: Demo Harbor"
+      ],
+      "recommended_actions": [
+        "Recommended action: coordinate a prompt assessment of the reported rescue situation.",
+        "Recommended action: assess reported casualties and coordinate appropriate medical review.",
+        "Recommended action: verify reported infrastructure damage with the relevant response team.",
+        "Recommended action: review and confirm the explicitly recorded request(s): urgent water; water."
+      ],
+      "resource_summary": {
+        "explicit_requests": [
+          {
+            "category": "water",
+            "quantity": null,
+            "raw_text": "urgent water",
+            "source": "request_entity"
+          },
+          {
+            "category": "water",
+            "quantity": null,
+            "raw_text": "water",
+            "source": "resource_entity"
+          }
+        ],
+        "estimated_needs": {
+          "based_on_casualties": {
+            "input_casualty_count": 120,
+            "food_meals": 180.0,
+            "water_liters": 360.0,
+            "medical_kits": 36.0
+          },
+          "based_on_displaced": {
+            "input_displaced_count": 0,
+            "shelter_spaces": 0.0,
+            "food_meals_daily": 0.0,
+            "water_liters_daily": 0.0
+          },
+          "rescue_teams": {
+            "teams_needed": 10,
+            "based_on": "1 rescue mentions, 120 casualties"
+          },
+          "metadata": {
+            "method": "heuristic_multipliers",
+            "confidence": "moderate",
+            "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+          }
+        },
+        "estimated_needs_type": "heuristic_estimate",
+        "estimate_disclaimer": "Planning aid only; not a confirmed request or validated requirement."
+      },
+      "spatial_context": {
+        "location_text": "Demo Harbor",
+        "normalized_location": "Demo Harbor",
+        "coordinates": {
+          "latitude": 10.0,
+          "longitude": 20.0
+        },
+        "geocoding_status": "success",
+        "geocoding_source": "synthetic_demo_fixture",
+        "spatial_cluster_id": "SPATIAL_3A0C5FDD8387",
+        "spatial_cluster_size": 2,
+        "hotspot": true,
+        "hotspot_id": "HOTSPOT_SPATIAL_3A0C5FDD8387",
+        "hotspot_incident_count": 2,
+        "spatial_priority_score": 41.93,
+        "spatial_metadata": {
+          "coordinate_reference_system": "EPSG:4326",
+          "coordinate_order": [
+            "latitude",
+            "longitude"
+          ],
+          "coordinate_validation": "valid",
+          "geocoding_candidates": null,
+          "geocoding_error": null
+        }
+      },
+      "deterministic_intelligence": {
+        "severity_score": 68.2,
+        "severity_level": "HIGH",
+        "urgency_score": 85.5,
+        "urgency_level": "CRITICAL",
+        "priority_score": 75.99,
+        "priority_level": "CRITICAL",
+        "confidence_score": 84.0,
+        "confidence_level": "HIGH"
+      },
+      "uncertainties": [
+        "Estimated resource needs are heuristic planning aids, not confirmed requests or requirements."
+      ],
+      "confidence_note": "Phase 5 evidence confidence is HIGH (84.0/100); it is an evidence-quality score, not a calibrated probability.",
+      "grounding_warnings": [
+        "Potential unsupported numeric claim in generated narrative: 100.",
+        "Potential unsupported numeric claim in generated narrative: 5."
+      ],
+      "generation_errors": [
+        "invalid_provider_output:invalid_summary",
+        "invalid_provider_output:invalid_situation_assessment",
+        "invalid_provider_output:invalid_priority_explanation",
+        "invalid_provider_output:invalid_recommended_actions",
+        "generation_failed:ValueError"
+      ],
+      "generation_metadata": {
+        "phase7_version": "1.0",
+        "provider": "malformed_demo_provider",
+        "model": "mock-phase7-v1",
+        "generation_mode": "mock_fallback",
+        "timestamp": "2026-09-23T17:57:15.263037+00:00",
+        "grounding_enabled": true,
+        "api_key_included": false
+      }
+    },
+    "provider_failure": {
+      "incident_id": "INC_32B5B77EF00FECAA",
+      "summary": "Structured evidence identifies the disaster type as flood. The incident record mentions Demo Harbor. Structured casualty evidence: 120 people injured. Structured rescue evidence: people trapped. Structured infrastructure evidence: hospital damaged. Structured request evidence: urgent water.",
+      "situation_assessment": "Phase 5 computed intelligence: Severity: HIGH (68.2/100); Urgency: CRITICAL (85.5/100); Priority: CRITICAL (75.99/100); Confidence: HIGH (84.0/100).",
+      "priority_explanation": [
+        "Phase 5 priority includes the severity factor (contribution 37.51).",
+        "Phase 5 priority includes the urgency factor (contribution 38.48)."
+      ],
+      "key_evidence": [
+        "Disaster type: flood",
+        "Casualty evidence: 120 people injured",
+        "Rescue evidence: people trapped",
+        "Infrastructure evidence: hospital damaged",
+        "Request evidence: urgent water",
+        "Resource mentions: water",
+        "Location mention: Demo Harbor"
+      ],
+      "recommended_actions": [
+        "Recommended action: coordinate a prompt assessment of the reported rescue situation.",
+        "Recommended action: assess reported casualties and coordinate appropriate medical review.",
+        "Recommended action: verify reported infrastructure damage with the relevant response team.",
+        "Recommended action: review and confirm the explicitly recorded request(s): urgent water; water."
+      ],
+      "resource_summary": {
+        "explicit_requests": [
+          {
+            "category": "water",
+            "quantity": null,
+            "raw_text": "urgent water",
+            "source": "request_entity"
+          },
+          {
+            "category": "water",
+            "quantity": null,
+            "raw_text": "water",
+            "source": "resource_entity"
+          }
+        ],
+        "estimated_needs": {
+          "based_on_casualties": {
+            "input_casualty_count": 120,
+            "food_meals": 180.0,
+            "water_liters": 360.0,
+            "medical_kits": 36.0
+          },
+          "based_on_displaced": {
+            "input_displaced_count": 0,
+            "shelter_spaces": 0.0,
+            "food_meals_daily": 0.0,
+            "water_liters_daily": 0.0
+          },
+          "rescue_teams": {
+            "teams_needed": 10,
+            "based_on": "1 rescue mentions, 120 casualties"
+          },
+          "metadata": {
+            "method": "heuristic_multipliers",
+            "confidence": "moderate",
+            "disclaimer": "Heuristic estimates for planning purposes only. Actual needs may vary significantly."
+          }
+        },
+        "estimated_needs_type": "heuristic_estimate",
+        "estimate_disclaimer": "Planning aid only; not a confirmed request or validated requirement."
+      },
+      "spatial_context": {
+        "location_text": "Demo Harbor",
+        "normalized_location": "Demo Harbor",
+        "coordinates": {
+          "latitude": 10.0,
+          "longitude": 20.0
+        },
+        "geocoding_status": "success",
+        "geocoding_source": "synthetic_demo_fixture",
+        "spatial_cluster_id": "SPATIAL_3A0C5FDD8387",
+        "spatial_cluster_size": 2,
+        "hotspot": true,
+        "hotspot_id": "HOTSPOT_SPATIAL_3A0C5FDD8387",
+        "hotspot_incident_count": 2,
+        "spatial_priority_score": 41.93,
+        "spatial_metadata": {
+          "coordinate_reference_system": "EPSG:4326",
+          "coordinate_order": [
+            "latitude",
+            "longitude"
+          ],
+          "coordinate_validation": "valid",
+          "geocoding_candidates": null,
+          "geocoding_error": null
+        }
+      },
+      "deterministic_intelligence": {
+        "severity_score": 68.2,
+        "severity_level": "HIGH",
+        "urgency_score": 85.5,
+        "urgency_level": "CRITICAL",
+        "priority_score": 75.99,
+        "priority_level": "CRITICAL",
+        "confidence_score": 84.0,
+        "confidence_level": "HIGH"
+      },
+      "uncertainties": [
+        "Estimated resource needs are heuristic planning aids, not confirmed requests or requirements."
+      ],
+      "confidence_note": "Phase 5 evidence confidence is HIGH (84.0/100); it is an evidence-quality score, not a calibrated probability.",
+      "grounding_warnings": [
+        "Potential unsupported numeric claim in generated narrative: 100.",
+        "Potential unsupported numeric claim in generated narrative: 5."
+      ],
+      "generation_errors": [
+        "generation_failed:RuntimeError"
+      ],
+      "generation_metadata": {
+        "phase7_version": "1.0",
+        "provider": "failing_demo_provider",
+        "model": "mock-phase7-v1",
+        "generation_mode": "mock_fallback",
+        "timestamp": "2026-09-23T17:57:15.263837+00:00",
+        "grounding_enabled": true,
+        "api_key_included": false
+      }
+    }
+  },
+  "limitations": [
+    "LLM outputs are not guaranteed to be hallucination-free.",
+    "Grounding consistency checks are not formal verification.",
+    "Recommendations are decision support, not autonomous commands.",
+    "Heuristic resource estimates are not confirmed requirements.",
+    "Confidence scores are evidence quality indicators, not calibrated probabilities.",
+    "Spatial coordinates are only as reliable as their provider/source.",
+    "The mock provider does not represent real LLM quality.",
+    "No autonomous emergency dispatch is performed."
+  ]
+}

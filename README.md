@@ -146,6 +146,20 @@ The Phase 6 demonstration uses synthetic coordinates to exercise the algorithms.
 
 **Status:** Complete
 
+### Phase 7 — LLM / Generative Intelligence & Grounded Decision Support
+Phase 7 adds provider-independent generation over Phase 5/6 records. Structured evidence and deterministic scores remain the source of truth; summaries, explanations, recommendations, spatial uncertainty, and human-readable reports preserve provenance. The deterministic mock provider runs without credentials or network access. An optional OpenAI-compatible HTTP adapter can be configured through environment variables.
+
+The demo uses synthetic records and coordinates. It does not evaluate real-world geocoding accuracy or production LLM quality. See [Phase 7 documentation](docs/phase7_llm_grounded_intelligence.md) for the API, settings, grounding checks, tests, and limitations.
+
+**Status:** Implementation complete; Phase 7 tests pass; full-suite validation is blocked by the current NumPy runtime environment
+
+### Phase 8 — Operational Monitoring / Real-Time Intelligence & Integration
+Phase 8 provides deterministic event normalization, source provenance, stable event identity, duplicate/update tracking, an in-memory lifecycle store, and isolated orchestration over the existing Phase 3–7 APIs. The included source is synthetic and finite; it runs locally without credentials or network access.
+
+Run the demonstration with `python evaluation\run_phase8_demonstration.py` and the focused tests with `pytest tests\test_phase8_monitoring.py -v`. Phase 8 establishes an operational monitoring foundation; it is not alerting, a dashboard, or a production deployment.
+
+**Status:** Implemented; focused and Phase 5–7 regression tests pass. Phase 3 prediction availability depends on the local runtime/model artifacts.
+
 ---
 
 ## 6. Complete System Pipeline
