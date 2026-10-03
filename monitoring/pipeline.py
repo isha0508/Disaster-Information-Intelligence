@@ -7,6 +7,7 @@ import time
 
 from monitoring.identity import event_id_for
 from monitoring.normalization import normalize_event, utc_now
+from monitoring.type_resolution import resolve_disaster_type
 
 
 def _duration(start):
@@ -28,6 +29,7 @@ class IntelligencePipeline:
                   "source": event["source"], "source_event_id": event.get("source_event_id"),
                   "provenance": event["provenance"], "intelligence": {},
                   "processing_errors": errors, "phase_status": phase_status,
+                  "operational_warnings": [],
                   "processing_status": "PROCESSING", "processing_started_at": started,
                   "pipeline_version": "phase8-v1"}
 
@@ -43,22 +45,67 @@ class IntelligencePipeline:
         else:
             phase_status["phase3"] = "disabled"
 
+        type_resolution = resolve_disaster_type(event, result["intelligence"].get("phase3"))
+        result["type_resolution"] = type_resolution
+        source_location = None
+        if event.get("location_text") or event.get("latitude") is not None or event.get("longitude") is not None:
+            source_location = {"text": event.get("location_text"),
+                               "latitude": event.get("latitude"), "longitude": event.get("longitude"),
+                               "source": event.get("source"),
+                               "provenance": event.get("coordinate_provenance") or
+                                   "authoritative_structured_metadata",
+                               "coordinate_source": "source_text_gps" if
+                                   event.get("coordinate_provenance") == "explicit_source_text_gps" else
+                                   "source_metadata"}
+        result["source_location"] = source_location
+
         structured = None
         try:
             from nlp.extractor import extract_hybrid, build_structured_record
             structured = build_structured_record(extract_hybrid(event["text"]))
             structured["text"] = event["text"]
+            structured["nlp_location_entities"] = structured.get("location", [])
+            type_resolution = resolve_disaster_type(
+                event, result["intelligence"].get("phase3"), structured.get("disaster_type"))
+            result["type_resolution"] = type_resolution
+            # Structured source location is operational input, not an NLP entity.
+            if source_location and source_location.get("text"):
+                structured["location"] = source_location["text"]
+            structured["type_resolution"] = type_resolution
+            structured["source_location"] = source_location
             phase_status["phase4"] = "completed"
             result["intelligence"]["phase4"] = structured
         except Exception as exc:
             phase_status["phase4"] = "failed"
             errors.append(_error("phase4", exc))
 
+        if type_resolution.get("warning"):
+            result["operational_warnings"].append({"phase": "type_resolution",
+                                                   "warning": type_resolution["warning"]})
+
         enriched = None
         if structured is not None:
             try:
                 from intelligence import enrich_incident
-                enriched = enrich_incident(structured)
+                phase5_input = dict(structured)
+                if type_resolution.get("canonical_disaster_type"):
+                    phase5_input["disaster_type"] = type_resolution["canonical_disaster_type"]
+                elif type_resolution.get("source_disaster_type"):
+                    # Do not pass a Phase 4/3 guess as an authoritative type
+                    # when malformed/unknown authoritative source evidence exists.
+                    phase5_input["disaster_type"] = None
+                enriched = enrich_incident(phase5_input)
+                enriched["type_resolution"] = type_resolution
+                enriched["source_disaster_type"] = type_resolution.get("source_disaster_type")
+                enriched["phase4_disaster_type"] = type_resolution.get("phase4_disaster_type")
+                enriched["ml_disaster_type"] = type_resolution.get("ml_disaster_type")
+                enriched["canonical_disaster_type"] = type_resolution.get("canonical_disaster_type")
+                enriched["source_location"] = source_location
+                enriched["nlp_location_entities"] = structured.get("nlp_location_entities", [])
+                if source_location:
+                    enriched["location_text"] = source_location.get("text")
+                    enriched["source_latitude"] = source_location.get("latitude")
+                    enriched["source_longitude"] = source_location.get("longitude")
                 result["intelligence"]["phase5"] = enriched
                 phase_status["phase5"] = "completed"
             except Exception as exc:
@@ -73,6 +120,10 @@ class IntelligencePipeline:
                 from gis import run_spatial_pipeline
                 spatial_result = run_spatial_pipeline([enriched], geocoder=self.geocoder, enrich_phase5=False)
                 spatial = spatial_result["incidents"][0]
+                spatial.update({key: enriched[key] for key in (
+                    "type_resolution", "source_disaster_type", "phase4_disaster_type", "ml_disaster_type",
+                    "canonical_disaster_type", "source_location", "nlp_location_entities") if key in enriched})
+                spatial_result["incidents"][0] = spatial
                 result["intelligence"]["phase6"] = spatial_result
                 phase_status["phase6"] = "completed"
             except Exception as exc:

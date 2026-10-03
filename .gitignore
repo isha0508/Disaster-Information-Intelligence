@@ -30,18 +30,26 @@ data/raw/*
 !data/raw/.gitkeep
 data/processed/*
 !data/processed/.gitkeep
-*.csv
-*.tsv
-*.jsonl
-*.parquet
-*.h5
-*.hdf5
-*.zip
-*.tar.gz
-*.gz
-
-# Allow sample data if needed, but ignore large data
+data/sample/*
 !data/sample/.gitkeep
+
+# Specific large data file extensions (but allow small config/metadata files)
+# Only ignore these patterns in data/ and evaluation/ directories
+data/*.csv
+data/*.tsv
+data/*.jsonl
+data/*.parquet
+data/*.h5
+data/*.hdf5
+data/*.zip
+data/*.tar.gz
+data/*.gz
+
+# Allow critical small JSON/CSV files in evaluation/ and docs/
+!evaluation/*.json
+!evaluation/*.csv
+!docs/*.json
+!docs/*.csv
 
 # ==================================================
 # Model Checkpoints and Weights
@@ -59,10 +67,37 @@ models/*
 *.weights
 
 # ==================================================
+# Local persistent databases
+# ==================================================
+*.db
+*.sqlite
+*.sqlite3
+data/database/
+
+# ==================================================
 # Jupyter Notebook & Profiling
 # ==================================================
 .ipynb_checkpoints/
 *-checkpoint.ipynb
+
+# Ignore large notebook-generated artifacts
+notebooks/*/*.safetensors
+notebooks/*/*.pt
+notebooks/*/*.pth
+notebooks/*/*.bin
+notebooks/*/*.pkl
+notebooks/*/*.joblib
+notebooks/*/*.csv
+notebooks/*/*.jsonl
+notebooks/*/*.txt
+notebooks/*/*.png
+notebooks/*/*.jpg
+notebooks/*/*.jpeg
+
+# Keep small config files
+!notebooks/*/*.json
+!notebooks/*/*.yml
+!notebooks/*/*.yaml
 
 # ==================================================
 # IDE and Editor Files
@@ -99,6 +134,47 @@ docs/disaster_type_dataset_requirement.md
 # ==================================================
 evaluation/results/
 evaluation/figures/
+evaluation/__pycache__/
+
+# Keep final phase demonstration results
+!evaluation/phase5_demonstration_results.json
+!evaluation/phase6_demonstration_results.json
+!evaluation/phase7_demonstration_results.json
+!evaluation/phase8_demonstration_results.json
+!evaluation/phase9_demonstration_results.json
+
+# Keep Phase 11 demonstration results (database, dashboard, monitoring, integration, deployment)
+!evaluation/phase11_1_database_demonstration_results.json
+!evaluation/phase11_5_dashboard_demonstration_results.json
+!evaluation/phase11_6_monitoring_demonstration_results.json
+!evaluation/phase11_7_mastodon_demonstration_results.json
+!evaluation/phase11_8_full_integration_demonstration_results.json
+!evaluation/phase11_9_deployment_smoke_results.json
+!evaluation/phase11_integration_demonstration_results.json
+
+# Ignore large V2/V3 evaluation result dumps (36MB+)
+evaluation/phase3_v2_baseline_results.json
+evaluation/phase3_v2_results.json
+evaluation/phase3_v3_results.*
+
+# Ignore large manual adjudication files
+evaluation/phase11_7_mastodon_manual_adjudication.json
+evaluation/phase11_7_mastodon_manual_adjudication_results.json
+evaluation/phase11_7_mastodon_manual_adjudication.csv
+
+# Ignore old deleted Phase 3 evaluation outputs (already deleted from tree)
+evaluation/phase3/humanitarian_distilbert/classification_report_test.txt
+evaluation/phase3/humanitarian_distilbert/transformer_results.json
+evaluation/phase3/humanitarian_tfidf/humanitarian_results.json
+evaluation/phase3/relevance/classification_report.txt
+evaluation/phase3/relevance/relevance_baseline_results.json
+evaluation/phase4/phase4_final_summary.json
+
+# Ignore old deleted notebook evaluation outputs (already deleted from tree)
+notebooks/phase_3/distilbert/classification_report_test.txt
+notebooks/phase_3/distilbert/transformer_results.json
+notebooks/phase_3/relevance_baseline/classification_report.txt
+notebooks/phase_3/relevance_baseline/relevance_baseline_results.json
 
 # ==================================================
 # Logs, Temp, and Test Artifacts
@@ -108,5 +184,32 @@ evaluation/figures/
 temp/
 tmp/
 .pytest_cache/
+/.pytest_tmp*/
+/.pytest-location-*/
+/.pytest-runtime-*/
 .coverage
+coverage.xml
 htmlcov/
+.ruff_cache/
+.mypy_cache/
+*.pid
+*.sqlite-shm
+*.sqlite-wal
+*.egg-info/
+
+# ==================================================
+# Training Artifacts (keep source code, ignore outputs)
+# ==================================================
+training/*/*.safetensors
+training/*/*.pt
+training/*/*.pth
+training/*/*.bin
+training/*/*.pkl
+training/*/*.joblib
+training/*/*.csv
+training/*/*.jsonl
+training/*/*.txt
+training/*/*.png
+training/*/*_results.json
+training/*/*_results.*
+training/*/__pycache__/

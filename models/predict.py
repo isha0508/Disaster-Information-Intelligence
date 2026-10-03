@@ -29,10 +29,11 @@ sys.path.insert(0, str(ROOT))
 from preprocessing.text_cleaner import clean_text
 from preprocessing.humaid_loader import HUMAID_CLASSES, RELEVANCE_NAMES
 
-# Canonical transformer checkpoints live with the Phase 3 research dumps.
-# They are NOT the smoke-test folder under models/_smoke_test/.
+# Canonical humanitarian weights remain with the Phase 3 research dump. The
+# disaster-type production candidate is the validated V2 checkpoint; V1 stays
+# intact at notebooks/phase_3/disaster_type/ for rollback.
 CANONICAL_HUMANITARIAN_DISTILBERT = ROOT / "notebooks" / "phase_3" / "distilbert"
-CANONICAL_DISASTER_TYPE = ROOT / "notebooks" / "phase_3" / "disaster_type"
+CANONICAL_DISASTER_TYPE = ROOT / "models" / "phase_3_v2" / "best_checkpoint"
 SMOKE_TRANSFORMER_HUMANITARIAN = (
     ROOT / "models" / "_smoke_test" / "transformer_humanitarian" / "best_model"
 )
@@ -319,8 +320,10 @@ class TransformerHumanitarianPredictor(BasePredictor):
 
 class DisasterTypePredictor(BasePredictor):
     """
-    Predicts disaster type using the canonical Phase 3 DistilBERT checkpoint
-    (notebooks/phase_3/disaster_type/). Classes: earthquake, fire, flood, hurricane.
+    Predicts disaster type using the validated canonical Phase 3 V2 DistilBERT
+    checkpoint (models/phase_3_v2/best_checkpoint/). V1 is retained at
+    notebooks/phase_3/disaster_type/ for rollback. Classes: earthquake, fire,
+    flood, hurricane.
 
     If the large checkpoint is not present locally, predict() returns an explicit
     CHECKPOINT_UNAVAILABLE error rather than a stub NOT_IMPLEMENTED result.

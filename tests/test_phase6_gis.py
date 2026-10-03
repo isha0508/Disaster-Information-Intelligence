@@ -140,7 +140,7 @@ def test_malformed_record_and_geocoder_error_safe():
         def geocode(self, text):
             raise RuntimeError("offline")
     out = enrich_spatial_record({"location": [None, 12]}, Broken())
-    assert out["geocoding_status"] == "failed"
+    assert out["geocoding_status"] == "unresolved"
     assert out["latitude"] is None
     json.dumps(out)
 

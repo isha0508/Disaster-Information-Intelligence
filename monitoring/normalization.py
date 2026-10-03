@@ -3,6 +3,7 @@
 from datetime import datetime, timezone
 import hashlib
 import json
+import math
 import re
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
@@ -24,6 +25,8 @@ def sanitize_source_value(value, stringify_unknown=True):
         return cleaned
     if isinstance(value, (list, tuple)):
         return [sanitize_source_value(item, stringify_unknown) for item in value]
+    if isinstance(value, float) and not math.isfinite(value):
+        return None
     if value is None or isinstance(value, (str, int, float, bool)):
         return value
     if isinstance(value, datetime):
@@ -99,24 +102,47 @@ def normalize_event(raw, ingested_at=None):
         raise ValueError("metadata must contain JSON-safe values") from exc
     original = sanitize_source_value(dict(raw))
     source_url = sanitize_source_value({"source_url": raw.get("source_url", raw.get("url"))}).get("source_url")
+    ingested_timestamp = normalize_timestamp(ingested_at) or utc_now()
+    retrieved_timestamp = normalize_timestamp(raw.get("retrieved_at")) or ingested_timestamp
+    updated_timestamp = normalize_timestamp(raw.get("updated_at", raw.get("observed_at")))
     normalized = {
         "source": source, "source_event_id": source_event_id,
+        "title": normalize_content(raw.get("title")),
         "text": text, "original_text": content,
         "observed_at": normalize_timestamp(raw.get("observed_at")),
+        "created_at": normalize_timestamp(raw.get("created_at")),
+        "event_timestamp": normalize_timestamp(raw.get("event_timestamp")),
         "published_at": normalize_timestamp(raw.get("published_at")),
+        "updated_at": updated_timestamp,
+        "retrieved_at": retrieved_timestamp,
         "raw_observed_at": raw.get("observed_at"),
         "raw_published_at": raw.get("published_at"),
-        "ingested_at": normalize_timestamp(ingested_at) or utc_now(),
+        "ingested_at": ingested_timestamp,
         "source_url": source_url,
+        "url": source_url,
+        "location_text": normalize_content(raw.get("location_text")),
+        "latitude": raw.get("latitude"), "longitude": raw.get("longitude"),
+        "coordinate_provenance": raw.get("coordinate_provenance"),
+        "disaster_type": raw.get("disaster_type"),
         "metadata": metadata,
         "provenance": {"source": source, "source_type": raw.get("source_type"),
                        "source_event_id": source_event_id,
                        "source_url": source_url,
                        "observed_at": normalize_timestamp(raw.get("observed_at")),
+                       "event_timestamp": normalize_timestamp(raw.get("event_timestamp")),
                        "published_at": normalize_timestamp(raw.get("published_at")),
-                       "ingested_at": normalize_timestamp(ingested_at) or utc_now(),
-                       "adapter": raw.get("adapter")},
+                       "updated_at": updated_timestamp,
+                       "created_at": normalize_timestamp(raw.get("created_at")),
+                       "retrieved_at": retrieved_timestamp,
+                       "ingested_at": ingested_timestamp,
+                       "adapter": raw.get("adapter"),
+                       "adapter_version": raw.get("adapter_version"),
+                       "coordinate_provenance": raw.get("coordinate_provenance"),
+                       "processing_status": "NORMALIZED"},
         "raw_event": original,
     }
     normalized["content_fingerprint"] = hashlib.sha256(text.casefold().encode("utf-8")).hexdigest()
+    revision_basis = json.dumps({"text": text, "metadata": metadata}, sort_keys=True,
+                                ensure_ascii=False, separators=(",", ":"), allow_nan=False)
+    normalized["revision_fingerprint"] = hashlib.sha256(revision_basis.encode("utf-8")).hexdigest()
     return normalized

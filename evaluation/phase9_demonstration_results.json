@@ -1,0 +1,2762 @@
+{
+  "demonstration": {
+    "phase": 9,
+    "source_type": "synthetic_demo",
+    "synthetic_data": true,
+    "offline": true,
+    "deterministic_clock": true,
+    "coordinates_are_synthetic_fixture_data": true,
+    "real_world_geographic_accuracy_validated": false,
+    "scientific_disaster_forecasting": false,
+    "autonomous_dispatch": false
+  },
+  "scenarios": [
+    {
+      "scenario": "1_no_alert",
+      "expected": "no operational alert",
+      "result": {
+        "event_id": "evt-low",
+        "event_state": "NEW",
+        "source": "synthetic_phase9_demo",
+        "source_type": "synthetic",
+        "provenance": {
+          "source": "synthetic_phase9_demo",
+          "source_event_id": "evt-low",
+          "source_type": "synthetic"
+        },
+        "intelligence": {
+          "phase5": {
+            "incident_id": "inc-low",
+            "priority_score": 8,
+            "severity_score": 10,
+            "urgency_score": 5,
+            "confidence_score": 70,
+            "confidence_level": "MODERATE",
+            "decision_flags": [],
+            "requests": [],
+            "resource_estimates": {
+              "explicit_requests": {
+                "raw_mentions": []
+              }
+            }
+          },
+          "phase6": {},
+          "phase7": {
+            "summary": "Synthetic grounded demonstration context",
+            "uncertainties": [
+              "Synthetic fixture; not a verified field report."
+            ]
+          }
+        },
+        "incident_intelligence": {
+          "incident_id": "inc-low",
+          "priority_score": 8,
+          "severity_score": 10,
+          "urgency_score": 5,
+          "confidence_score": 70,
+          "confidence_level": "MODERATE",
+          "decision_flags": [],
+          "requests": [],
+          "resource_estimates": {
+            "explicit_requests": {
+              "raw_mentions": []
+            }
+          }
+        },
+        "spatial_context": {
+          "location_text": null,
+          "normalized_location": null,
+          "latitude": null,
+          "longitude": null,
+          "coordinates": null,
+          "geocoding_status": "unknown",
+          "geocoding_source": null,
+          "spatial_cluster_id": null,
+          "spatial_area_id": null,
+          "spatial_priority_score": null,
+          "hotspot": false,
+          "hotspot_id": null,
+          "hotspot_score": null,
+          "hotspot_incident_count": null,
+          "spatial_metadata": {}
+        },
+        "grounded_intelligence": {
+          "summary": "Synthetic grounded demonstration context",
+          "uncertainties": [
+            "Synthetic fixture; not a verified field report."
+          ]
+        },
+        "alert_decision": {
+          "should_alert": false,
+          "alert_level": "LOW",
+          "alert_type": "NO_ALERT",
+          "incident_id": "inc-low",
+          "event_id": "evt-low",
+          "priority_score": 8.0,
+          "severity_score": 10.0,
+          "urgency_score": 5.0,
+          "confidence_score": 70.0,
+          "relevant_flags": [],
+          "rule_results": [
+            {
+              "rule": "critical_priority",
+              "triggered": false,
+              "reason": "Priority score does not meet CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_priority",
+              "triggered": false,
+              "reason": "Priority score does not meet HIGH band 50.0–75.0."
+            },
+            {
+              "rule": "medium_priority",
+              "triggered": false,
+              "reason": "Priority score does not meet MEDIUM band 25.0–50.0."
+            },
+            {
+              "rule": "critical_urgency",
+              "triggered": false,
+              "reason": "Urgency score does not meet CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_urgency",
+              "triggered": false,
+              "reason": "Urgency score does not meet HIGH band 50.0–75.0."
+            },
+            {
+              "rule": "critical_severity",
+              "triggered": false,
+              "reason": "Severity score does not meet CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_severity",
+              "triggered": false,
+              "reason": "Severity score does not meet HIGH band 50.0–75.0."
+            },
+            {
+              "rule": "immediate_rescue",
+              "triggered": false,
+              "reason": "No Phase 5 IMMEDIATE_RESCUE flag is present."
+            },
+            {
+              "rule": "critical_priority_flag",
+              "triggered": false,
+              "reason": "No Phase 5 CRITICAL_PRIORITY flag is present."
+            },
+            {
+              "rule": "urgent_resource_request",
+              "triggered": false,
+              "reason": "No configured urgent resource request evidence is present."
+            },
+            {
+              "rule": "spatial_hotspot",
+              "triggered": false,
+              "reason": "No Phase 6 hotspot or qualifying spatial-priority evidence is present."
+            }
+          ],
+          "trigger_reasons": [],
+          "spatial_context": {
+            "location_text": null,
+            "normalized_location": null,
+            "latitude": null,
+            "longitude": null,
+            "coordinates": null,
+            "geocoding_status": "unknown",
+            "geocoding_source": null,
+            "spatial_cluster_id": null,
+            "spatial_area_id": null,
+            "spatial_priority_score": null,
+            "hotspot": false,
+            "hotspot_id": null,
+            "hotspot_score": null,
+            "hotspot_incident_count": null,
+            "spatial_metadata": {}
+          },
+          "uncertainty": [
+            "Verified coordinates are unavailable (geocoding status: unknown)."
+          ],
+          "suppressed": false,
+          "suppression_reason": null,
+          "is_escalation": false,
+          "escalation_reasons": [],
+          "deescalated": false,
+          "alert_id": null
+        },
+        "alert_record": null,
+        "alert_status": "NO_ALERT",
+        "alert_evaluated_at": "2026-01-01T00:00:00Z",
+        "alert_suppression": {}
+      }
+    },
+    {
+      "scenario": "2_high_alert",
+      "expected": "HIGH alert",
+      "result": {
+        "event_id": "evt-high",
+        "event_state": "NEW",
+        "source": "synthetic_phase9_demo",
+        "source_type": "synthetic",
+        "provenance": {
+          "source": "synthetic_phase9_demo",
+          "source_event_id": "evt-high",
+          "source_type": "synthetic"
+        },
+        "intelligence": {
+          "phase5": {
+            "incident_id": "inc-high",
+            "priority_score": 58,
+            "severity_score": 60,
+            "urgency_score": 52,
+            "confidence_score": 70,
+            "confidence_level": "MODERATE",
+            "decision_flags": [],
+            "requests": [],
+            "resource_estimates": {
+              "explicit_requests": {
+                "raw_mentions": []
+              }
+            }
+          },
+          "phase6": {},
+          "phase7": {
+            "summary": "Synthetic grounded demonstration context",
+            "uncertainties": [
+              "Synthetic fixture; not a verified field report."
+            ]
+          }
+        },
+        "incident_intelligence": {
+          "incident_id": "inc-high",
+          "priority_score": 58,
+          "severity_score": 60,
+          "urgency_score": 52,
+          "confidence_score": 70,
+          "confidence_level": "MODERATE",
+          "decision_flags": [],
+          "requests": [],
+          "resource_estimates": {
+            "explicit_requests": {
+              "raw_mentions": []
+            }
+          }
+        },
+        "spatial_context": {
+          "location_text": null,
+          "normalized_location": null,
+          "latitude": null,
+          "longitude": null,
+          "coordinates": null,
+          "geocoding_status": "unknown",
+          "geocoding_source": null,
+          "spatial_cluster_id": null,
+          "spatial_area_id": null,
+          "spatial_priority_score": null,
+          "hotspot": false,
+          "hotspot_id": null,
+          "hotspot_score": null,
+          "hotspot_incident_count": null,
+          "spatial_metadata": {}
+        },
+        "grounded_intelligence": {
+          "summary": "Synthetic grounded demonstration context",
+          "uncertainties": [
+            "Synthetic fixture; not a verified field report."
+          ]
+        },
+        "alert_decision": {
+          "should_alert": true,
+          "alert_level": "HIGH",
+          "alert_type": "HIGH_PRIORITY",
+          "incident_id": "inc-high",
+          "event_id": "evt-high",
+          "priority_score": 58.0,
+          "severity_score": 60.0,
+          "urgency_score": 52.0,
+          "confidence_score": 70.0,
+          "relevant_flags": [],
+          "rule_results": [
+            {
+              "rule": "critical_priority",
+              "triggered": false,
+              "reason": "Priority score does not meet CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_priority",
+              "triggered": true,
+              "reason": "Priority score 58.0 meets HIGH threshold 50.0."
+            },
+            {
+              "rule": "medium_priority",
+              "triggered": false,
+              "reason": "Priority score does not meet MEDIUM band 25.0–50.0."
+            },
+            {
+              "rule": "critical_urgency",
+              "triggered": false,
+              "reason": "Urgency score does not meet CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_urgency",
+              "triggered": true,
+              "reason": "Urgency score 52.0 meets HIGH threshold 50.0."
+            },
+            {
+              "rule": "critical_severity",
+              "triggered": false,
+              "reason": "Severity score does not meet CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_severity",
+              "triggered": true,
+              "reason": "Severity score 60.0 meets HIGH threshold 50.0."
+            },
+            {
+              "rule": "immediate_rescue",
+              "triggered": false,
+              "reason": "No Phase 5 IMMEDIATE_RESCUE flag is present."
+            },
+            {
+              "rule": "critical_priority_flag",
+              "triggered": false,
+              "reason": "No Phase 5 CRITICAL_PRIORITY flag is present."
+            },
+            {
+              "rule": "urgent_resource_request",
+              "triggered": false,
+              "reason": "No configured urgent resource request evidence is present."
+            },
+            {
+              "rule": "spatial_hotspot",
+              "triggered": false,
+              "reason": "No Phase 6 hotspot or qualifying spatial-priority evidence is present."
+            }
+          ],
+          "trigger_reasons": [
+            {
+              "rule": "high_priority",
+              "triggered": true,
+              "reason": "Priority score 58.0 meets HIGH threshold 50.0."
+            },
+            {
+              "rule": "high_urgency",
+              "triggered": true,
+              "reason": "Urgency score 52.0 meets HIGH threshold 50.0."
+            },
+            {
+              "rule": "high_severity",
+              "triggered": true,
+              "reason": "Severity score 60.0 meets HIGH threshold 50.0."
+            }
+          ],
+          "spatial_context": {
+            "location_text": null,
+            "normalized_location": null,
+            "latitude": null,
+            "longitude": null,
+            "coordinates": null,
+            "geocoding_status": "unknown",
+            "geocoding_source": null,
+            "spatial_cluster_id": null,
+            "spatial_area_id": null,
+            "spatial_priority_score": null,
+            "hotspot": false,
+            "hotspot_id": null,
+            "hotspot_score": null,
+            "hotspot_incident_count": null,
+            "spatial_metadata": {}
+          },
+          "uncertainty": [
+            "Verified coordinates are unavailable (geocoding status: unknown)."
+          ],
+          "suppressed": false,
+          "suppression_reason": null,
+          "is_escalation": false,
+          "escalation_reasons": [],
+          "deescalated": false,
+          "alert_id": "alt_7ef0fda30920a9b7b4a4ea6f"
+        },
+        "alert_record": {
+          "alert_id": "alt_7ef0fda30920a9b7b4a4ea6f",
+          "incident_id": "inc-high",
+          "event_id": "evt-high",
+          "alert_level": "HIGH",
+          "alert_type": "HIGH_PRIORITY",
+          "status": "ACTIVE",
+          "created_at": "2026-01-01T00:00:00Z",
+          "priority_score": 58.0,
+          "severity_score": 60.0,
+          "urgency_score": 52.0,
+          "confidence_score": 70.0,
+          "trigger_reasons": [
+            {
+              "rule": "high_priority",
+              "triggered": true,
+              "reason": "Priority score 58.0 meets HIGH threshold 50.0."
+            },
+            {
+              "rule": "high_urgency",
+              "triggered": true,
+              "reason": "Urgency score 52.0 meets HIGH threshold 50.0."
+            },
+            {
+              "rule": "high_severity",
+              "triggered": true,
+              "reason": "Severity score 60.0 meets HIGH threshold 50.0."
+            }
+          ],
+          "provenance": {
+            "source": "synthetic_phase9_demo",
+            "source_event_id": "evt-high",
+            "source_type": "synthetic"
+          },
+          "spatial_context": {
+            "location_text": null,
+            "normalized_location": null,
+            "latitude": null,
+            "longitude": null,
+            "coordinates": null,
+            "geocoding_status": "unknown",
+            "geocoding_source": null,
+            "spatial_cluster_id": null,
+            "spatial_area_id": null,
+            "spatial_priority_score": null,
+            "hotspot": false,
+            "hotspot_id": null,
+            "hotspot_score": null,
+            "hotspot_incident_count": null,
+            "spatial_metadata": {}
+          },
+          "uncertainty": [
+            "Verified coordinates are unavailable (geocoding status: unknown)."
+          ],
+          "escalation": {
+            "is_escalation": false,
+            "reasons": [],
+            "previous_alert_level": null
+          },
+          "suppression": {},
+          "notification": {
+            "attempted": true,
+            "alert_id": "alt_7ef0fda30920a9b7b4a4ea6f",
+            "attempt": 1,
+            "provider": "mock_notification",
+            "status": "sent"
+          },
+          "grounded_intelligence": {
+            "summary": "Synthetic grounded demonstration context",
+            "uncertainties": [
+              "Synthetic fixture; not a verified field report."
+            ]
+          }
+        },
+        "alert_status": "CREATED",
+        "alert_evaluated_at": "2026-01-01T00:00:00Z",
+        "alert_suppression": {}
+      }
+    },
+    {
+      "scenario": "3_critical_rescue",
+      "expected": "CRITICAL alert",
+      "result": {
+        "event_id": "evt-critical",
+        "event_state": "NEW",
+        "source": "synthetic_phase9_demo",
+        "source_type": "synthetic",
+        "provenance": {
+          "source": "synthetic_phase9_demo",
+          "source_event_id": "evt-critical",
+          "source_type": "synthetic"
+        },
+        "intelligence": {
+          "phase5": {
+            "incident_id": "inc-critical",
+            "priority_score": 82,
+            "severity_score": 80,
+            "urgency_score": 88,
+            "confidence_score": 70,
+            "confidence_level": "MODERATE",
+            "decision_flags": [
+              "IMMEDIATE_RESCUE",
+              "CASUALTY_REPORT"
+            ],
+            "requests": [],
+            "resource_estimates": {
+              "explicit_requests": {
+                "raw_mentions": []
+              }
+            }
+          },
+          "phase6": {},
+          "phase7": {
+            "summary": "Synthetic grounded demonstration context",
+            "uncertainties": [
+              "Synthetic fixture; not a verified field report."
+            ]
+          }
+        },
+        "incident_intelligence": {
+          "incident_id": "inc-critical",
+          "priority_score": 82,
+          "severity_score": 80,
+          "urgency_score": 88,
+          "confidence_score": 70,
+          "confidence_level": "MODERATE",
+          "decision_flags": [
+            "IMMEDIATE_RESCUE",
+            "CASUALTY_REPORT"
+          ],
+          "requests": [],
+          "resource_estimates": {
+            "explicit_requests": {
+              "raw_mentions": []
+            }
+          }
+        },
+        "spatial_context": {
+          "location_text": null,
+          "normalized_location": null,
+          "latitude": null,
+          "longitude": null,
+          "coordinates": null,
+          "geocoding_status": "unknown",
+          "geocoding_source": null,
+          "spatial_cluster_id": null,
+          "spatial_area_id": null,
+          "spatial_priority_score": null,
+          "hotspot": false,
+          "hotspot_id": null,
+          "hotspot_score": null,
+          "hotspot_incident_count": null,
+          "spatial_metadata": {}
+        },
+        "grounded_intelligence": {
+          "summary": "Synthetic grounded demonstration context",
+          "uncertainties": [
+            "Synthetic fixture; not a verified field report."
+          ]
+        },
+        "alert_decision": {
+          "should_alert": true,
+          "alert_level": "CRITICAL",
+          "alert_type": "CRITICAL_PRIORITY",
+          "incident_id": "inc-critical",
+          "event_id": "evt-critical",
+          "priority_score": 82.0,
+          "severity_score": 80.0,
+          "urgency_score": 88.0,
+          "confidence_score": 70.0,
+          "relevant_flags": [
+            "IMMEDIATE_RESCUE",
+            "CASUALTY_REPORT"
+          ],
+          "rule_results": [
+            {
+              "rule": "critical_priority",
+              "triggered": true,
+              "reason": "Priority score 82.0 meets CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_priority",
+              "triggered": false,
+              "reason": "Priority score does not meet HIGH band 50.0–75.0."
+            },
+            {
+              "rule": "medium_priority",
+              "triggered": false,
+              "reason": "Priority score does not meet MEDIUM band 25.0–50.0."
+            },
+            {
+              "rule": "critical_urgency",
+              "triggered": true,
+              "reason": "Urgency score 88.0 meets CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_urgency",
+              "triggered": false,
+              "reason": "Urgency score does not meet HIGH band 50.0–75.0."
+            },
+            {
+              "rule": "critical_severity",
+              "triggered": true,
+              "reason": "Severity score 80.0 meets CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_severity",
+              "triggered": false,
+              "reason": "Severity score does not meet HIGH band 50.0–75.0."
+            },
+            {
+              "rule": "immediate_rescue",
+              "triggered": true,
+              "reason": "Phase 5 IMMEDIATE_RESCUE flag is present."
+            },
+            {
+              "rule": "critical_priority_flag",
+              "triggered": false,
+              "reason": "No Phase 5 CRITICAL_PRIORITY flag is present."
+            },
+            {
+              "rule": "urgent_resource_request",
+              "triggered": false,
+              "reason": "No configured urgent resource request evidence is present."
+            },
+            {
+              "rule": "spatial_hotspot",
+              "triggered": false,
+              "reason": "No Phase 6 hotspot or qualifying spatial-priority evidence is present."
+            }
+          ],
+          "trigger_reasons": [
+            {
+              "rule": "critical_priority",
+              "triggered": true,
+              "reason": "Priority score 82.0 meets CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "critical_urgency",
+              "triggered": true,
+              "reason": "Urgency score 88.0 meets CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "critical_severity",
+              "triggered": true,
+              "reason": "Severity score 80.0 meets CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "immediate_rescue",
+              "triggered": true,
+              "reason": "Phase 5 IMMEDIATE_RESCUE flag is present."
+            }
+          ],
+          "spatial_context": {
+            "location_text": null,
+            "normalized_location": null,
+            "latitude": null,
+            "longitude": null,
+            "coordinates": null,
+            "geocoding_status": "unknown",
+            "geocoding_source": null,
+            "spatial_cluster_id": null,
+            "spatial_area_id": null,
+            "spatial_priority_score": null,
+            "hotspot": false,
+            "hotspot_id": null,
+            "hotspot_score": null,
+            "hotspot_incident_count": null,
+            "spatial_metadata": {}
+          },
+          "uncertainty": [
+            "Verified coordinates are unavailable (geocoding status: unknown)."
+          ],
+          "suppressed": false,
+          "suppression_reason": null,
+          "is_escalation": false,
+          "escalation_reasons": [],
+          "deescalated": false,
+          "alert_id": "alt_1901c93c8bc3f29c578a5827"
+        },
+        "alert_record": {
+          "alert_id": "alt_1901c93c8bc3f29c578a5827",
+          "incident_id": "inc-critical",
+          "event_id": "evt-critical",
+          "alert_level": "CRITICAL",
+          "alert_type": "CRITICAL_PRIORITY",
+          "status": "ACTIVE",
+          "created_at": "2026-01-01T00:00:00Z",
+          "priority_score": 82.0,
+          "severity_score": 80.0,
+          "urgency_score": 88.0,
+          "confidence_score": 70.0,
+          "trigger_reasons": [
+            {
+              "rule": "critical_priority",
+              "triggered": true,
+              "reason": "Priority score 82.0 meets CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "critical_urgency",
+              "triggered": true,
+              "reason": "Urgency score 88.0 meets CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "critical_severity",
+              "triggered": true,
+              "reason": "Severity score 80.0 meets CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "immediate_rescue",
+              "triggered": true,
+              "reason": "Phase 5 IMMEDIATE_RESCUE flag is present."
+            }
+          ],
+          "provenance": {
+            "source": "synthetic_phase9_demo",
+            "source_event_id": "evt-critical",
+            "source_type": "synthetic"
+          },
+          "spatial_context": {
+            "location_text": null,
+            "normalized_location": null,
+            "latitude": null,
+            "longitude": null,
+            "coordinates": null,
+            "geocoding_status": "unknown",
+            "geocoding_source": null,
+            "spatial_cluster_id": null,
+            "spatial_area_id": null,
+            "spatial_priority_score": null,
+            "hotspot": false,
+            "hotspot_id": null,
+            "hotspot_score": null,
+            "hotspot_incident_count": null,
+            "spatial_metadata": {}
+          },
+          "uncertainty": [
+            "Verified coordinates are unavailable (geocoding status: unknown)."
+          ],
+          "escalation": {
+            "is_escalation": false,
+            "reasons": [],
+            "previous_alert_level": null
+          },
+          "suppression": {},
+          "notification": {
+            "attempted": true,
+            "alert_id": "alt_1901c93c8bc3f29c578a5827",
+            "attempt": 1,
+            "provider": "mock_notification",
+            "status": "sent"
+          },
+          "grounded_intelligence": {
+            "summary": "Synthetic grounded demonstration context",
+            "uncertainties": [
+              "Synthetic fixture; not a verified field report."
+            ]
+          }
+        },
+        "alert_status": "CREATED",
+        "alert_evaluated_at": "2026-01-01T00:00:00Z",
+        "alert_suppression": {}
+      }
+    },
+    {
+      "scenario": "4_escalation",
+      "expected": "no alert → HIGH → CRITICAL escalation",
+      "history": [
+        {
+          "event_id": "evt-update",
+          "event_state": "NEW",
+          "source": "synthetic_phase9_demo",
+          "source_type": "synthetic",
+          "provenance": {
+            "source": "synthetic_phase9_demo",
+            "source_event_id": "evt-update",
+            "source_type": "synthetic"
+          },
+          "intelligence": {
+            "phase5": {
+              "incident_id": "inc-update",
+              "priority_score": 8,
+              "severity_score": 10,
+              "urgency_score": 5,
+              "confidence_score": 70,
+              "confidence_level": "MODERATE",
+              "decision_flags": [],
+              "requests": [],
+              "resource_estimates": {
+                "explicit_requests": {
+                  "raw_mentions": []
+                }
+              }
+            },
+            "phase6": {},
+            "phase7": {
+              "summary": "Synthetic grounded demonstration context",
+              "uncertainties": [
+                "Synthetic fixture; not a verified field report."
+              ]
+            }
+          },
+          "incident_intelligence": {
+            "incident_id": "inc-update",
+            "priority_score": 8,
+            "severity_score": 10,
+            "urgency_score": 5,
+            "confidence_score": 70,
+            "confidence_level": "MODERATE",
+            "decision_flags": [],
+            "requests": [],
+            "resource_estimates": {
+              "explicit_requests": {
+                "raw_mentions": []
+              }
+            }
+          },
+          "spatial_context": {
+            "location_text": null,
+            "normalized_location": null,
+            "latitude": null,
+            "longitude": null,
+            "coordinates": null,
+            "geocoding_status": "unknown",
+            "geocoding_source": null,
+            "spatial_cluster_id": null,
+            "spatial_area_id": null,
+            "spatial_priority_score": null,
+            "hotspot": false,
+            "hotspot_id": null,
+            "hotspot_score": null,
+            "hotspot_incident_count": null,
+            "spatial_metadata": {}
+          },
+          "grounded_intelligence": {
+            "summary": "Synthetic grounded demonstration context",
+            "uncertainties": [
+              "Synthetic fixture; not a verified field report."
+            ]
+          },
+          "alert_decision": {
+            "should_alert": false,
+            "alert_level": "LOW",
+            "alert_type": "NO_ALERT",
+            "incident_id": "inc-update",
+            "event_id": "evt-update",
+            "priority_score": 8.0,
+            "severity_score": 10.0,
+            "urgency_score": 5.0,
+            "confidence_score": 70.0,
+            "relevant_flags": [],
+            "rule_results": [
+              {
+                "rule": "critical_priority",
+                "triggered": false,
+                "reason": "Priority score does not meet CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "high_priority",
+                "triggered": false,
+                "reason": "Priority score does not meet HIGH band 50.0–75.0."
+              },
+              {
+                "rule": "medium_priority",
+                "triggered": false,
+                "reason": "Priority score does not meet MEDIUM band 25.0–50.0."
+              },
+              {
+                "rule": "critical_urgency",
+                "triggered": false,
+                "reason": "Urgency score does not meet CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "high_urgency",
+                "triggered": false,
+                "reason": "Urgency score does not meet HIGH band 50.0–75.0."
+              },
+              {
+                "rule": "critical_severity",
+                "triggered": false,
+                "reason": "Severity score does not meet CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "high_severity",
+                "triggered": false,
+                "reason": "Severity score does not meet HIGH band 50.0–75.0."
+              },
+              {
+                "rule": "immediate_rescue",
+                "triggered": false,
+                "reason": "No Phase 5 IMMEDIATE_RESCUE flag is present."
+              },
+              {
+                "rule": "critical_priority_flag",
+                "triggered": false,
+                "reason": "No Phase 5 CRITICAL_PRIORITY flag is present."
+              },
+              {
+                "rule": "urgent_resource_request",
+                "triggered": false,
+                "reason": "No configured urgent resource request evidence is present."
+              },
+              {
+                "rule": "spatial_hotspot",
+                "triggered": false,
+                "reason": "No Phase 6 hotspot or qualifying spatial-priority evidence is present."
+              }
+            ],
+            "trigger_reasons": [],
+            "spatial_context": {
+              "location_text": null,
+              "normalized_location": null,
+              "latitude": null,
+              "longitude": null,
+              "coordinates": null,
+              "geocoding_status": "unknown",
+              "geocoding_source": null,
+              "spatial_cluster_id": null,
+              "spatial_area_id": null,
+              "spatial_priority_score": null,
+              "hotspot": false,
+              "hotspot_id": null,
+              "hotspot_score": null,
+              "hotspot_incident_count": null,
+              "spatial_metadata": {}
+            },
+            "uncertainty": [
+              "Verified coordinates are unavailable (geocoding status: unknown)."
+            ],
+            "suppressed": false,
+            "suppression_reason": null,
+            "is_escalation": false,
+            "escalation_reasons": [],
+            "deescalated": false,
+            "alert_id": null
+          },
+          "alert_record": null,
+          "alert_status": "NO_ALERT",
+          "alert_evaluated_at": "2026-01-01T00:00:00Z",
+          "alert_suppression": {}
+        },
+        {
+          "event_id": "evt-update",
+          "event_state": "UPDATED",
+          "source": "synthetic_phase9_demo",
+          "source_type": "synthetic",
+          "provenance": {
+            "source": "synthetic_phase9_demo",
+            "source_event_id": "evt-update",
+            "source_type": "synthetic"
+          },
+          "intelligence": {
+            "phase5": {
+              "incident_id": "inc-update",
+              "priority_score": 56,
+              "severity_score": 58,
+              "urgency_score": 54,
+              "confidence_score": 70,
+              "confidence_level": "MODERATE",
+              "decision_flags": [],
+              "requests": [],
+              "resource_estimates": {
+                "explicit_requests": {
+                  "raw_mentions": []
+                }
+              }
+            },
+            "phase6": {},
+            "phase7": {
+              "summary": "Synthetic grounded demonstration context",
+              "uncertainties": [
+                "Synthetic fixture; not a verified field report."
+              ]
+            }
+          },
+          "incident_intelligence": {
+            "incident_id": "inc-update",
+            "priority_score": 56,
+            "severity_score": 58,
+            "urgency_score": 54,
+            "confidence_score": 70,
+            "confidence_level": "MODERATE",
+            "decision_flags": [],
+            "requests": [],
+            "resource_estimates": {
+              "explicit_requests": {
+                "raw_mentions": []
+              }
+            }
+          },
+          "spatial_context": {
+            "location_text": null,
+            "normalized_location": null,
+            "latitude": null,
+            "longitude": null,
+            "coordinates": null,
+            "geocoding_status": "unknown",
+            "geocoding_source": null,
+            "spatial_cluster_id": null,
+            "spatial_area_id": null,
+            "spatial_priority_score": null,
+            "hotspot": false,
+            "hotspot_id": null,
+            "hotspot_score": null,
+            "hotspot_incident_count": null,
+            "spatial_metadata": {}
+          },
+          "grounded_intelligence": {
+            "summary": "Synthetic grounded demonstration context",
+            "uncertainties": [
+              "Synthetic fixture; not a verified field report."
+            ]
+          },
+          "alert_decision": {
+            "should_alert": true,
+            "alert_level": "HIGH",
+            "alert_type": "HIGH_PRIORITY",
+            "incident_id": "inc-update",
+            "event_id": "evt-update",
+            "priority_score": 56.0,
+            "severity_score": 58.0,
+            "urgency_score": 54.0,
+            "confidence_score": 70.0,
+            "relevant_flags": [],
+            "rule_results": [
+              {
+                "rule": "critical_priority",
+                "triggered": false,
+                "reason": "Priority score does not meet CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "high_priority",
+                "triggered": true,
+                "reason": "Priority score 56.0 meets HIGH threshold 50.0."
+              },
+              {
+                "rule": "medium_priority",
+                "triggered": false,
+                "reason": "Priority score does not meet MEDIUM band 25.0–50.0."
+              },
+              {
+                "rule": "critical_urgency",
+                "triggered": false,
+                "reason": "Urgency score does not meet CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "high_urgency",
+                "triggered": true,
+                "reason": "Urgency score 54.0 meets HIGH threshold 50.0."
+              },
+              {
+                "rule": "critical_severity",
+                "triggered": false,
+                "reason": "Severity score does not meet CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "high_severity",
+                "triggered": true,
+                "reason": "Severity score 58.0 meets HIGH threshold 50.0."
+              },
+              {
+                "rule": "immediate_rescue",
+                "triggered": false,
+                "reason": "No Phase 5 IMMEDIATE_RESCUE flag is present."
+              },
+              {
+                "rule": "critical_priority_flag",
+                "triggered": false,
+                "reason": "No Phase 5 CRITICAL_PRIORITY flag is present."
+              },
+              {
+                "rule": "urgent_resource_request",
+                "triggered": false,
+                "reason": "No configured urgent resource request evidence is present."
+              },
+              {
+                "rule": "spatial_hotspot",
+                "triggered": false,
+                "reason": "No Phase 6 hotspot or qualifying spatial-priority evidence is present."
+              }
+            ],
+            "trigger_reasons": [
+              {
+                "rule": "high_priority",
+                "triggered": true,
+                "reason": "Priority score 56.0 meets HIGH threshold 50.0."
+              },
+              {
+                "rule": "high_urgency",
+                "triggered": true,
+                "reason": "Urgency score 54.0 meets HIGH threshold 50.0."
+              },
+              {
+                "rule": "high_severity",
+                "triggered": true,
+                "reason": "Severity score 58.0 meets HIGH threshold 50.0."
+              }
+            ],
+            "spatial_context": {
+              "location_text": null,
+              "normalized_location": null,
+              "latitude": null,
+              "longitude": null,
+              "coordinates": null,
+              "geocoding_status": "unknown",
+              "geocoding_source": null,
+              "spatial_cluster_id": null,
+              "spatial_area_id": null,
+              "spatial_priority_score": null,
+              "hotspot": false,
+              "hotspot_id": null,
+              "hotspot_score": null,
+              "hotspot_incident_count": null,
+              "spatial_metadata": {}
+            },
+            "uncertainty": [
+              "Verified coordinates are unavailable (geocoding status: unknown)."
+            ],
+            "suppressed": false,
+            "suppression_reason": null,
+            "is_escalation": false,
+            "escalation_reasons": [],
+            "deescalated": false,
+            "alert_id": "alt_aeb8685b086741570e27e0b9"
+          },
+          "alert_record": {
+            "alert_id": "alt_aeb8685b086741570e27e0b9",
+            "incident_id": "inc-update",
+            "event_id": "evt-update",
+            "alert_level": "HIGH",
+            "alert_type": "HIGH_PRIORITY",
+            "status": "ACTIVE",
+            "created_at": "2026-01-01T00:00:01Z",
+            "priority_score": 56.0,
+            "severity_score": 58.0,
+            "urgency_score": 54.0,
+            "confidence_score": 70.0,
+            "trigger_reasons": [
+              {
+                "rule": "high_priority",
+                "triggered": true,
+                "reason": "Priority score 56.0 meets HIGH threshold 50.0."
+              },
+              {
+                "rule": "high_urgency",
+                "triggered": true,
+                "reason": "Urgency score 54.0 meets HIGH threshold 50.0."
+              },
+              {
+                "rule": "high_severity",
+                "triggered": true,
+                "reason": "Severity score 58.0 meets HIGH threshold 50.0."
+              }
+            ],
+            "provenance": {
+              "source": "synthetic_phase9_demo",
+              "source_event_id": "evt-update",
+              "source_type": "synthetic"
+            },
+            "spatial_context": {
+              "location_text": null,
+              "normalized_location": null,
+              "latitude": null,
+              "longitude": null,
+              "coordinates": null,
+              "geocoding_status": "unknown",
+              "geocoding_source": null,
+              "spatial_cluster_id": null,
+              "spatial_area_id": null,
+              "spatial_priority_score": null,
+              "hotspot": false,
+              "hotspot_id": null,
+              "hotspot_score": null,
+              "hotspot_incident_count": null,
+              "spatial_metadata": {}
+            },
+            "uncertainty": [
+              "Verified coordinates are unavailable (geocoding status: unknown)."
+            ],
+            "escalation": {
+              "is_escalation": false,
+              "reasons": [],
+              "previous_alert_level": null
+            },
+            "suppression": {},
+            "notification": {
+              "attempted": true,
+              "alert_id": "alt_aeb8685b086741570e27e0b9",
+              "attempt": 1,
+              "provider": "mock_notification",
+              "status": "sent"
+            },
+            "grounded_intelligence": {
+              "summary": "Synthetic grounded demonstration context",
+              "uncertainties": [
+                "Synthetic fixture; not a verified field report."
+              ]
+            }
+          },
+          "alert_status": "CREATED",
+          "alert_evaluated_at": "2026-01-01T00:00:01Z",
+          "alert_suppression": {}
+        },
+        {
+          "event_id": "evt-update",
+          "event_state": "UPDATED",
+          "source": "synthetic_phase9_demo",
+          "source_type": "synthetic",
+          "provenance": {
+            "source": "synthetic_phase9_demo",
+            "source_event_id": "evt-update",
+            "source_type": "synthetic"
+          },
+          "intelligence": {
+            "phase5": {
+              "incident_id": "inc-update",
+              "priority_score": 82,
+              "severity_score": 78,
+              "urgency_score": 80,
+              "confidence_score": 70,
+              "confidence_level": "MODERATE",
+              "decision_flags": [
+                "IMMEDIATE_RESCUE"
+              ],
+              "requests": [],
+              "resource_estimates": {
+                "explicit_requests": {
+                  "raw_mentions": []
+                }
+              }
+            },
+            "phase6": {},
+            "phase7": {
+              "summary": "Synthetic grounded demonstration context",
+              "uncertainties": [
+                "Synthetic fixture; not a verified field report."
+              ]
+            }
+          },
+          "incident_intelligence": {
+            "incident_id": "inc-update",
+            "priority_score": 82,
+            "severity_score": 78,
+            "urgency_score": 80,
+            "confidence_score": 70,
+            "confidence_level": "MODERATE",
+            "decision_flags": [
+              "IMMEDIATE_RESCUE"
+            ],
+            "requests": [],
+            "resource_estimates": {
+              "explicit_requests": {
+                "raw_mentions": []
+              }
+            }
+          },
+          "spatial_context": {
+            "location_text": null,
+            "normalized_location": null,
+            "latitude": null,
+            "longitude": null,
+            "coordinates": null,
+            "geocoding_status": "unknown",
+            "geocoding_source": null,
+            "spatial_cluster_id": null,
+            "spatial_area_id": null,
+            "spatial_priority_score": null,
+            "hotspot": false,
+            "hotspot_id": null,
+            "hotspot_score": null,
+            "hotspot_incident_count": null,
+            "spatial_metadata": {}
+          },
+          "grounded_intelligence": {
+            "summary": "Synthetic grounded demonstration context",
+            "uncertainties": [
+              "Synthetic fixture; not a verified field report."
+            ]
+          },
+          "alert_decision": {
+            "should_alert": true,
+            "alert_level": "CRITICAL",
+            "alert_type": "CRITICAL_PRIORITY",
+            "incident_id": "inc-update",
+            "event_id": "evt-update",
+            "priority_score": 82.0,
+            "severity_score": 78.0,
+            "urgency_score": 80.0,
+            "confidence_score": 70.0,
+            "relevant_flags": [
+              "IMMEDIATE_RESCUE"
+            ],
+            "rule_results": [
+              {
+                "rule": "critical_priority",
+                "triggered": true,
+                "reason": "Priority score 82.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "high_priority",
+                "triggered": false,
+                "reason": "Priority score does not meet HIGH band 50.0–75.0."
+              },
+              {
+                "rule": "medium_priority",
+                "triggered": false,
+                "reason": "Priority score does not meet MEDIUM band 25.0–50.0."
+              },
+              {
+                "rule": "critical_urgency",
+                "triggered": true,
+                "reason": "Urgency score 80.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "high_urgency",
+                "triggered": false,
+                "reason": "Urgency score does not meet HIGH band 50.0–75.0."
+              },
+              {
+                "rule": "critical_severity",
+                "triggered": true,
+                "reason": "Severity score 78.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "high_severity",
+                "triggered": false,
+                "reason": "Severity score does not meet HIGH band 50.0–75.0."
+              },
+              {
+                "rule": "immediate_rescue",
+                "triggered": true,
+                "reason": "Phase 5 IMMEDIATE_RESCUE flag is present."
+              },
+              {
+                "rule": "critical_priority_flag",
+                "triggered": false,
+                "reason": "No Phase 5 CRITICAL_PRIORITY flag is present."
+              },
+              {
+                "rule": "urgent_resource_request",
+                "triggered": false,
+                "reason": "No configured urgent resource request evidence is present."
+              },
+              {
+                "rule": "spatial_hotspot",
+                "triggered": false,
+                "reason": "No Phase 6 hotspot or qualifying spatial-priority evidence is present."
+              }
+            ],
+            "trigger_reasons": [
+              {
+                "rule": "critical_priority",
+                "triggered": true,
+                "reason": "Priority score 82.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "critical_urgency",
+                "triggered": true,
+                "reason": "Urgency score 80.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "critical_severity",
+                "triggered": true,
+                "reason": "Severity score 78.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "immediate_rescue",
+                "triggered": true,
+                "reason": "Phase 5 IMMEDIATE_RESCUE flag is present."
+              }
+            ],
+            "spatial_context": {
+              "location_text": null,
+              "normalized_location": null,
+              "latitude": null,
+              "longitude": null,
+              "coordinates": null,
+              "geocoding_status": "unknown",
+              "geocoding_source": null,
+              "spatial_cluster_id": null,
+              "spatial_area_id": null,
+              "spatial_priority_score": null,
+              "hotspot": false,
+              "hotspot_id": null,
+              "hotspot_score": null,
+              "hotspot_incident_count": null,
+              "spatial_metadata": {}
+            },
+            "uncertainty": [
+              "Verified coordinates are unavailable (geocoding status: unknown)."
+            ],
+            "suppressed": false,
+            "suppression_reason": null,
+            "is_escalation": true,
+            "escalation_reasons": [
+              "Alert level increased from HIGH to CRITICAL.",
+              "IMMEDIATE_RESCUE appeared in the updated structured evidence."
+            ],
+            "deescalated": false,
+            "alert_id": "alt_c591709c2f737b13b910862d"
+          },
+          "alert_record": {
+            "alert_id": "alt_c591709c2f737b13b910862d",
+            "incident_id": "inc-update",
+            "event_id": "evt-update",
+            "alert_level": "CRITICAL",
+            "alert_type": "CRITICAL_PRIORITY",
+            "status": "ESCALATED",
+            "created_at": "2026-01-01T00:00:02Z",
+            "priority_score": 82.0,
+            "severity_score": 78.0,
+            "urgency_score": 80.0,
+            "confidence_score": 70.0,
+            "trigger_reasons": [
+              {
+                "rule": "critical_priority",
+                "triggered": true,
+                "reason": "Priority score 82.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "critical_urgency",
+                "triggered": true,
+                "reason": "Urgency score 80.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "critical_severity",
+                "triggered": true,
+                "reason": "Severity score 78.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "immediate_rescue",
+                "triggered": true,
+                "reason": "Phase 5 IMMEDIATE_RESCUE flag is present."
+              }
+            ],
+            "provenance": {
+              "source": "synthetic_phase9_demo",
+              "source_event_id": "evt-update",
+              "source_type": "synthetic"
+            },
+            "spatial_context": {
+              "location_text": null,
+              "normalized_location": null,
+              "latitude": null,
+              "longitude": null,
+              "coordinates": null,
+              "geocoding_status": "unknown",
+              "geocoding_source": null,
+              "spatial_cluster_id": null,
+              "spatial_area_id": null,
+              "spatial_priority_score": null,
+              "hotspot": false,
+              "hotspot_id": null,
+              "hotspot_score": null,
+              "hotspot_incident_count": null,
+              "spatial_metadata": {}
+            },
+            "uncertainty": [
+              "Verified coordinates are unavailable (geocoding status: unknown)."
+            ],
+            "escalation": {
+              "is_escalation": true,
+              "reasons": [
+                "Alert level increased from HIGH to CRITICAL.",
+                "IMMEDIATE_RESCUE appeared in the updated structured evidence."
+              ],
+              "previous_alert_level": "HIGH"
+            },
+            "suppression": {},
+            "notification": {
+              "attempted": true,
+              "alert_id": "alt_c591709c2f737b13b910862d",
+              "attempt": 2,
+              "provider": "mock_notification",
+              "status": "sent"
+            },
+            "grounded_intelligence": {
+              "summary": "Synthetic grounded demonstration context",
+              "uncertainties": [
+                "Synthetic fixture; not a verified field report."
+              ]
+            }
+          },
+          "alert_status": "ESCALATED",
+          "alert_evaluated_at": "2026-01-01T00:00:02Z",
+          "alert_suppression": {}
+        }
+      ]
+    },
+    {
+      "scenario": "5_duplicate_suppression",
+      "expected": "created then suppressed",
+      "history": [
+        {
+          "event_id": "evt-repeat",
+          "event_state": "NEW",
+          "source": "synthetic_phase9_demo",
+          "source_type": "synthetic",
+          "provenance": {
+            "source": "synthetic_phase9_demo",
+            "source_event_id": "evt-repeat",
+            "source_type": "synthetic"
+          },
+          "intelligence": {
+            "phase5": {
+              "incident_id": "inc-repeat",
+              "priority_score": 82,
+              "severity_score": 80,
+              "urgency_score": 80,
+              "confidence_score": 70,
+              "confidence_level": "MODERATE",
+              "decision_flags": [],
+              "requests": [],
+              "resource_estimates": {
+                "explicit_requests": {
+                  "raw_mentions": []
+                }
+              }
+            },
+            "phase6": {},
+            "phase7": {
+              "summary": "Synthetic grounded demonstration context",
+              "uncertainties": [
+                "Synthetic fixture; not a verified field report."
+              ]
+            }
+          },
+          "incident_intelligence": {
+            "incident_id": "inc-repeat",
+            "priority_score": 82,
+            "severity_score": 80,
+            "urgency_score": 80,
+            "confidence_score": 70,
+            "confidence_level": "MODERATE",
+            "decision_flags": [],
+            "requests": [],
+            "resource_estimates": {
+              "explicit_requests": {
+                "raw_mentions": []
+              }
+            }
+          },
+          "spatial_context": {
+            "location_text": null,
+            "normalized_location": null,
+            "latitude": null,
+            "longitude": null,
+            "coordinates": null,
+            "geocoding_status": "unknown",
+            "geocoding_source": null,
+            "spatial_cluster_id": null,
+            "spatial_area_id": null,
+            "spatial_priority_score": null,
+            "hotspot": false,
+            "hotspot_id": null,
+            "hotspot_score": null,
+            "hotspot_incident_count": null,
+            "spatial_metadata": {}
+          },
+          "grounded_intelligence": {
+            "summary": "Synthetic grounded demonstration context",
+            "uncertainties": [
+              "Synthetic fixture; not a verified field report."
+            ]
+          },
+          "alert_decision": {
+            "should_alert": true,
+            "alert_level": "CRITICAL",
+            "alert_type": "CRITICAL_PRIORITY",
+            "incident_id": "inc-repeat",
+            "event_id": "evt-repeat",
+            "priority_score": 82.0,
+            "severity_score": 80.0,
+            "urgency_score": 80.0,
+            "confidence_score": 70.0,
+            "relevant_flags": [],
+            "rule_results": [
+              {
+                "rule": "critical_priority",
+                "triggered": true,
+                "reason": "Priority score 82.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "high_priority",
+                "triggered": false,
+                "reason": "Priority score does not meet HIGH band 50.0–75.0."
+              },
+              {
+                "rule": "medium_priority",
+                "triggered": false,
+                "reason": "Priority score does not meet MEDIUM band 25.0–50.0."
+              },
+              {
+                "rule": "critical_urgency",
+                "triggered": true,
+                "reason": "Urgency score 80.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "high_urgency",
+                "triggered": false,
+                "reason": "Urgency score does not meet HIGH band 50.0–75.0."
+              },
+              {
+                "rule": "critical_severity",
+                "triggered": true,
+                "reason": "Severity score 80.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "high_severity",
+                "triggered": false,
+                "reason": "Severity score does not meet HIGH band 50.0–75.0."
+              },
+              {
+                "rule": "immediate_rescue",
+                "triggered": false,
+                "reason": "No Phase 5 IMMEDIATE_RESCUE flag is present."
+              },
+              {
+                "rule": "critical_priority_flag",
+                "triggered": false,
+                "reason": "No Phase 5 CRITICAL_PRIORITY flag is present."
+              },
+              {
+                "rule": "urgent_resource_request",
+                "triggered": false,
+                "reason": "No configured urgent resource request evidence is present."
+              },
+              {
+                "rule": "spatial_hotspot",
+                "triggered": false,
+                "reason": "No Phase 6 hotspot or qualifying spatial-priority evidence is present."
+              }
+            ],
+            "trigger_reasons": [
+              {
+                "rule": "critical_priority",
+                "triggered": true,
+                "reason": "Priority score 82.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "critical_urgency",
+                "triggered": true,
+                "reason": "Urgency score 80.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "critical_severity",
+                "triggered": true,
+                "reason": "Severity score 80.0 meets CRITICAL threshold 75.0."
+              }
+            ],
+            "spatial_context": {
+              "location_text": null,
+              "normalized_location": null,
+              "latitude": null,
+              "longitude": null,
+              "coordinates": null,
+              "geocoding_status": "unknown",
+              "geocoding_source": null,
+              "spatial_cluster_id": null,
+              "spatial_area_id": null,
+              "spatial_priority_score": null,
+              "hotspot": false,
+              "hotspot_id": null,
+              "hotspot_score": null,
+              "hotspot_incident_count": null,
+              "spatial_metadata": {}
+            },
+            "uncertainty": [
+              "Verified coordinates are unavailable (geocoding status: unknown)."
+            ],
+            "suppressed": false,
+            "suppression_reason": null,
+            "is_escalation": false,
+            "escalation_reasons": [],
+            "deescalated": false,
+            "alert_id": "alt_88054f08d2f602be877d93ca"
+          },
+          "alert_record": {
+            "alert_id": "alt_88054f08d2f602be877d93ca",
+            "incident_id": "inc-repeat",
+            "event_id": "evt-repeat",
+            "alert_level": "CRITICAL",
+            "alert_type": "CRITICAL_PRIORITY",
+            "status": "ACTIVE",
+            "created_at": "2026-01-01T00:00:00Z",
+            "priority_score": 82.0,
+            "severity_score": 80.0,
+            "urgency_score": 80.0,
+            "confidence_score": 70.0,
+            "trigger_reasons": [
+              {
+                "rule": "critical_priority",
+                "triggered": true,
+                "reason": "Priority score 82.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "critical_urgency",
+                "triggered": true,
+                "reason": "Urgency score 80.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "critical_severity",
+                "triggered": true,
+                "reason": "Severity score 80.0 meets CRITICAL threshold 75.0."
+              }
+            ],
+            "provenance": {
+              "source": "synthetic_phase9_demo",
+              "source_event_id": "evt-repeat",
+              "source_type": "synthetic"
+            },
+            "spatial_context": {
+              "location_text": null,
+              "normalized_location": null,
+              "latitude": null,
+              "longitude": null,
+              "coordinates": null,
+              "geocoding_status": "unknown",
+              "geocoding_source": null,
+              "spatial_cluster_id": null,
+              "spatial_area_id": null,
+              "spatial_priority_score": null,
+              "hotspot": false,
+              "hotspot_id": null,
+              "hotspot_score": null,
+              "hotspot_incident_count": null,
+              "spatial_metadata": {}
+            },
+            "uncertainty": [
+              "Verified coordinates are unavailable (geocoding status: unknown)."
+            ],
+            "escalation": {
+              "is_escalation": false,
+              "reasons": [],
+              "previous_alert_level": null
+            },
+            "suppression": {},
+            "notification": {
+              "attempted": true,
+              "alert_id": "alt_88054f08d2f602be877d93ca",
+              "attempt": 1,
+              "provider": "mock_notification",
+              "status": "sent"
+            },
+            "grounded_intelligence": {
+              "summary": "Synthetic grounded demonstration context",
+              "uncertainties": [
+                "Synthetic fixture; not a verified field report."
+              ]
+            }
+          },
+          "alert_status": "CREATED",
+          "alert_evaluated_at": "2026-01-01T00:00:00Z",
+          "alert_suppression": {}
+        },
+        {
+          "event_id": "evt-repeat",
+          "event_state": "DUPLICATE",
+          "source": "synthetic_phase9_demo",
+          "source_type": "synthetic",
+          "provenance": {
+            "source": "synthetic_phase9_demo",
+            "source_event_id": "evt-repeat",
+            "source_type": "synthetic"
+          },
+          "intelligence": {
+            "phase5": {
+              "incident_id": "inc-repeat",
+              "priority_score": 82,
+              "severity_score": 80,
+              "urgency_score": 80,
+              "confidence_score": 70,
+              "confidence_level": "MODERATE",
+              "decision_flags": [],
+              "requests": [],
+              "resource_estimates": {
+                "explicit_requests": {
+                  "raw_mentions": []
+                }
+              }
+            },
+            "phase6": {},
+            "phase7": {
+              "summary": "Synthetic grounded demonstration context",
+              "uncertainties": [
+                "Synthetic fixture; not a verified field report."
+              ]
+            }
+          },
+          "incident_intelligence": {
+            "incident_id": "inc-repeat",
+            "priority_score": 82,
+            "severity_score": 80,
+            "urgency_score": 80,
+            "confidence_score": 70,
+            "confidence_level": "MODERATE",
+            "decision_flags": [],
+            "requests": [],
+            "resource_estimates": {
+              "explicit_requests": {
+                "raw_mentions": []
+              }
+            }
+          },
+          "spatial_context": {
+            "location_text": null,
+            "normalized_location": null,
+            "latitude": null,
+            "longitude": null,
+            "coordinates": null,
+            "geocoding_status": "unknown",
+            "geocoding_source": null,
+            "spatial_cluster_id": null,
+            "spatial_area_id": null,
+            "spatial_priority_score": null,
+            "hotspot": false,
+            "hotspot_id": null,
+            "hotspot_score": null,
+            "hotspot_incident_count": null,
+            "spatial_metadata": {}
+          },
+          "grounded_intelligence": {
+            "summary": "Synthetic grounded demonstration context",
+            "uncertainties": [
+              "Synthetic fixture; not a verified field report."
+            ]
+          },
+          "alert_decision": {
+            "should_alert": false,
+            "alert_level": "CRITICAL",
+            "alert_type": "CRITICAL_PRIORITY",
+            "incident_id": "inc-repeat",
+            "event_id": "evt-repeat",
+            "priority_score": 82.0,
+            "severity_score": 80.0,
+            "urgency_score": 80.0,
+            "confidence_score": 70.0,
+            "relevant_flags": [],
+            "rule_results": [
+              {
+                "rule": "critical_priority",
+                "triggered": true,
+                "reason": "Priority score 82.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "high_priority",
+                "triggered": false,
+                "reason": "Priority score does not meet HIGH band 50.0–75.0."
+              },
+              {
+                "rule": "medium_priority",
+                "triggered": false,
+                "reason": "Priority score does not meet MEDIUM band 25.0–50.0."
+              },
+              {
+                "rule": "critical_urgency",
+                "triggered": true,
+                "reason": "Urgency score 80.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "high_urgency",
+                "triggered": false,
+                "reason": "Urgency score does not meet HIGH band 50.0–75.0."
+              },
+              {
+                "rule": "critical_severity",
+                "triggered": true,
+                "reason": "Severity score 80.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "high_severity",
+                "triggered": false,
+                "reason": "Severity score does not meet HIGH band 50.0–75.0."
+              },
+              {
+                "rule": "immediate_rescue",
+                "triggered": false,
+                "reason": "No Phase 5 IMMEDIATE_RESCUE flag is present."
+              },
+              {
+                "rule": "critical_priority_flag",
+                "triggered": false,
+                "reason": "No Phase 5 CRITICAL_PRIORITY flag is present."
+              },
+              {
+                "rule": "urgent_resource_request",
+                "triggered": false,
+                "reason": "No configured urgent resource request evidence is present."
+              },
+              {
+                "rule": "spatial_hotspot",
+                "triggered": false,
+                "reason": "No Phase 6 hotspot or qualifying spatial-priority evidence is present."
+              }
+            ],
+            "trigger_reasons": [
+              {
+                "rule": "critical_priority",
+                "triggered": true,
+                "reason": "Priority score 82.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "critical_urgency",
+                "triggered": true,
+                "reason": "Urgency score 80.0 meets CRITICAL threshold 75.0."
+              },
+              {
+                "rule": "critical_severity",
+                "triggered": true,
+                "reason": "Severity score 80.0 meets CRITICAL threshold 75.0."
+              }
+            ],
+            "spatial_context": {
+              "location_text": null,
+              "normalized_location": null,
+              "latitude": null,
+              "longitude": null,
+              "coordinates": null,
+              "geocoding_status": "unknown",
+              "geocoding_source": null,
+              "spatial_cluster_id": null,
+              "spatial_area_id": null,
+              "spatial_priority_score": null,
+              "hotspot": false,
+              "hotspot_id": null,
+              "hotspot_score": null,
+              "hotspot_incident_count": null,
+              "spatial_metadata": {}
+            },
+            "uncertainty": [
+              "Verified coordinates are unavailable (geocoding status: unknown)."
+            ],
+            "suppressed": true,
+            "suppression_reason": "phase8_duplicate_event",
+            "is_escalation": false,
+            "escalation_reasons": [],
+            "deescalated": false,
+            "alert_id": "alt_88054f08d2f602be877d93ca"
+          },
+          "alert_record": null,
+          "alert_status": "SUPPRESSED",
+          "alert_evaluated_at": "2026-01-01T00:00:01Z",
+          "alert_suppression": {
+            "suppressed": true,
+            "cooldown_seconds": 300.0,
+            "cooldown_remaining_seconds": 299.0
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "6_notification_failure",
+      "expected": "alert created; mock delivery failed",
+      "result": {
+        "event_id": "evt-notify",
+        "event_state": "NEW",
+        "source": "synthetic_phase9_demo",
+        "source_type": "synthetic",
+        "provenance": {
+          "source": "synthetic_phase9_demo",
+          "source_event_id": "evt-notify",
+          "source_type": "synthetic"
+        },
+        "intelligence": {
+          "phase5": {
+            "incident_id": "inc-notify",
+            "priority_score": 81,
+            "severity_score": 80,
+            "urgency_score": 75,
+            "confidence_score": 70,
+            "confidence_level": "MODERATE",
+            "decision_flags": [],
+            "requests": [],
+            "resource_estimates": {
+              "explicit_requests": {
+                "raw_mentions": []
+              }
+            }
+          },
+          "phase6": {},
+          "phase7": {
+            "summary": "Synthetic grounded demonstration context",
+            "uncertainties": [
+              "Synthetic fixture; not a verified field report."
+            ]
+          }
+        },
+        "incident_intelligence": {
+          "incident_id": "inc-notify",
+          "priority_score": 81,
+          "severity_score": 80,
+          "urgency_score": 75,
+          "confidence_score": 70,
+          "confidence_level": "MODERATE",
+          "decision_flags": [],
+          "requests": [],
+          "resource_estimates": {
+            "explicit_requests": {
+              "raw_mentions": []
+            }
+          }
+        },
+        "spatial_context": {
+          "location_text": null,
+          "normalized_location": null,
+          "latitude": null,
+          "longitude": null,
+          "coordinates": null,
+          "geocoding_status": "unknown",
+          "geocoding_source": null,
+          "spatial_cluster_id": null,
+          "spatial_area_id": null,
+          "spatial_priority_score": null,
+          "hotspot": false,
+          "hotspot_id": null,
+          "hotspot_score": null,
+          "hotspot_incident_count": null,
+          "spatial_metadata": {}
+        },
+        "grounded_intelligence": {
+          "summary": "Synthetic grounded demonstration context",
+          "uncertainties": [
+            "Synthetic fixture; not a verified field report."
+          ]
+        },
+        "alert_decision": {
+          "should_alert": true,
+          "alert_level": "CRITICAL",
+          "alert_type": "CRITICAL_PRIORITY",
+          "incident_id": "inc-notify",
+          "event_id": "evt-notify",
+          "priority_score": 81.0,
+          "severity_score": 80.0,
+          "urgency_score": 75.0,
+          "confidence_score": 70.0,
+          "relevant_flags": [],
+          "rule_results": [
+            {
+              "rule": "critical_priority",
+              "triggered": true,
+              "reason": "Priority score 81.0 meets CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_priority",
+              "triggered": false,
+              "reason": "Priority score does not meet HIGH band 50.0–75.0."
+            },
+            {
+              "rule": "medium_priority",
+              "triggered": false,
+              "reason": "Priority score does not meet MEDIUM band 25.0–50.0."
+            },
+            {
+              "rule": "critical_urgency",
+              "triggered": true,
+              "reason": "Urgency score 75.0 meets CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_urgency",
+              "triggered": false,
+              "reason": "Urgency score does not meet HIGH band 50.0–75.0."
+            },
+            {
+              "rule": "critical_severity",
+              "triggered": true,
+              "reason": "Severity score 80.0 meets CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_severity",
+              "triggered": false,
+              "reason": "Severity score does not meet HIGH band 50.0–75.0."
+            },
+            {
+              "rule": "immediate_rescue",
+              "triggered": false,
+              "reason": "No Phase 5 IMMEDIATE_RESCUE flag is present."
+            },
+            {
+              "rule": "critical_priority_flag",
+              "triggered": false,
+              "reason": "No Phase 5 CRITICAL_PRIORITY flag is present."
+            },
+            {
+              "rule": "urgent_resource_request",
+              "triggered": false,
+              "reason": "No configured urgent resource request evidence is present."
+            },
+            {
+              "rule": "spatial_hotspot",
+              "triggered": false,
+              "reason": "No Phase 6 hotspot or qualifying spatial-priority evidence is present."
+            }
+          ],
+          "trigger_reasons": [
+            {
+              "rule": "critical_priority",
+              "triggered": true,
+              "reason": "Priority score 81.0 meets CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "critical_urgency",
+              "triggered": true,
+              "reason": "Urgency score 75.0 meets CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "critical_severity",
+              "triggered": true,
+              "reason": "Severity score 80.0 meets CRITICAL threshold 75.0."
+            }
+          ],
+          "spatial_context": {
+            "location_text": null,
+            "normalized_location": null,
+            "latitude": null,
+            "longitude": null,
+            "coordinates": null,
+            "geocoding_status": "unknown",
+            "geocoding_source": null,
+            "spatial_cluster_id": null,
+            "spatial_area_id": null,
+            "spatial_priority_score": null,
+            "hotspot": false,
+            "hotspot_id": null,
+            "hotspot_score": null,
+            "hotspot_incident_count": null,
+            "spatial_metadata": {}
+          },
+          "uncertainty": [
+            "Verified coordinates are unavailable (geocoding status: unknown)."
+          ],
+          "suppressed": false,
+          "suppression_reason": null,
+          "is_escalation": false,
+          "escalation_reasons": [],
+          "deescalated": false,
+          "alert_id": "alt_9a68fae4799bbae0da60cb7d"
+        },
+        "alert_record": {
+          "alert_id": "alt_9a68fae4799bbae0da60cb7d",
+          "incident_id": "inc-notify",
+          "event_id": "evt-notify",
+          "alert_level": "CRITICAL",
+          "alert_type": "CRITICAL_PRIORITY",
+          "status": "ACTIVE",
+          "created_at": "2026-01-01T00:00:00Z",
+          "priority_score": 81.0,
+          "severity_score": 80.0,
+          "urgency_score": 75.0,
+          "confidence_score": 70.0,
+          "trigger_reasons": [
+            {
+              "rule": "critical_priority",
+              "triggered": true,
+              "reason": "Priority score 81.0 meets CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "critical_urgency",
+              "triggered": true,
+              "reason": "Urgency score 75.0 meets CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "critical_severity",
+              "triggered": true,
+              "reason": "Severity score 80.0 meets CRITICAL threshold 75.0."
+            }
+          ],
+          "provenance": {
+            "source": "synthetic_phase9_demo",
+            "source_event_id": "evt-notify",
+            "source_type": "synthetic"
+          },
+          "spatial_context": {
+            "location_text": null,
+            "normalized_location": null,
+            "latitude": null,
+            "longitude": null,
+            "coordinates": null,
+            "geocoding_status": "unknown",
+            "geocoding_source": null,
+            "spatial_cluster_id": null,
+            "spatial_area_id": null,
+            "spatial_priority_score": null,
+            "hotspot": false,
+            "hotspot_id": null,
+            "hotspot_score": null,
+            "hotspot_incident_count": null,
+            "spatial_metadata": {}
+          },
+          "uncertainty": [
+            "Verified coordinates are unavailable (geocoding status: unknown)."
+          ],
+          "escalation": {
+            "is_escalation": false,
+            "reasons": [],
+            "previous_alert_level": null
+          },
+          "suppression": {},
+          "notification": {
+            "attempted": true,
+            "alert_id": "alt_9a68fae4799bbae0da60cb7d",
+            "attempt": 1,
+            "provider": "mock_notification",
+            "status": "failed",
+            "error": "simulated notification failure"
+          },
+          "grounded_intelligence": {
+            "summary": "Synthetic grounded demonstration context",
+            "uncertainties": [
+              "Synthetic fixture; not a verified field report."
+            ]
+          }
+        },
+        "alert_status": "CREATED",
+        "alert_evaluated_at": "2026-01-01T00:00:00Z",
+        "alert_suppression": {}
+      }
+    },
+    {
+      "scenario": "7_unresolved_location",
+      "expected": "alert evaluated; coordinates remain null",
+      "result": {
+        "event_id": "evt-unresolved",
+        "event_state": "NEW",
+        "source": "synthetic_phase9_demo",
+        "source_type": "synthetic",
+        "provenance": {
+          "source": "synthetic_phase9_demo",
+          "source_event_id": "evt-unresolved",
+          "source_type": "synthetic"
+        },
+        "intelligence": {
+          "phase5": {
+            "incident_id": "inc-unresolved",
+            "priority_score": 62,
+            "severity_score": 60,
+            "urgency_score": 55,
+            "confidence_score": 70,
+            "confidence_level": "MODERATE",
+            "decision_flags": [],
+            "requests": [],
+            "resource_estimates": {
+              "explicit_requests": {
+                "raw_mentions": []
+              }
+            }
+          },
+          "phase6": {
+            "incidents": [
+              {
+                "incident_id": "inc-unresolved",
+                "location_text": "Synthetic unverified district",
+                "geocoding_status": "failed",
+                "latitude": null,
+                "longitude": null,
+                "spatial_metadata": {
+                  "geocoding_error": "not_resolved"
+                }
+              }
+            ]
+          },
+          "phase7": {
+            "summary": "Synthetic grounded demonstration context",
+            "uncertainties": [
+              "Synthetic fixture; not a verified field report."
+            ]
+          }
+        },
+        "incident_intelligence": {
+          "incident_id": "inc-unresolved",
+          "priority_score": 62,
+          "severity_score": 60,
+          "urgency_score": 55,
+          "confidence_score": 70,
+          "confidence_level": "MODERATE",
+          "decision_flags": [],
+          "requests": [],
+          "resource_estimates": {
+            "explicit_requests": {
+              "raw_mentions": []
+            }
+          }
+        },
+        "spatial_context": {
+          "location_text": "Synthetic unverified district",
+          "normalized_location": null,
+          "latitude": null,
+          "longitude": null,
+          "coordinates": null,
+          "geocoding_status": "failed",
+          "geocoding_source": null,
+          "spatial_cluster_id": null,
+          "spatial_area_id": null,
+          "spatial_priority_score": null,
+          "hotspot": false,
+          "hotspot_id": null,
+          "hotspot_score": null,
+          "hotspot_incident_count": null,
+          "spatial_metadata": {
+            "geocoding_error": "not_resolved"
+          }
+        },
+        "grounded_intelligence": {
+          "summary": "Synthetic grounded demonstration context",
+          "uncertainties": [
+            "Synthetic fixture; not a verified field report."
+          ]
+        },
+        "alert_decision": {
+          "should_alert": true,
+          "alert_level": "HIGH",
+          "alert_type": "HIGH_PRIORITY",
+          "incident_id": "inc-unresolved",
+          "event_id": "evt-unresolved",
+          "priority_score": 62.0,
+          "severity_score": 60.0,
+          "urgency_score": 55.0,
+          "confidence_score": 70.0,
+          "relevant_flags": [],
+          "rule_results": [
+            {
+              "rule": "critical_priority",
+              "triggered": false,
+              "reason": "Priority score does not meet CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_priority",
+              "triggered": true,
+              "reason": "Priority score 62.0 meets HIGH threshold 50.0."
+            },
+            {
+              "rule": "medium_priority",
+              "triggered": false,
+              "reason": "Priority score does not meet MEDIUM band 25.0–50.0."
+            },
+            {
+              "rule": "critical_urgency",
+              "triggered": false,
+              "reason": "Urgency score does not meet CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_urgency",
+              "triggered": true,
+              "reason": "Urgency score 55.0 meets HIGH threshold 50.0."
+            },
+            {
+              "rule": "critical_severity",
+              "triggered": false,
+              "reason": "Severity score does not meet CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_severity",
+              "triggered": true,
+              "reason": "Severity score 60.0 meets HIGH threshold 50.0."
+            },
+            {
+              "rule": "immediate_rescue",
+              "triggered": false,
+              "reason": "No Phase 5 IMMEDIATE_RESCUE flag is present."
+            },
+            {
+              "rule": "critical_priority_flag",
+              "triggered": false,
+              "reason": "No Phase 5 CRITICAL_PRIORITY flag is present."
+            },
+            {
+              "rule": "urgent_resource_request",
+              "triggered": false,
+              "reason": "No configured urgent resource request evidence is present."
+            },
+            {
+              "rule": "spatial_hotspot",
+              "triggered": false,
+              "reason": "No Phase 6 hotspot or qualifying spatial-priority evidence is present."
+            }
+          ],
+          "trigger_reasons": [
+            {
+              "rule": "high_priority",
+              "triggered": true,
+              "reason": "Priority score 62.0 meets HIGH threshold 50.0."
+            },
+            {
+              "rule": "high_urgency",
+              "triggered": true,
+              "reason": "Urgency score 55.0 meets HIGH threshold 50.0."
+            },
+            {
+              "rule": "high_severity",
+              "triggered": true,
+              "reason": "Severity score 60.0 meets HIGH threshold 50.0."
+            }
+          ],
+          "spatial_context": {
+            "location_text": "Synthetic unverified district",
+            "normalized_location": null,
+            "latitude": null,
+            "longitude": null,
+            "coordinates": null,
+            "geocoding_status": "failed",
+            "geocoding_source": null,
+            "spatial_cluster_id": null,
+            "spatial_area_id": null,
+            "spatial_priority_score": null,
+            "hotspot": false,
+            "hotspot_id": null,
+            "hotspot_score": null,
+            "hotspot_incident_count": null,
+            "spatial_metadata": {
+              "geocoding_error": "not_resolved"
+            }
+          },
+          "uncertainty": [
+            "Verified coordinates are unavailable (geocoding status: failed)."
+          ],
+          "suppressed": false,
+          "suppression_reason": null,
+          "is_escalation": false,
+          "escalation_reasons": [],
+          "deescalated": false,
+          "alert_id": "alt_291cdf071381fc9623f6d588"
+        },
+        "alert_record": {
+          "alert_id": "alt_291cdf071381fc9623f6d588",
+          "incident_id": "inc-unresolved",
+          "event_id": "evt-unresolved",
+          "alert_level": "HIGH",
+          "alert_type": "HIGH_PRIORITY",
+          "status": "ACTIVE",
+          "created_at": "2026-01-01T00:00:00Z",
+          "priority_score": 62.0,
+          "severity_score": 60.0,
+          "urgency_score": 55.0,
+          "confidence_score": 70.0,
+          "trigger_reasons": [
+            {
+              "rule": "high_priority",
+              "triggered": true,
+              "reason": "Priority score 62.0 meets HIGH threshold 50.0."
+            },
+            {
+              "rule": "high_urgency",
+              "triggered": true,
+              "reason": "Urgency score 55.0 meets HIGH threshold 50.0."
+            },
+            {
+              "rule": "high_severity",
+              "triggered": true,
+              "reason": "Severity score 60.0 meets HIGH threshold 50.0."
+            }
+          ],
+          "provenance": {
+            "source": "synthetic_phase9_demo",
+            "source_event_id": "evt-unresolved",
+            "source_type": "synthetic"
+          },
+          "spatial_context": {
+            "location_text": "Synthetic unverified district",
+            "normalized_location": null,
+            "latitude": null,
+            "longitude": null,
+            "coordinates": null,
+            "geocoding_status": "failed",
+            "geocoding_source": null,
+            "spatial_cluster_id": null,
+            "spatial_area_id": null,
+            "spatial_priority_score": null,
+            "hotspot": false,
+            "hotspot_id": null,
+            "hotspot_score": null,
+            "hotspot_incident_count": null,
+            "spatial_metadata": {
+              "geocoding_error": "not_resolved"
+            }
+          },
+          "uncertainty": [
+            "Verified coordinates are unavailable (geocoding status: failed)."
+          ],
+          "escalation": {
+            "is_escalation": false,
+            "reasons": [],
+            "previous_alert_level": null
+          },
+          "suppression": {},
+          "notification": {
+            "attempted": true,
+            "alert_id": "alt_291cdf071381fc9623f6d588",
+            "attempt": 1,
+            "provider": "mock_notification",
+            "status": "sent"
+          },
+          "grounded_intelligence": {
+            "summary": "Synthetic grounded demonstration context",
+            "uncertainties": [
+              "Synthetic fixture; not a verified field report."
+            ]
+          }
+        },
+        "alert_status": "CREATED",
+        "alert_evaluated_at": "2026-01-01T00:00:00Z",
+        "alert_suppression": {}
+      }
+    },
+    {
+      "scenario": "8_spatial_hotspot",
+      "expected": "hotspot contributes MEDIUM alert",
+      "result": {
+        "event_id": "evt-hotspot",
+        "event_state": "NEW",
+        "source": "synthetic_phase9_demo",
+        "source_type": "synthetic",
+        "provenance": {
+          "source": "synthetic_phase9_demo",
+          "source_event_id": "evt-hotspot",
+          "source_type": "synthetic"
+        },
+        "intelligence": {
+          "phase5": {
+            "incident_id": "inc-hotspot",
+            "priority_score": 5,
+            "severity_score": 10,
+            "urgency_score": 5,
+            "confidence_score": 70,
+            "confidence_level": "MODERATE",
+            "decision_flags": [],
+            "requests": [],
+            "resource_estimates": {
+              "explicit_requests": {
+                "raw_mentions": []
+              }
+            }
+          },
+          "phase6": {
+            "incidents": [
+              {
+                "incident_id": "inc-hotspot",
+                "latitude": 12.5,
+                "longitude": 34.5,
+                "geocoding_status": "success",
+                "geocoding_source": "synthetic_fixture",
+                "spatial_cluster_id": "sp-synthetic-1",
+                "spatial_area_id": "area-synthetic-1"
+              }
+            ],
+            "hotspots": [
+              {
+                "hotspot_id": "hotspot-synthetic-1",
+                "spatial_cluster_id": "sp-synthetic-1",
+                "incident_ids": [
+                  "inc-hotspot"
+                ],
+                "incident_count": 4,
+                "hotspot_score": 61.0
+              }
+            ],
+            "spatial_priority_ranking": [
+              {
+                "spatial_area_id": "area-synthetic-1",
+                "spatial_cluster_id": "sp-synthetic-1",
+                "spatial_priority_score": 62.0
+              }
+            ]
+          },
+          "phase7": {
+            "summary": "Synthetic grounded demonstration context",
+            "uncertainties": [
+              "Synthetic fixture; not a verified field report."
+            ]
+          }
+        },
+        "incident_intelligence": {
+          "incident_id": "inc-hotspot",
+          "priority_score": 5,
+          "severity_score": 10,
+          "urgency_score": 5,
+          "confidence_score": 70,
+          "confidence_level": "MODERATE",
+          "decision_flags": [],
+          "requests": [],
+          "resource_estimates": {
+            "explicit_requests": {
+              "raw_mentions": []
+            }
+          }
+        },
+        "spatial_context": {
+          "location_text": null,
+          "normalized_location": null,
+          "latitude": 12.5,
+          "longitude": 34.5,
+          "coordinates": {
+            "latitude": 12.5,
+            "longitude": 34.5
+          },
+          "geocoding_status": "success",
+          "geocoding_source": "synthetic_fixture",
+          "spatial_cluster_id": "sp-synthetic-1",
+          "spatial_area_id": "area-synthetic-1",
+          "spatial_priority_score": 62.0,
+          "hotspot": true,
+          "hotspot_id": "hotspot-synthetic-1",
+          "hotspot_score": 61.0,
+          "hotspot_incident_count": 4,
+          "spatial_metadata": {}
+        },
+        "grounded_intelligence": {
+          "summary": "Synthetic grounded demonstration context",
+          "uncertainties": [
+            "Synthetic fixture; not a verified field report."
+          ]
+        },
+        "alert_decision": {
+          "should_alert": true,
+          "alert_level": "MEDIUM",
+          "alert_type": "SPATIAL_HOTSPOT",
+          "incident_id": "inc-hotspot",
+          "event_id": "evt-hotspot",
+          "priority_score": 5.0,
+          "severity_score": 10.0,
+          "urgency_score": 5.0,
+          "confidence_score": 70.0,
+          "relevant_flags": [],
+          "rule_results": [
+            {
+              "rule": "critical_priority",
+              "triggered": false,
+              "reason": "Priority score does not meet CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_priority",
+              "triggered": false,
+              "reason": "Priority score does not meet HIGH band 50.0–75.0."
+            },
+            {
+              "rule": "medium_priority",
+              "triggered": false,
+              "reason": "Priority score does not meet MEDIUM band 25.0–50.0."
+            },
+            {
+              "rule": "critical_urgency",
+              "triggered": false,
+              "reason": "Urgency score does not meet CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_urgency",
+              "triggered": false,
+              "reason": "Urgency score does not meet HIGH band 50.0–75.0."
+            },
+            {
+              "rule": "critical_severity",
+              "triggered": false,
+              "reason": "Severity score does not meet CRITICAL threshold 75.0."
+            },
+            {
+              "rule": "high_severity",
+              "triggered": false,
+              "reason": "Severity score does not meet HIGH band 50.0–75.0."
+            },
+            {
+              "rule": "immediate_rescue",
+              "triggered": false,
+              "reason": "No Phase 5 IMMEDIATE_RESCUE flag is present."
+            },
+            {
+              "rule": "critical_priority_flag",
+              "triggered": false,
+              "reason": "No Phase 5 CRITICAL_PRIORITY flag is present."
+            },
+            {
+              "rule": "urgent_resource_request",
+              "triggered": false,
+              "reason": "No configured urgent resource request evidence is present."
+            },
+            {
+              "rule": "spatial_hotspot",
+              "triggered": true,
+              "reason": "Phase 6 hotspot or configured spatial-priority evidence is present."
+            }
+          ],
+          "trigger_reasons": [
+            {
+              "rule": "spatial_hotspot",
+              "triggered": true,
+              "reason": "Phase 6 hotspot or configured spatial-priority evidence is present."
+            }
+          ],
+          "spatial_context": {
+            "location_text": null,
+            "normalized_location": null,
+            "latitude": 12.5,
+            "longitude": 34.5,
+            "coordinates": {
+              "latitude": 12.5,
+              "longitude": 34.5
+            },
+            "geocoding_status": "success",
+            "geocoding_source": "synthetic_fixture",
+            "spatial_cluster_id": "sp-synthetic-1",
+            "spatial_area_id": "area-synthetic-1",
+            "spatial_priority_score": 62.0,
+            "hotspot": true,
+            "hotspot_id": "hotspot-synthetic-1",
+            "hotspot_score": 61.0,
+            "hotspot_incident_count": 4,
+            "spatial_metadata": {}
+          },
+          "uncertainty": [],
+          "suppressed": false,
+          "suppression_reason": null,
+          "is_escalation": false,
+          "escalation_reasons": [],
+          "deescalated": false,
+          "alert_id": "alt_ab721ab5745c62e54cefbfd4"
+        },
+        "alert_record": {
+          "alert_id": "alt_ab721ab5745c62e54cefbfd4",
+          "incident_id": "inc-hotspot",
+          "event_id": "evt-hotspot",
+          "alert_level": "MEDIUM",
+          "alert_type": "SPATIAL_HOTSPOT",
+          "status": "ACTIVE",
+          "created_at": "2026-01-01T00:00:00Z",
+          "priority_score": 5.0,
+          "severity_score": 10.0,
+          "urgency_score": 5.0,
+          "confidence_score": 70.0,
+          "trigger_reasons": [
+            {
+              "rule": "spatial_hotspot",
+              "triggered": true,
+              "reason": "Phase 6 hotspot or configured spatial-priority evidence is present."
+            }
+          ],
+          "provenance": {
+            "source": "synthetic_phase9_demo",
+            "source_event_id": "evt-hotspot",
+            "source_type": "synthetic"
+          },
+          "spatial_context": {
+            "location_text": null,
+            "normalized_location": null,
+            "latitude": 12.5,
+            "longitude": 34.5,
+            "coordinates": {
+              "latitude": 12.5,
+              "longitude": 34.5
+            },
+            "geocoding_status": "success",
+            "geocoding_source": "synthetic_fixture",
+            "spatial_cluster_id": "sp-synthetic-1",
+            "spatial_area_id": "area-synthetic-1",
+            "spatial_priority_score": 62.0,
+            "hotspot": true,
+            "hotspot_id": "hotspot-synthetic-1",
+            "hotspot_score": 61.0,
+            "hotspot_incident_count": 4,
+            "spatial_metadata": {}
+          },
+          "uncertainty": [],
+          "escalation": {
+            "is_escalation": false,
+            "reasons": [],
+            "previous_alert_level": null
+          },
+          "suppression": {},
+          "notification": {
+            "attempted": true,
+            "alert_id": "alt_ab721ab5745c62e54cefbfd4",
+            "attempt": 1,
+            "provider": "mock_notification",
+            "status": "sent"
+          },
+          "grounded_intelligence": {
+            "summary": "Synthetic grounded demonstration context",
+            "uncertainties": [
+              "Synthetic fixture; not a verified field report."
+            ]
+          }
+        },
+        "alert_status": "CREATED",
+        "alert_evaluated_at": "2026-01-01T00:00:00Z",
+        "alert_suppression": {}
+      }
+    }
+  ]
+}

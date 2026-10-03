@@ -1,6 +1,10 @@
+# Partial/general project dependencies; this is not a complete deployment lock.
+# The validated ML runtime is Python 3.10.9, NumPy 1.26.4,
+# PyTorch 2.4.1+cu124, and Transformers 4.44.2. Install the CUDA-specific
+# PyTorch wheel separately as documented in docs/phase11_9_deployment.md.
 # Core Data Processing & Machine Learning
 pandas==2.3.3
-numpy==2.2.6
+numpy==1.26.4
 scikit-learn==1.7.2
 scipy==1.15.3
 

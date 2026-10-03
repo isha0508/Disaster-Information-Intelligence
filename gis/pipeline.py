@@ -2,7 +2,7 @@
 
 import copy
 
-from gis.geocoding import OfflineGeocoder
+from gis.geocoding import OfflineGeocoder, is_offset_description
 from gis.hotspots import detect_hotspots, rank_spatial_priority
 from gis.normalization import normalize_location
 from gis.schemas import SpatialConfig, validate_coordinates
@@ -13,11 +13,31 @@ def enrich_spatial_record(record, geocoder=None):
     """Add spatial fields to one Phase 4/5 record, retaining every input field."""
     geocoder = geocoder or OfflineGeocoder()
     enriched = copy.deepcopy(record)
-    normalized = normalize_location(record.get("location", record.get("location_text")))
+    source_location = record.get("source_location") if isinstance(record.get("source_location"), dict) else {}
+    # Source-provided location text remains authoritative when present. NLP
+    # mentions are a candidate only when source metadata has no location text.
+    nlp_locations = record.get("nlp_location_entities")
+    location_candidate = (source_location.get("text") or record.get("location") or
+                         record.get("location_text") or nlp_locations)
+    normalized = normalize_location(location_candidate)
     first = normalized[0] if normalized else None
     location_text = first["original_text"] if first else None
-    result = {"latitude": None, "longitude": None, "status": "failed", "source": getattr(geocoder, "source", "unknown")}
-    if first:
+    result = {"latitude": None, "longitude": None,
+              "status": "failed" if first else "unresolved",
+              "source": getattr(geocoder, "source", "unknown") if first else None}
+    source_lat, source_lon = source_location.get("latitude"), source_location.get("longitude")
+    source_valid, _ = validate_coordinates(source_lat, source_lon)
+    coordinate_source = None
+    if source_valid:
+        result = {"latitude": float(source_lat), "longitude": float(source_lon),
+                  "status": "success", "source": source_location.get("coordinate_source") or "source_metadata"}
+        coordinate_source = result["source"]
+    elif first and is_offset_description(first["normalized_text"]):
+        # The place after "of" is a reference, not the earthquake epicenter.
+        result = {"latitude": None, "longitude": None, "status": "unresolved",
+                  "source": getattr(geocoder, "source", geocoder.__class__.__name__),
+                  "error": "offset_description_requires_origin_coordinates"}
+    elif first:
         try:
             result = geocoder.geocode(first["normalized_text"])
         except Exception as exc:
@@ -43,8 +63,9 @@ def enrich_spatial_record(record, geocoder=None):
         "normalized_locations": normalized,
         "latitude": latitude,
         "longitude": longitude,
-        "geocoding_status": status if status in {"success", "pending", "ambiguous", "failed"} else "failed",
-        "geocoding_source": result.get("source", geocoder.__class__.__name__),
+        "geocoding_status": status if status in {"success", "pending", "ambiguous", "failed", "unresolved"} else "failed",
+        "geocoding_source": result.get("source"),
+        "coordinate_source": coordinate_source or ("geocoder" if status == "success" else None),
         "spatial_metadata": {
             "coordinate_reference_system": "EPSG:4326",
             "coordinate_order": ["latitude", "longitude"],

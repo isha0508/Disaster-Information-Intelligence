@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import Optional, Tuple
 
 
-GEOCODING_STATUSES = {"success", "pending", "ambiguous", "failed"}
+GEOCODING_STATUSES = {"success", "pending", "ambiguous", "failed", "unresolved"}
 
 
 def validate_coordinates(latitude, longitude) -> Tuple[bool, Optional[str]]:

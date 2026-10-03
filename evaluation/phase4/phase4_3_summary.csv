@@ -1,0 +1,5 @@
+metric,value
+processed_tweets,2000
+tweets_with_entities,1923
+total_entities,6612
+output_directory,/kaggle/working/phase4_3_outputs

@@ -11,18 +11,21 @@ class EventStateStore:
     def observe(self, event_id, event, now):
         current = self._events.get(event_id)
         fingerprint = event["content_fingerprint"]
+        revision_fingerprint = event.get("revision_fingerprint", fingerprint)
         if current is None:
             entry = {"event_id": event_id, "first_seen": now, "last_seen": now,
-                     "content_fingerprint": fingerprint, "previous_fingerprint": None,
+                     "content_fingerprint": fingerprint, "revision_fingerprint": revision_fingerprint,
+                     "previous_fingerprint": None,
                      "processing_status": "NEW", "processing_count": 0,
                      "version": 1, "latest_event": deepcopy(event)}
             self._events[event_id] = entry
             return "NEW", deepcopy(entry)
         current["last_seen"] = now
-        if current["content_fingerprint"] == fingerprint:
+        if current.get("revision_fingerprint", current["content_fingerprint"]) == revision_fingerprint:
             return "DUPLICATE", deepcopy(current)
-        current["previous_fingerprint"] = current["content_fingerprint"]
+        current["previous_fingerprint"] = current.get("revision_fingerprint", current["content_fingerprint"])
         current["content_fingerprint"] = fingerprint
+        current["revision_fingerprint"] = revision_fingerprint
         current["latest_event"] = deepcopy(event)
         current["version"] += 1
         current["processing_status"] = "UPDATED"
